@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Compétences — Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg: #0f1117;
+      --panel: #151823;
+      --panel-2: #1b2030;
+      --text: #e8ecf1;
+      --muted: #a8b0bf;
+      --accent: #8ab4ff;
+      --border: #293042;
+      --good: #6ee7b7;
+    }
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Cantarell, "Noto Color Emoji","Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+    }
+    .wrap{
+      max-width: 1200px; margin: 24px auto; padding: 0 16px;
+    }
+    h1{margin:0 0 12px; font-size: 20px}
+    .toolbar{
+      display:flex; gap:12px; align-items:center; margin-bottom:12px;
+    }
+    .toolbar input[type="search"]{
+      flex:1; padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+      background:var(--panel); color:var(--text); outline:none;
+    }
+    .grid{
+      display:grid; gap:12px; grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr;}
+    }
+
+    .card{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    /* Liste */
+    .list{
+      display:flex; flex-direction:column; height: 70vh;
+    }
+    .thead{
+      display:grid; grid-template-columns: 140px 1fr 80px;
+      gap:10px; padding:10px 12px; background:var(--panel-2); border-bottom:1px solid var(--border);
+      position: sticky; top:0; z-index:2;
+    }
+    .tbody{
+      overflow:auto; padding:4px 0;
+    }
+    .row{
+      display:grid; grid-template-columns: 140px 1fr 80px; gap:10px;
+      align-items:center; padding:8px 12px; border-bottom:1px solid var(--border);
+      cursor:pointer;
+    }
+    .row:hover{ background: rgba(138,180,255,0.08) }
+    .row.active{ background: rgba(110,231,183,0.10) }
+    .cell-emoji{ font-size: 24px; line-height:1; text-align:center }
+    .cell-name{ font-weight:600 }
+    .cell-level{ text-align:center; color:var(--muted) }
+
+    /* Détail */
+    .detail{
+      padding:16px 16px 24px;
+    }
+    .title{
+      font-size: 18px; margin:0 0 6px; display:flex; gap:8px; align-items:baseline;
+    }
+    .title .emoji{ font-size: 26px; }
+    .title .name{ font-weight:700 }
+    .title .lvl{ color:var(--muted) }
+
+    .kv{ margin: 8px 0; }
+    .kv .k{ color:var(--muted) }
+    .indent-1{ margin-left: 1.25rem }
+    .indent-2{ margin-left: 2.5rem }
+
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      white-space: pre-wrap;
+    }
+    .pill{
+      display:inline-block; padding:2px 8px; border-radius:999px; background:rgba(138,180,255,0.12); color:var(--accent); font-size:12px
+    }
+    .empty{ color: var(--muted); font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Afficher Compétences</h1>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Rechercher (famille, nom, effets, ...)" />
+      <span id="count" class="pill">0</span>
+    </div>
+
+    <div class="grid">
+      <!-- Liste -->
+      <section class="card list" aria-label="Liste des compétences">
+        <div class="thead">
+          <div>Famille</div>
+          <div>Nom</div>
+          <div>Niv</div>
+        </div>
+        <div id="tbody" class="tbody" role="listbox" aria-label="Compétences triées"></div>
+      </section>
+
+      <!-- Détail -->
+      <section class="card detail" aria-live="polite">
+        <div id="detailEmpty" class="empty">Sélectionnez une compétence dans la liste pour voir ses détails.</div>
+        <div id="detail" hidden>
+          <h2 class="title">
+            <span id="d-emoji" class="emoji"></span>
+            <span id="d-name" class="name"></span>
+            <span id="d-lvl" class="lvl"></span>
+          </h2>
+          <div id="d-body"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // ///summary
+    // Charge ./skills_data.json, affiche la liste Famille|Nom|Niv et le détail formaté.
+    const JSON_URL = "./skills_data.json"; // place ce fichier à côté de index.html
+
+    const lvlOrder = { "niv1":1, "niv2":2, "niv3":3 };
+
+    /** Normalise tableau de chaînes : trim + filtre vides */
+    const normList = (arr) => (Array.isArray(arr) ? arr : [])
+      .map(s => (typeof s === "string" ? s.trim() : ""))
+      .filter(Boolean);
+
+    /** Tri: famille → niveau → nom */
+    const sortSkills = (skills) => {
+      return [...skills].sort((a, b) => {
+        const famA = (a.family || "").localeCompare ? a.family : String(a.family || "");
+        const famB = (b.family || "").localeCompare ? b.family : String(b.family || "");
+        const byFam = famA.localeCompare(famB, "fr");
+        if (byFam !== 0) return byFam;
+
+        const la = (a.level || "").toLowerCase();
+        const lb = (b.level || "").toLowerCase();
+        const oa = lvlOrder[la] ?? 999, ob = lvlOrder[lb] ?? 999;
+        if (oa !== ob) return oa - ob;
+
+        return (a.name || "").localeCompare(b.name || "", "fr", {sensitivity:"base"});
+      });
+    };
+
+    /** Recherche plein texte */
+    const matchesQuery = (skill, q) => {
+      if (!q) return true;
+      const parts = [
+        skill.family, skill.name, skill.level, skill.cost, skill.difficulty,
+        skill.target, skill.range_, skill.duration, skill.damage,
+        ...(skill.effects || []), ...(skill.conditions || []), ...(skill.limits || [])
+      ].map(x => (x || "").toString().toLowerCase());
+      const hay = parts.join(" ");
+      return hay.includes(q.toLowerCase());
+    };
+
+    /** Format panneau détail (structure HTML, champs vides masqués) */
+    const renderDetail = (skill) => {
+      const fam = skill.family || "";
+      const name = skill.name || "";
+      const lvl = skill.level || "";
+
+      // Header
+      document.getElementById("d-emoji").textContent = fam;
+      document.getElementById("d-name").textContent = name;
+      document.getElementById("d-lvl").textContent = lvl ? `(${lvl})` : "";
+
+      // Corps
+      const body = document.getElementById("d-body");
+      body.innerHTML = "";
+
+      const line = (label, value, opts={}) => {
+        if (!value) return;
+        const d = document.createElement("div");
+        d.className = "kv" + (opts.indent ? ` indent-${opts.indent}` : "");
+        if (opts.raw === true) {
+          d.textContent = value;
+        } else {
+          const k = document.createElement("span");
+          k.className = "k";
+          k.textContent = label + " ";
+          const v = document.createElement("span");
+          v.textContent = value;
+          d.appendChild(k); d.appendChild(v);
+        }
+        body.appendChild(d);
+      };
+
+      // Simples
+      line("Coût :", skill.cost, {indent:1});
+      if (skill.difficulty) {
+        // Le champ contient déjà "Difficulté : ..." ou "Facilité : ..."
+        const d = document.createElement("div");
+        d.className = "kv indent-1";
+        d.textContent = skill.difficulty;
+        body.appendChild(d);
+      }
+      line("Cible :", skill.target, {indent:1});
+      line("Portée :", skill.range_, {indent:1});
+      line("Durée :", skill.duration, {indent:1});
+      line("Dégâts :", skill.damage, {indent:1});
+
+      // Effets / Conditions / Limites : singulier vs pluriel + indentation
+      const itemsBlock = (titleSing, titlePlur, arr) => {
+        const list = normList(arr);
+        if (list.length === 1) {
+          line(titleSing + " :", list[0], {indent:1});
+        } else if (list.length > 1) {
+          const head = document.createElement("div");
+          head.className = "kv indent-1";
+          const k = document.createElement("span");
+          k.className = "k";
+          k.textContent = titlePlur + " :";
+          head.appendChild(k);
+          body.appendChild(head);
+
+          list.forEach(it => {
+            const li = document.createElement("div");
+            li.className = "kv indent-2";
+            li.textContent = it;
+            body.appendChild(li);
+          });
+        }
+      };
+      itemsBlock("Effet", "Effets", skill.effects);
+      itemsBlock("Condition", "Conditions", skill.conditions);
+      itemsBlock("Limite", "Limites", skill.limits);
+    };
+
+    /** Rendu de la liste */
+    const renderList = (skills, q) => {
+      const tbody = document.getElementById("tbody");
+      tbody.innerHTML = "";
+      const out = sortSkills(skills).filter(s => matchesQuery(s, q));
+
+      document.getElementById("count").textContent = out.length;
+
+      out.forEach((s, i) => {
+        const row = document.createElement("div");
+        row.className = "row";
+        row.role = "option";
+        row.dataset.index = i;
+
+        const c1 = document.createElement("div");
+        c1.className = "cell-emoji";
+        c1.textContent = s.family || "";
+        const c2 = document.createElement("div");
+        c2.className = "cell-name";
+        c2.textContent = s.name || "";
+        const c3 = document.createElement("div");
+        c3.className = "cell-level";
+        c3.textContent = s.level || "";
+
+        row.appendChild(c1); row.appendChild(c2); row.appendChild(c3);
+        row.addEventListener("click", () => {
+          [...tbody.children].forEach(el => el.classList.remove("active"));
+          row.classList.add("active");
+          document.getElementById("detailEmpty").hidden = true;
+          document.getElementById("detail").hidden = false;
+          renderDetail(s);
+        });
+
+        tbody.appendChild(row);
+      });
+
+      if (out.length === 0) {
+        document.getElementById("detail").hidden = true;
+        document.getElementById("detailEmpty").hidden = false;
+        document.getElementById("detailEmpty").textContent = "Aucun résultat.";
+      }
+    };
+
+    async function boot(){
+      try{
+        const res = await fetch(JSON_URL, {cache:"no-store"});
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        // data attendu: { families: [...], skills: [...] } OU directement [...]
+        const skills = Array.isArray(data) ? data : (data.skills || []);
+        // normaliser certains champs optionnels pour compat retro
+        skills.forEach(s => {
+          s.effects = normList(s.effects);
+          s.conditions = normList(s.conditions);
+          s.limits = normList(s.limits);
+          s.level = s.level || "";     // peut être vide
+          s.duration = s.duration || "";
+        });
+
+        const search = document.getElementById("search");
+        const doRender = () => renderList(skills, search.value.trim());
+        search.addEventListener("input", doRender);
+
+        doRender();
+      }catch(err){
+        console.error(err);
+        document.getElementById("tbody").innerHTML =
+          `<div style="padding:12px;color:#ffb4b4;">Erreur de chargement de ${JSON_URL}. Vérifie que le fichier existe à côté de index.html et que GitHub Pages est activé.</div>`;
+      }
+    }
+    boot();
+  </script>
+</body>
+</html>
