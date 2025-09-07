@@ -1,0 +1,3627 @@
+{
+  "families": [
+    {
+      "emojis": "✨",
+      "name": "Magie",
+      "description": "La magie commune"
+    },
+    {
+      "emojis": "✨🕚",
+      "name": "Magie Temporelle",
+      "description": ""
+    },
+    {
+      "emojis": "✨🟣​",
+      "name": "Magie de l'Ombre",
+      "description": ""
+    },
+    {
+      "emojis": "✨💧​",
+      "name": "Magie de l'Eau",
+      "description": ""
+    },
+    {
+      "emojis": "✨🌌​",
+      "name": "Magie Cosmique",
+      "description": ""
+    },
+    {
+      "emojis": "✨❤️​",
+      "name": "Magie de l'Amour",
+      "description": ""
+    },
+    {
+      "emojis": "✨💚​",
+      "name": "Magie de Soin",
+      "description": ""
+    },
+    {
+      "emojis": "✨🔥",
+      "name": "Magie du Feu",
+      "description": ""
+    },
+    {
+      "emojis": "✨🌪",
+      "name": "Magie du Vent",
+      "description": ""
+    },
+    {
+      "emojis": "✨🌱",
+      "name": "Magie de la Nature",
+      "description": ""
+    },
+    {
+      "emojis": "✨⚡",
+      "name": "Magie de Foudre",
+      "description": ""
+    },
+    {
+      "emojis": "✨❄️",
+      "name": "Magie de Glace",
+      "description": ""
+    },
+    {
+      "emojis": "✨🌀",
+      "name": "Magie Altérante",
+      "description": ""
+    },
+    {
+      "emojis": "✨🌀🧠",
+      "name": "Magie Mentale",
+      "description": ""
+    },
+    {
+      "emojis": "✨💀",
+      "name": "Magie Nécromantique",
+      "description": ""
+    },
+    {
+      "emojis": "✨☀️",
+      "name": "Magie de Lumière",
+      "description": ""
+    },
+    {
+      "emojis": "✨🏔",
+      "name": "Magie Terrestre",
+      "description": ""
+    },
+    {
+      "emojis": "✨🩸",
+      "name": "Magie du Sang",
+      "description": ""
+    },
+    {
+      "emojis": "🎤",
+      "name": "Voix",
+      "description": ""
+    },
+    {
+      "emojis": "🎤🎵",
+      "name": "Instrumental",
+      "description": ""
+    },
+    {
+      "emojis": "🐾",
+      "name": "Nature & Instinct",
+      "description": ""
+    },
+    {
+      "emojis": "🐾🐺",
+      "name": "Domptage",
+      "description": ""
+    },
+    {
+      "emojis": "🐾🐍",
+      "name": "Instinct Primal",
+      "description": ""
+    },
+    {
+      "emojis": "🐾🪶",
+      "name": "Métamorphose",
+      "description": ""
+    },
+    {
+      "emojis": "🛠",
+      "name": "Artisanat",
+      "description": ""
+    },
+    {
+      "emojis": "🛠⚒️",
+      "name": "Forge & Métallurgie",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🎨",
+      "name": "Arts & Artisanat",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🧵",
+      "name": "Tailleurs & Co",
+      "description": ""
+    },
+    {
+      "emojis": "🕊",
+      "name": "Social",
+      "description": ""
+    },
+    {
+      "emojis": "🕊🗣",
+      "name": "Diplomatie & Persuasion",
+      "description": ""
+    },
+    {
+      "emojis": "🕊😈",
+      "name": "Intimidation / Manipulation",
+      "description": ""
+    },
+    {
+      "emojis": "🕊🎭",
+      "name": "Déguisement, Mensonge, Double-jeu",
+      "description": ""
+    },
+    {
+      "emojis": "🕊🔮",
+      "name": "Divination (Présage, interprétation)",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲",
+      "name": "Invocation",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲💀",
+      "name": "Invocation Nécromantique",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲✨",
+      "name": "Invocation élémentaire",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲🐾",
+      "name": "Invocation Bestiale",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲👼",
+      "name": "Invocation Angélique",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲👹",
+      "name": "Invocation Démoniaque",
+      "description": ""
+    },
+    {
+      "emojis": "👁",
+      "name": "Clairvoyance",
+      "description": ""
+    },
+    {
+      "emojis": "✨💙",
+      "name": "Protection & Bénédiction",
+      "description": ""
+    },
+    {
+      "emojis": "🪽",
+      "name": "Vol",
+      "description": ""
+    },
+    {
+      "emojis": "🗡",
+      "name": "Combat",
+      "description": ""
+    },
+    {
+      "emojis": "🗡⚔️",
+      "name": "Maître d'Arme",
+      "description": ""
+    },
+    {
+      "emojis": "🗡🥋",
+      "name": "Arts Martiaux",
+      "description": ""
+    },
+    {
+      "emojis": "🗡🛡",
+      "name": "Défense & Parade",
+      "description": ""
+    },
+    {
+      "emojis": "🗡🏹",
+      "name": "Archerie",
+      "description": ""
+    },
+    {
+      "emojis": "🗡💣",
+      "name": "Bombardier",
+      "description": ""
+    },
+    {
+      "emojis": "🗡🧭",
+      "name": "Tacticien",
+      "description": ""
+    },
+    {
+      "emojis": "🗡🔄",
+      "name": "Absorption",
+      "description": ""
+    },
+    {
+      "emojis": "🗡🔄🔺",
+      "name": "Retribution",
+      "description": ""
+    },
+    {
+      "emojis": "🎤🧜",
+      "name": "Sirène",
+      "description": ""
+    },
+    {
+      "emojis": "🧭",
+      "name": "Exploration",
+      "description": ""
+    },
+    {
+      "emojis": "🧭🗺️",
+      "name": "Cartographie",
+      "description": ""
+    },
+    {
+      "emojis": "🧭🔥",
+      "name": "Survie",
+      "description": ""
+    },
+    {
+      "emojis": "🧭🪤",
+      "name": "Pièges & Traquenards",
+      "description": ""
+    },
+    {
+      "emojis": "🕵🔓",
+      "name": "Crochetage",
+      "description": ""
+    },
+    {
+      "emojis": "⚓⛵",
+      "name": "Navigation",
+      "description": ""
+    },
+    {
+      "emojis": "⚓🎣",
+      "name": "Pêche",
+      "description": ""
+    },
+    {
+      "emojis": "⚓🦑",
+      "name": "Combat Sous-Marin",
+      "description": ""
+    },
+    {
+      "emojis": "🧘",
+      "name": "Spiritualité",
+      "description": ""
+    },
+    {
+      "emojis": "🧘🙏",
+      "name": "Prières & Rituels",
+      "description": ""
+    },
+    {
+      "emojis": "🧘🌀",
+      "name": "Transe Mystique",
+      "description": ""
+    },
+    {
+      "emojis": "🎭",
+      "name": "Arts & Performance",
+      "description": ""
+    },
+    {
+      "emojis": "🎭🕺",
+      "name": "Danse",
+      "description": ""
+    },
+    {
+      "emojis": "🎭🎨",
+      "name": "Peinture & Sculpture",
+      "description": ""
+    },
+    {
+      "emojis": "🎭🎶",
+      "name": "Musique",
+      "description": ""
+    },
+    {
+      "emojis": "📜",
+      "name": "Sciences",
+      "description": ""
+    },
+    {
+      "emojis": "📜☘️",
+      "name": "Botanisterie",
+      "description": ""
+    },
+    {
+      "emojis": "📜🐬",
+      "name": "Zoologie Aquatique",
+      "description": ""
+    },
+    {
+      "emojis": "📜🕷️",
+      "name": "Insectologie",
+      "description": ""
+    },
+    {
+      "emojis": "📜🐾",
+      "name": "Zoologie",
+      "description": ""
+    },
+    {
+      "emojis": "📜⚛️",
+      "name": "Arcanologie",
+      "description": ""
+    },
+    {
+      "emojis": "📜🧩",
+      "name": "Enigmes & Logique",
+      "description": ""
+    },
+    {
+      "emojis": "📜⚗️",
+      "name": "Alchimie",
+      "description": ""
+    },
+    {
+      "emojis": "📜⏳",
+      "name": "Savoirs Antique",
+      "description": ""
+    },
+    {
+      "emojis": "📜✨",
+      "name": "Savoir Magique",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🪓",
+      "name": "Bûcheronnage",
+      "description": "Abattage et transformation du bois"
+    },
+    {
+      "emojis": "🛠⛏️",
+      "name": "Minage",
+      "description": "Extraction de minerais et pierres précieuses"
+    },
+    {
+      "emojis": "🕵",
+      "name": "Furtivité",
+      "description": ""
+    },
+    {
+      "emojis": "🕵🗡",
+      "name": "Assassinat",
+      "description": ""
+    },
+    {
+      "emojis": "🕵💰",
+      "name": "Vol & Pickpocket",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🍳",
+      "name": "Cuisine",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🏗",
+      "name": "Ingénierie",
+      "description": ""
+    },
+    {
+      "emojis": "📜​✒️​",
+      "name": "Calligraphie & Runes",
+      "description": ""
+    },
+    {
+      "emojis": "🧭👣",
+      "name": "Pistage",
+      "description": ""
+    },
+    {
+      "emojis": "🧘🥋",
+      "name": "Méditation Martiale",
+      "description": ""
+    },
+    {
+      "emojis": "🐎",
+      "name": "Montures",
+      "description": ""
+    },
+    {
+      "emojis": "🕊🪙",
+      "name": "Marchandage",
+      "description": ""
+    },
+    {
+      "emojis": "🕊🍷",
+      "name": "Etiquette (Noblesse)",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🛡",
+      "name": "Armurerie",
+      "description": ""
+    },
+    {
+      "emojis": "⭐",
+      "name": "Spécial (Dieu, Espèce, Histoire, Autre)",
+      "description": ""
+    },
+    {
+      "emojis": "⚓",
+      "name": "Maritime",
+      "description": ""
+    },
+    {
+      "emojis": "🧘💤",
+      "name": "Méditation",
+      "description": ""
+    },
+    {
+      "emojis": "🧘🧠",
+      "name": "Concentration",
+      "description": ""
+    },
+    {
+      "emojis": "🕊💋",
+      "name": "Séduction",
+      "description": ""
+    },
+    {
+      "emojis": "🐎🗡",
+      "name": "Combat Monté",
+      "description": ""
+    },
+    {
+      "emojis": "🕵🎭",
+      "name": "Maître du Déguisement",
+      "description": ""
+    },
+    {
+      "emojis": "🥋️🐢",
+      "name": "Tradition Martiale - Tortue (Défensif)",
+      "description": ""
+    },
+    {
+      "emojis": "🥋️🦅",
+      "name": "Tradition Martiale - Faucon (Agilité)",
+      "description": ""
+    },
+    {
+      "emojis": "🥋🐉",
+      "name": "Tradition Martiale - Draconique (Equilibre)",
+      "description": ""
+    },
+    {
+      "emojis": "🥋🐍",
+      "name": "Tradition Martiale - Serpent (Furtivité)",
+      "description": ""
+    },
+    {
+      "emojis": "🥋🐦‍🔥",
+      "name": "Tradition Martiale - Phénix (Assaut Immortel)",
+      "description": ""
+    },
+    {
+      "emojis": "🥋🐯",
+      "name": "Tradition Martiale - Tigre (Assaillant)",
+      "description": ""
+    },
+    {
+      "emojis": "🛠🍺",
+      "name": "Brasserie",
+      "description": ""
+    },
+    {
+      "emojis": "🛠💎",
+      "name": "Joaillerie & Orfèvrerie",
+      "description": ""
+    },
+    {
+      "emojis": "🕯",
+      "name": "Occultisme",
+      "description": ""
+    },
+    {
+      "emojis": "🕯🩸",
+      "name": "Sacrifices Rituels",
+      "description": ""
+    },
+    {
+      "emojis": "🕯🕰",
+      "name": "Prophéties",
+      "description": ""
+    },
+    {
+      "emojis": "✨🪞",
+      "name": "Magie de l'Illusion",
+      "description": ""
+    },
+    {
+      "emojis": "🥋🧘🔥",
+      "name": "Canalisation de Puissance Intérieure",
+      "description": ""
+    },
+    {
+      "emojis": "🧘🌌",
+      "name": "Projection Astrale",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲🕷",
+      "name": "Invocation d'Insecte",
+      "description": ""
+    },
+    {
+      "emojis": "✨🐲🐬",
+      "name": "Invocation Aquatique",
+      "description": ""
+    }
+  ],
+  "skills": [
+    {
+      "family": "✨🟣​",
+      "name": "Échange d’Ombre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Se téléporte instantanément vers une ombre visible."
+      ],
+      "conditions": [
+        "Doit être en contact avec son ombre (niv1)"
+      ],
+      "limits": []
+    },
+    {
+      "family": "🎤🧜",
+      "name": "Chant de Sirène",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "3tours",
+      "damage": "",
+      "effects": [
+        "Charme un ennemi et le transforme en allié."
+      ],
+      "conditions": [],
+      "limits": [
+        "La cible doit présenter des signes d'intelligence."
+      ]
+    },
+    {
+      "family": "🎤🧜",
+      "name": "Cri de Sirène",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Zone conique de 10m",
+      "range_": "",
+      "duration": "",
+      "damage": "1D6+1",
+      "effects": [
+        "Inflige des dégâts sonores en zone."
+      ],
+      "conditions": [],
+      "limits": [
+        "Inefficace sur les créatures sourdes"
+      ]
+    },
+    {
+      "family": "✨💧​",
+      "name": "Lance d'Eau",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "2 Cibles Maximum",
+      "range_": "Ligne droite de 15m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [
+        "Premier ennemi touché : Dégâts complets.",
+        "Deuxieme ennemi touché : Dégâts réduits de moitié"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨💧​",
+      "name": "Prison d'Eau",
+      "level": "Niv1",
+      "cost": "3 mana (chaque tour)",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "Tant que maintenu",
+      "damage": "",
+      "effects": [
+        "Enferme la cible dans une sphère d'eau, la privant d'action tant que le sort est maintenu."
+      ],
+      "conditions": [],
+      "limits": [
+        "Inefficace contre les créatures éthérées ou très grandes.",
+        "L'utilisateur doit rester concentré sur le sort et ne peut rien faire d'autre."
+      ]
+    },
+    {
+      "family": "✨💧​",
+      "name": "Éclaboussure",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "20m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨💧​",
+      "name": "Brouillard",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Zone de 5m",
+      "range_": "6m",
+      "duration": "4 tours",
+      "damage": "",
+      "effects": [
+        "Crée un voile de brume réduisant la visibilité. (Malus de précision pour tout les ennemis dans la zone)"
+      ],
+      "conditions": [
+        "Durée réduite à 2 tours si terrains venteux"
+      ],
+      "limits": []
+    },
+    {
+      "family": "✨💧​",
+      "name": "Main Aquatique",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "6m",
+      "duration": "Tant que maintenus",
+      "damage": "",
+      "effects": [
+        "Une main d'eau surgit et réagit aux mouvement de l'utilisateur"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨💧​",
+      "name": "Vague Protectrice",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "10m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Erige un mur d'eau de 5m de largeur réduisant de moitié les dégâts physiques à distance.",
+        "Annule completement les dégâts a distance non-physique (ex : Boule de feu)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨💧​",
+      "name": "Soif de l’Océan",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Absorbe l'eau environnante pour restaurer 2 mana"
+      ],
+      "conditions": [],
+      "limits": [
+        "Contact direct avec de l'eau requis (Rivière, Lac, Mer, Océan, Étangs...)"
+      ]
+    },
+    {
+      "family": "🎤🧜",
+      "name": "Chant de Ralliement",
+      "level": "Niv1",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Alliés et Soi-Même",
+      "range_": "Dans un rayon de 10m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Confère un bonus de +1 à toute les caractéristiques secondaires (ex: Finesse)",
+        "Confère un bonus de +10 à toute les caractéristiques principale (Physique, Social et Mental)"
+      ],
+      "conditions": [
+        "Alliés non-sourd au moment du lancement."
+      ],
+      "limits": []
+    },
+    {
+      "family": "🎤🧜",
+      "name": "Écho Perturbateur",
+      "level": "Niv1",
+      "cost": "1mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Zone de 5m",
+      "range_": "10m",
+      "duration": "1tour",
+      "damage": "",
+      "effects": [
+        "Empêche de lancer des sorts dans la zone."
+      ],
+      "conditions": [
+        "Inefficace sur les cibles sourdes."
+      ],
+      "limits": []
+    },
+    {
+      "family": "🎤🧜",
+      "name": "Chant Dissonant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "12m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [
+        "Infilge des dégâts imcompressible (Traverse-Armure)"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne fonctionne que sur les cibles physiques"
+      ]
+    },
+    {
+      "family": "🎤🧜",
+      "name": "Murmure Hypnotique",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "6m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Trouble la cible, lui donnant un malus de 30 de Mental."
+      ],
+      "conditions": [],
+      "limits": [
+        "La cible doit être intelligente.",
+        "Inefficace sur les cibles sourdes"
+      ]
+    },
+    {
+      "family": "⭐",
+      "name": "Manipulation de la Vie",
+      "level": "Niv1",
+      "cost": "1 point de Vie",
+      "difficulty": "Difficulté",
+      "target": "Cible Unique",
+      "range_": "20m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Regagne 2 points de vie"
+      ],
+      "conditions": [],
+      "limits": [
+        "Inefficace sur les morts-vivants ou les entités mortes."
+      ]
+    },
+    {
+      "family": "⭐",
+      "name": "Transformation Humaine / Sirène",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⭐",
+      "name": "🪽 Vol",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 50 ( ⚠️ pas de jet pour voler en conditions normales).",
+      "target": "",
+      "range_": "Jusqu'a 15m de hauteur",
+      "duration": "",
+      "damage": "",
+      "effects": [],
+      "conditions": [],
+      "limits": [
+        "Sensible aux conditions météo (Vents forts, pluie, ...)",
+        "Nécéssite un espace dégagé pour décoller."
+      ]
+    },
+    {
+      "family": "⭐",
+      "name": "🔥 Éveil Ardent",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 50 ( ⚠️ pas de jet en conditions normales).",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Enflamme son épée (objet clé)"
+      ],
+      "conditions": [],
+      "limits": [
+        "Sensible aux conditions météo (Vents forts, pluie, ...)",
+        "Sensible à l'eau (Immersion, sort d'eau, ...)"
+      ]
+    },
+    {
+      "family": "⭐",
+      "name": "Résistance aux Altérations",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Confère une meilleure résistance aux altérations (maladies, malédictions, contrôle mental).",
+        "50% de chance de résister."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲💀",
+      "name": "Invocation de Liche Mineure",
+      "level": "Niv1",
+      "cost": "3 / 5 / 8 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲💀",
+      "name": "Invocation de Liche",
+      "level": "Niv2",
+      "cost": "4 / 6 / 9 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲💀",
+      "name": "Invocation de Cerbère",
+      "level": "Niv1",
+      "cost": "2 / 4 / 6",
+      "difficulty": "Difficulté : 20",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🗡🔄",
+      "name": "Résilience",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Chaque points dégât reçus ajoute 1 point cynétique, avant calcul des réductions."
+      ],
+      "conditions": [
+        "Ne doit pas être pris par surprise"
+      ],
+      "limits": [
+        "Ne peut absorber que des dégâts physiques"
+      ]
+    },
+    {
+      "family": "🗡🔄",
+      "name": "Aura-Zone",
+      "level": "Niv1",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "Zone de 2m",
+      "duration": "2 tours",
+      "damage": "",
+      "effects": [
+        "Chaque action d'une autre entité physique dans la zone impliquant un mouvement génère un point cynétique.",
+        "Malus de 10 au Physique pour toute les entités dans la zone"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🗡🔄",
+      "name": "Absorption",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "2 tours, 1 utilisation",
+      "damage": "",
+      "effects": [
+        "Absorbe 3 points de dégâts et génère 3 points de cynétique supplémentaire"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne peut absorber que des dégâts physiques"
+      ]
+    },
+    {
+      "family": "🛠⛏️",
+      "name": "Expert du Minage",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissances des types de roche et minéraux.",
+        "Capacité à creuser des trous et des galeries."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🗡🔄🔺",
+      "name": "Projectile",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Unique",
+      "range_": "30m en ligne droite",
+      "duration": "",
+      "damage": "XD2",
+      "effects": [
+        "Insuffle X points d'énergie cynétique dans un petit objet pour lui donner de la vitesse et de la pénétration.",
+        "Perce-armure si plus de 3 points de cynétique"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🗡🔄🔺",
+      "name": "Rétribution",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "Arme + XD2 + X",
+      "effects": [
+        "Insuffle X points d'énergie cynétique dans son arme et attaque.",
+        "Perce-armure si plus de 3 points de cynétique"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🗡🔄🔺",
+      "name": "Choc Cynétique",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Zone de 2m",
+      "range_": "",
+      "duration": "",
+      "damage": "XD2",
+      "effects": [
+        "Fait exploser X points de cynétique pour créer une onde de choc qui expulseras toute entité à (X / 2)m"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🗡",
+      "name": "Bond de Géant",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 40",
+      "target": "Emplacement",
+      "range_": "6m (obligatoirement) + Dégât en zone de 2m",
+      "duration": "",
+      "damage": "Arme",
+      "effects": [
+        "Effectue un bond de 6m et frappe le sol de sa pioche pour faire une onde de choc terrestre"
+      ],
+      "conditions": [],
+      "limits": [
+        "Seule les cibles au sol sont touchées"
+      ]
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Lecture des Étoiles",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de s'orienter de nuit en utilisant la position des étoiles"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "🧭🗺️",
+      "name": "Lecture des Étoiles",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de s'orienter de nuit en utilisant la position des étoiles"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Vent Arrière",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Navire",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente la vitesse du navire de 25%"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Nœud Marin",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Création d’un nœud résistant (solidité accrue, difficile à défaire sans compétence)."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Réparation de Fortune",
+      "level": "Niv1",
+      "cost": "Matériaux (Planche de Bois)",
+      "difficulty": "Difficulté : 30",
+      "target": "Navire",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de réparer un navire le temps de un trajet."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Esquive des Récifs",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 30",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduit de moitié les dégâts si le navire touche un obstacle marin."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Souffle Marin",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 30",
+      "target": "Navire Ennemis",
+      "range_": "50m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Repousse de 15m un navire ennemi ou de 50m une petite embarcation."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Observation de l’Horizon",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Détecte navires, côtes ou tempêtes à l'avance."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Appel du Large",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Maintiens le moral a bords du bâteau, même pendant les longs trajets."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Manœuvre d’Urgence",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Difficulté : 40",
+      "target": "Navire",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet un virage serré du navire, esquivant une attaque de zone ou un obstacle maritime."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Lecture des Courants",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente la vitesse du navire de 50% si les courants sont suivis."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Tir de Baliste",
+      "level": "Niv2",
+      "cost": "Munitions (Boulet, Harpon, ect)",
+      "difficulty": "Difficulté : 30",
+      "target": "Cible Unique",
+      "range_": "30m",
+      "duration": "",
+      "damage": "2D8 (perce-armure)",
+      "effects": [
+        "Peut transperçer une coque ou une créature marine."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Tir de Harpon",
+      "level": "Niv1",
+      "cost": "1 Harpon",
+      "difficulty": "Difficulté : 30",
+      "target": "Cible Unique",
+      "range_": "30m",
+      "duration": "",
+      "damage": "2D4 perforants (perce-armure)",
+      "effects": [
+        "Peut transpercer une coque ou une créature marine."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Navigation Astrale",
+      "level": "Niv2",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Navire",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de s'orienter même pas mauvais temps, grâce à la magie."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Chanson des Marins",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "~5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de 20 les chances lors d'un lancer de Social",
+        "Augmente de 2 les chances lors d'un lancer de Relations"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne marche que sur des personnes ayant un lien avec la mer (Capitaine de bâteau, Pirates, ect...)"
+      ]
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Capitaine du Destin",
+      "level": "Niv3",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 25",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Ignore un évènement maritime (Tempête, Obstacle, Créature, Navire, ect...)."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓⛵",
+      "name": "Tir de Canon",
+      "level": "Niv3",
+      "cost": "1 Boulet de Canon",
+      "difficulty": "Difficulté : 30",
+      "target": "Cible Unique",
+      "range_": "30m",
+      "duration": "",
+      "damage": "4D8 contondant",
+      "effects": [
+        "Peut assomer une créature marine.",
+        "Transperçe la coque d'un navire et fait un trou béant."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Lancer de Ligne",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 20",
+      "target": "Rivière",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'attraper de petits poissons dans un plan d'eau calme."
+      ],
+      "conditions": [],
+      "limits": [
+        "Une canna à pêche doit être possédé."
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Appât Naturel",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de 40% les chances de réussite du prochain jet de pêche."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Filet de Rivière",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 20",
+      "target": "Rivière",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Capture plusieurs petits poissons à la fois. (1D4)"
+      ],
+      "conditions": [],
+      "limits": [
+        "Un filet doit être possédé."
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Lecture de l’Eau",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Repère les zones de pêche favorables",
+        "Augmente de 20% les chances de réussite des jets de pêche si zone favorables."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Poisson des Marais",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 60",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de capturer des espèces rares dans des eaux troubles ou stagnantes."
+      ],
+      "conditions": [],
+      "limits": [
+        "Une canna à pêche doit être possédé."
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Main Rapide",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 40",
+      "target": "Rivière",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Attrape un petit poisson directement à la main en eau peu profonde"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Harponage",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 40",
+      "target": "Rivière",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Attrape un petit poisson directement à la main en eau peu profonde"
+      ],
+      "conditions": [],
+      "limits": [
+        "Un harpon doit être possédé."
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Séchage de Poisson",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 20",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Seche un poisson pour en faire une denrée impérissable."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Harponnage Marin",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Difficulté : 30",
+      "target": "Mer, Océans",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de capturer de grand poisson"
+      ],
+      "conditions": [],
+      "limits": [
+        "Un harpon doit être possédé."
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Filet Océanique",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Difficulté : 50",
+      "target": "Mer, Océans",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de capturer 1D6 de poissons moyens d'un banc marin."
+      ],
+      "conditions": [],
+      "limits": [
+        "Un filet doit être posséder"
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Lecture Marines",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Difficulté : 20",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente les chances de réussite de la prochaine action de pêche de 50%"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Prise Légendaire",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Difficulté : 100",
+      "target": "Cible Unique",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'essayer de pêcher une créature énorme."
+      ],
+      "conditions": [
+        "Une créature géante doit avoir été apperçue."
+      ],
+      "limits": [
+        "Une canne à pêche doit être possédée."
+      ]
+    },
+    {
+      "family": "⚓🎣",
+      "name": "Bénédiction des Mers",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Les prises de pêche sont multipliées par 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🦑",
+      "name": "Apnée",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente la durée de l'apnée de 50%"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🦑",
+      "name": "Vision Aquatique",
+      "level": "Niv2",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 25",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Permet de voir clairement dans les eaux troubles ou profondes."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🦑",
+      "name": "Esquive Aquatique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de 20% les chances d'esquives sous-marines."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "⚓🦑",
+      "name": "Agilité Marine",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Aucune réduction de vos capacités sous l'eau."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Rayon Éblouissant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Aveugle la cible, gênant sa vision et sa précision."
+      ],
+      "conditions": [],
+      "limits": [
+        "Inefficace sur les ennemis aveugles ou ne dépendant pas de vision classique."
+      ]
+    },
+    {
+      "family": "✨☀️",
+      "name": "Halo Protecteur",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Zone de 5m",
+      "range_": "",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Réduit les effets des sorts d'ombre dans la zone de 50%."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Étincelle Sacrée",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [
+        "Double les dégâts infilgé si créature d'ombre ou morte-vivantes."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Marque Lumineuse",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Marque une cible, augmentant les dégâts subis de +1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Chaleur Réconfortante",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Retire un état de fatigue de la cible."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Globe Lumineux",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "",
+      "duration": "10 tours",
+      "damage": "",
+      "effects": [
+        "Crée une sphère lumineuse qui éclaire la zone de 10m autour d'elle."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Détection de l'Ombre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Zone d'ombre",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Révèle les entités cachées par magie d'ombre."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Rayon Purificateur",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "2D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Armure de Lumière",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Soi-Même ou Alliés",
+      "range_": "10m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Réduit de 3 les dégâts magiques subis."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Rayon Sacré",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "3D6+3",
+      "effects": [
+        "Double les dégâts si créature de l'ombre ou morte-vivantes."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Éclat Solaire",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Zone de 3m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "3D4+2",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Jugement Solaire",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 140",
+      "target": "Zone de 5m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "6D6+4",
+      "effects": [
+        "Double les dégâts si créature de l'ombre ou morte-vivantes."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨☀️",
+      "name": "Bénédiction du Zénith",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "",
+      "range_": "10m autours de l'utilisateur",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Les alliées regagnent 1D4 pv par tour.",
+        "Les alliées gagnent une imunité à la cécité.",
+        "Les alliées voit leurs physique et mental augmenter de 20.",
+        "Infilge 1D6 par tour aux créature de l'ombre ou morte-vivante dans la zone."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Étincelle",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [],
+      "conditions": [],
+      "limits": [
+        "Nécessite une ligne de vue."
+      ]
+    },
+    {
+      "family": "✨⚡",
+      "name": "Fulgurance",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de se déplacer très rapidement à l'endroit souhaité."
+      ],
+      "conditions": [
+        "Nécéssite une ligne de vue."
+      ],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Arc Mineur",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Trois Cibles",
+      "range_": "10m / 5m entre chaque ennemi",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [
+        "Crée un arc électrique qui se transmet entre plusieurs ennemis."
+      ],
+      "conditions": [
+        "Nécéssite une ligne de vue pour le premier ennemi."
+      ],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Choc Étourdissant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "Dégât d'Arme + 1D3",
+      "effects": [
+        "Charge son arme avec de la foudre.",
+        "Paralyse la cible pour un tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Signal Vibrant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "",
+      "range_": "30m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Détecte toute entités dans une zone de 30m, même à travers les murs."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Survoltage",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "1 action",
+      "damage": "",
+      "effects": [
+        "Augmente temporairement les dégâts infilgés de 2."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Éclair Rapide",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "20m",
+      "duration": "",
+      "damage": "3D6+3",
+      "effects": [
+        "Un éclair puissant frappe la cible, la paralysant.",
+        "Infilge 4 dégâts de plus si armure métallique."
+      ],
+      "conditions": [],
+      "limits": [
+        "Nécéssite une ligne de vue."
+      ]
+    },
+    {
+      "family": "✨⚡",
+      "name": "Chaîne Foudroyante",
+      "level": "Niv2",
+      "cost": "4 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "10 Cibles Uniques",
+      "range_": "10m / 5m entre chaque ennemi",
+      "duration": "",
+      "damage": "3D4+2",
+      "effects": [
+        "Crée un arc électrique qui se transmet entre plusieurs ennemis."
+      ],
+      "conditions": [
+        "Nécéssite une ligne de vue pour le premier ennemi."
+      ],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Surcharge",
+      "level": "Niv2",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "1 action",
+      "damage": "",
+      "effects": [
+        "Augmente la puissance de la prochaine attaque électrique (+1D6 aux dégâts)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Bouclier Tonnant",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Génère un champ électrique autours du lanceur.",
+        "Toute attaque de mêlée contre le porteur inflige 1D6 de contre-éclair. (Incompressible)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Colère Tonnante",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Cible Unique",
+      "range_": "30m",
+      "duration": "",
+      "damage": "8D6+2",
+      "effects": [
+        "Un éclair puissant frappe violemment l'ennmi, la paralysant.",
+        "Double les dégâts si armure métallique."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨⚡",
+      "name": "Tempête de Foudre",
+      "level": "Niv3",
+      "cost": "8 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Zone de 5m",
+      "range_": "15m",
+      "duration": "2",
+      "damage": "8D6+2",
+      "effects": [
+        "Double les dégâts si armure métallique."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Éclat de Givre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Gel Superficiel",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Ralentis la cible. (Saute son tour 1 fois d'affilé max)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Morsure du Froid",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [
+        "Retarde le tour de la cible. (3)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Pic de Glace",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "2 Cibles Maximum",
+      "range_": "Ligne droite de 15m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Souffle Hivernal",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "Zone cônique de 10m",
+      "duration": "",
+      "damage": "1D4+1",
+      "effects": [
+        "Retarde le tour des cibles. (3)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Givre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Sol sur 3m de rayon",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Glace le sol sur 3m, rendant les déplacements plus difficiles.",
+        "(Test de physique pour éviter de glisser)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Conservation",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "2m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Préserve un aliment ou un objet organique de sa décomposition."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Lance de Glace",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Cible Unique",
+      "range_": "15m",
+      "duration": "",
+      "damage": "3D4+3 (perce-armure)",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Prison de Glace",
+      "level": "Niv2",
+      "cost": "4 mana (Une fois)",
+      "difficulty": "Difficulté : 80",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "Infinie",
+      "damage": "",
+      "effects": [
+        "Enferme une cible dans un bloc de glace épais.",
+        "(Empêche d'agir mais protège également des dégâts)",
+        "Test de Physique pour en sortir."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Gel Sanguin",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Cible Unique",
+      "range_": "5m",
+      "duration": "",
+      "damage": "6D6+4",
+      "effects": [
+        "Ralentis la cible. (Saute son tour 1 fois d'affilé max)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❄️",
+      "name": "Blizzard",
+      "level": "Niv3",
+      "cost": "8 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Zone de 10m",
+      "range_": "20m",
+      "duration": "2 tours",
+      "damage": "3D6+4",
+      "effects": [
+        "Réduit visibilité et mobilités.",
+        "Tous les ennemis doivent réussir un test de Mental ou passer leur tours."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Charme",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "5m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "(Hors Combat) Augmente de 20 votre Social.",
+        "(Combat) Contrôle la cible pendant 3 tours."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Baiser Porte-Bonheur",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Réduit de 1 les dégâts reçus."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Regard Attendrissant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "La cible doit réussir un test de Mental ou ne peut pas attaquer le lanceur ce tour-ci."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Lien Passionnel",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Deux alliés (Soi-Même possible)",
+      "range_": "10m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "(Caracterisque principale) Augmente les chances de réussite de 30 si les deux cibles sont proches.",
+        "(Caracteristique secondaire) Augmente les chances de réussite de 3 si les deux cibles sont proches."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Fusion Émotionnelle",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Soi-Même & Cible Unique",
+      "range_": "Contact",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Le lanceur copie temporairement 1 compétence de la cible.",
+        "(Lancement immédiat avec les caractéristique de la cible)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Élan du Cœur",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "La cible récupère 1D6 de PV",
+        "Récupère d'un état de fatigue."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Amour Éternel",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Soi-Même + Cible Unique",
+      "range_": "10m",
+      "duration": "10 tours",
+      "damage": "",
+      "effects": [
+        "Tant que le lanceur est en vie, la cible ne peut pas tomber en dessous de 1PV."
+      ],
+      "conditions": [],
+      "limits": [
+        "Les dégâts reçus ne peuvent être réduit à moins de 1. (Autrement dit si 1 pv on meurt)"
+      ]
+    },
+    {
+      "family": "✨❤️​",
+      "name": "Cœur Altruiste",
+      "level": "Niv3",
+      "cost": "8 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Soi-Même",
+      "range_": "Zone de 10m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Les alliés récupèrent 1D3 par tours.",
+        "Les alliés gagnent une résistance magique de 2.",
+        "Les alliés gagnent une résistance physique de 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Poison Mineur",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "5m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "La cible perds 1D2 PV par tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Aveuglement Fugace",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "1 Action",
+      "damage": "",
+      "effects": [
+        "La cible voit sa précision réduite pour sa prochaine action."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Faiblesse",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "1 tour",
+      "damage": "",
+      "effects": [
+        "La cible inflige -1 dégât pendant son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Nausée",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "La cible a 50% de chance de perdre son action ce tour-ci."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Saignement Mineur",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "La cible perds 2PV par tour."
+      ],
+      "conditions": [
+        "La cible doit avoir subis des dégâts physique au préalable."
+      ],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Ankylose",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "2 tours",
+      "damage": "",
+      "effects": [
+        "La cible a 50% de chance de ne pas pouvoir bouger."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Poison Corrosif",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "5m",
+      "duration": "3 tour",
+      "damage": "",
+      "effects": [
+        "La cible perds 1D4 PV par tour",
+        "Réduis de -1 l'armure de la cible"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Agonie",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Cible Unique",
+      "range_": "6m",
+      "duration": "",
+      "damage": "3D4+2",
+      "effects": [
+        "La cible passe son prochain tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Fièvre",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "La cible a 75% de chance de passer son tour.",
+        "La cible voit ses capacités Mentales diminuée de 30."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Peste Putride",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Zone de 10m",
+      "range_": "10m",
+      "duration": "3 tours",
+      "damage": "3D4+2",
+      "effects": [
+        "Chaque cible infestée augmente les dégâts de 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀",
+      "name": "Malédiction",
+      "level": "Niv3",
+      "cost": "8 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Cible Unique",
+      "range_": "20m",
+      "duration": "Indéfinie",
+      "damage": "",
+      "effects": [
+        "La cible a 50% de rater chaque action.",
+        "La cible ne peut pas être soignée.",
+        "La cible inflige -2 dégâts."
+      ],
+      "conditions": [],
+      "limits": [
+        "Peut-être retirée via Bénédiction."
+      ]
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Suggestion",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Imprime une idée simple dans l'esprit de la cible (\"Regarde là-bas\", \"Attends\")"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne marche qu'une seule fois"
+      ]
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Lien Télépathique",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "15m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Communication télépathique avec la cible."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Brume Mentale",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "2 tours",
+      "damage": "",
+      "effects": [
+        "La cible n'arrive pas à penser à un détail (ex: Cette personne a un contrat sur sa tête)"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne marche qu'une seule fois"
+      ]
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Trou de Mémoire",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "Infini",
+      "damage": "",
+      "effects": [
+        "La cible oublie purement et simplement quelque chose (ex: Où elle a rangé un objet)"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne marche qu'une seule fois à la suite",
+        "Brisable via jet de Mental"
+      ]
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Suggestion Renforcée",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Implante une action simple dans l'esprit de la cible (\"Lâche ton arme\", \"Pars\")"
+      ],
+      "conditions": [],
+      "limits": [
+        "Ne marche qu'une seule fois"
+      ]
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Lien Mental",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Groupe",
+      "range_": "20m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Communication télépathique entre toute les personnes du groupe."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Domination",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Cible Unique",
+      "range_": "",
+      "duration": "Indéfinie",
+      "damage": "",
+      "effects": [
+        "Contrôle total d'une cible."
+      ],
+      "conditions": [],
+      "limits": [
+        "Test de Mental chaque tour pour résister (+ X * Tours en Mental chaque tour)",
+        "Ne marche qu'une seule fois à la suite"
+      ]
+    },
+    {
+      "family": "✨🌀🧠",
+      "name": "Confusion",
+      "level": "Niv3",
+      "cost": "4 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Cible Unique",
+      "range_": "15m",
+      "duration": "Indéfinie",
+      "damage": "",
+      "effects": [
+        "La cible ne fait plus de distinction entre amis et ennemis."
+      ],
+      "conditions": [],
+      "limits": [
+        "Test de Mental chaque tour pour résister (+ X * Tours en Mental chaque tour)",
+        "Ne marche qu'une seule fois à la suite"
+      ]
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Éclat Stellaire",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "2D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Lueur Astrale",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Zone de 20m",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Tout alliés dans la zone regagne 1 mana par tour."
+      ],
+      "conditions": [],
+      "limits": [
+        "N'affecte pas le lanceur"
+      ]
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Déphasage",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "1 tour",
+      "damage": "",
+      "effects": [
+        "Le lanceur devient invicible pour 1 tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Comète Mineure",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Zone de 2m",
+      "range_": "15m",
+      "duration": "",
+      "damage": "2D4",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Rayon Sidéral",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Ligne droite de 20m",
+      "range_": "",
+      "duration": "",
+      "damage": "2D4+1",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Résonance Cosmique",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "1 action",
+      "damage": "",
+      "effects": [
+        "Double les dégâts du prochain sort Cosmique de niv1 ou 2.",
+        "Sinon, augmente les dégâts du prochain sort Magique de 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Comète Stellaire",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Zone de 3m",
+      "range_": "",
+      "duration": "",
+      "damage": "4D4+2",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Éclat Cosmique",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "4D6+4",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Faille Sidérale",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Ligne droite de 10m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "4D6+2",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Alignement Astral",
+      "level": "Niv2",
+      "cost": "2 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduit de moitié le coût du prochain sort magique"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Pluie de Météores",
+      "level": "Niv3",
+      "cost": "12 mana",
+      "difficulty": "Difficulté : 280",
+      "target": "Zone de 15m",
+      "range_": "30m",
+      "duration": "",
+      "damage": "8D12+6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌌​",
+      "name": "Anomalie Cosmique",
+      "level": "Niv3",
+      "cost": "10 mana",
+      "difficulty": "Difficulté : 240",
+      "target": "Zone de 10m",
+      "range_": "30m",
+      "duration": "2 tours",
+      "damage": "4D10+6",
+      "effects": [
+        "Malus de 20 en Physique, Social et Mental."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Rafale",
+      "level": "Niv1",
+      "cost": "1",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "15m",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [
+        "Repousse l'ennemi de 4m"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Mur d'Air",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "10m",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Erige un mur d'air de 5m de largeur réduisant de moitié les dégâts physiques à distance.",
+        "Annule completement les dégâts a distance non-physique (ex : Boule de feu)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Souffle Ascendant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "15m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Fait souffler une bourrasque qui fait décoller du sol de 6m"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Tranche-Vent",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Lame de Vent",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "15m",
+      "duration": "",
+      "damage": "3D6+3",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Tornade",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Zone de 3m (se déplace de 6m)",
+      "range_": "15m",
+      "duration": "2 tours",
+      "damage": "2D4+2",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Ouragan",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 140",
+      "target": "Zone de 6m (Se déplace de 8m)",
+      "range_": "15m",
+      "duration": "3 tours",
+      "damage": "4D6+4",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌪",
+      "name": "Lame Cyclonique",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Cible Unique",
+      "range_": "20m",
+      "duration": "",
+      "damage": "8D6+2",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Ronces Entravantes",
+      "level": "Niv3",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Immobilise la cible. (test de Physique (20) pour se dégager)",
+        "1D6+3 si test échoué."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Croissance Instantanée",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique (au sol)",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Fait pousser un arbre qui bloque la ligne de vue."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Appel Animal",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "",
+      "range_": "20m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Attire de petits animaux (oiseaux, écureuils, souris, ...) pour distraire les ennemis."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Camouflage Végétal",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "Indéfini",
+      "damage": "",
+      "effects": [
+        "Le lanceur se fond dans la végétation.",
+        "Invisible tant qu'il reste immobile."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Spore Irritantes",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Zone de 5m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Les ennemis doivent réussir un test de Physique (Malus 40)",
+        "2D6+3 si test échoué."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Lianes Capturantes",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Immobilise totalement une cible pour 2 tour.",
+        "Au délà, test de physique pour se libérer."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Tronc Protecteur",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "1 action",
+      "damage": "",
+      "effects": [
+        "Echange sa place avec un tronc d'arbre en cas d'attaque, ignorant la totalité des dégâts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Graines Explosives",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "3 zones de 3m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D4+2",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Colosse de Bois",
+      "level": "Niv3",
+      "cost": "8 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "",
+      "range_": "10m",
+      "duration": "4 tours",
+      "damage": "",
+      "effects": [
+        "Fait surgir un Golem-Arbre qui agit comme un allié temporaire (100PV)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🌱",
+      "name": "Forêt Vivante",
+      "level": "Niv3",
+      "cost": "8 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "Zone de 15m",
+      "range_": "30m",
+      "duration": "2 tours",
+      "damage": "4D6+2",
+      "effects": [
+        "Tout les ennemis sont immobilisé (Test de Physique pour se libérer (60)).",
+        "4D6+2 par tour dans la zone."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Jet de Roche",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté",
+      "target": "Cible Unique",
+      "range_": "8m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Peau de Pierre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "2tours",
+      "damage": "",
+      "effects": [
+        "Réduis de -3 les dégâts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Secousse Mineure",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Zone de 5m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Mur de Terre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Erige un muret de 2m bloquant la ligne de vue.",
+        "Peut-être détruit."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Éclats de Pierre",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "3 Cibles (Proche)",
+      "range_": "10m",
+      "duration": "",
+      "damage": "1D4+1",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Étreinte Tellurique",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "1 tour",
+      "damage": "1D4",
+      "effects": [
+        "Immobilise la cible pendant 1 tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Masse Rocheuse",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "",
+      "damage": "3D6+3",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Bouclier de Terre",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "10m",
+      "duration": "2 tours",
+      "damage": "",
+      "effects": [
+        "Protège un allié en absorbant jusqu'à 4 coups ou 40 dégâts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Faille",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Ligne de 5m",
+      "range_": "10m",
+      "duration": "",
+      "damage": "3D6+3",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Peau de Granit",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "4 tours",
+      "damage": "",
+      "effects": [
+        "Réduits de moitié tout les dégâts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🏔",
+      "name": "Golem",
+      "level": "Niv1",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 160",
+      "target": "",
+      "range_": "",
+      "duration": "4 tours",
+      "damage": "",
+      "effects": [
+        "Fait surgir un Golem qui agit comme un allié temporaire.",
+        "(60Pv & 1D6 de dégât)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit d'Ondine",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un esprit aqueux."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit de la Flamme",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque une petite flammèche."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit de Foudre",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque une étincelle animée."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit de Glace",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un petit golem de glace."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit de Pierre",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque une motte de terre."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit de Vent",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque une brise animée."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Esprit Naturel",
+      "level": "Niv1",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un arbuste animé."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Lien Élémentaire",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "Arme",
+      "effects": [
+        "Le lanceur infilge des dégâts du type de l'élémentaire choisi avec son arme."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire d’Eau",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire d’Eau."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire de Feu",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire de Feu."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire de Foudre",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire de Foudre."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire de Glace",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire de Glace."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire de Terre",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire de Terre."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire de Vent",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire de Vent."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Élémentaire Naturel",
+      "level": "Niv2",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un Élémentaire Naturel."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Seigneur Élémentaire",
+      "level": "Niv3",
+      "cost": "10",
+      "difficulty": "Difficulté : 200",
+      "target": "",
+      "range_": "5m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Invoque un grand élémentaire.",
+        "Choissisez son type à son invocation."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Tempête Élémentaire",
+      "level": "Niv3",
+      "cost": "12 mana",
+      "difficulty": "Difficulté : 280",
+      "target": "Zone de 20m autours de l'élémentaire cible",
+      "range_": "",
+      "duration": "",
+      "damage": "8D12+6 de l'élément de l'élémentaire",
+      "effects": [],
+      "conditions": [],
+      "limits": [
+        "Pas de ligne de vue requise."
+      ]
+    },
+    {
+      "family": "✨🐲✨",
+      "name": "Sursaut Élémentaire",
+      "level": "Niv3",
+      "cost": "6 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "Seigneur Élémentaire",
+      "range_": "Zone de 4m autours",
+      "duration": "",
+      "damage": "6D6+4",
+      "effects": [
+	  "Choissisez un élément désiré (Eau, Feu, Foudre, Glace, Terre, Vent ou Nature)",
+        "Change l'élément du Seigneur Élémentaire pour celui choisi.",
+        "Infilge 6D6+4 de l'élément choisi."
+      ],
+      "conditions": [],
+      "limits": []
+    }
+  ]
+}
