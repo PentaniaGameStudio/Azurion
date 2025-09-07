@@ -3833,7 +3833,7 @@
       "difficulty": "Difficulté : 0",
       "target": "Soi-Même",
       "range_": "",
-      "duration": "3 tours",
+      "duration": "",
       "damage": "",
       "effects": [
         "Réduits les dégâts infilgés de 1.",
@@ -3905,7 +3905,7 @@
       "duration": "",
       "damage": "",
       "effects": [
-        "Peut identifier une plante, champignon ou herbe et savoir si elle est comestible ou non."
+        "Peut identifier une plante, champignon ou herbe et savoir si elle est comestible, médicinale ou toxiques."
       ],
       "conditions": [],
       "limits": []
@@ -3922,7 +3922,8 @@
       "duration": "",
       "damage": "",
       "effects": [
-        "Identifier une plante, champignon ou herbe et savoir si elle est comestible, médicinale ou toxique."
+        "Identifier une plante, champignon ou herbe et savoir si elle est comestible, médicinale ou toxique.",
+		"Connait plus en détails les effets."
       ],
       "conditions": [],
       "limits": []
