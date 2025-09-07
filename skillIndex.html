@@ -79,32 +79,58 @@ async function boot(){
   const data=await res.json();
   const skills=Array.isArray(data)?data:(data.skills||[]);
   skills.forEach(s=>{
-  s.hided = !!s.hided;
-  s.effects=normList(s.effects);
-  s.conditions=normList(s.conditions);
-  s.limits=normList(s.limits);
-  s.level=s.level||"";
-  s.duration=s.duration||"";
+	  s.hided = (typeof s.hided === "boolean") ? s.hided
+		: (typeof s.hided === "string") ? s.hided.toLowerCase() === "true"
+		: !!s.hided;
+	  s.effects=normList(s.effects);
+	  s.conditions=normList(s.conditions);
+	  s.limits=normList(s.limits);
+	  s.level=s.level||"";
+	  s.duration=s.duration||"";
   });
   const search=document.getElementById("search"); const tbody=document.getElementById("tbody"); const count=document.getElementById("count");
-  const render=()=>{
-    const q=search.value.trim(); tbody.innerHTML="";
-    let out = sortSkills(skills)
-	  .filter(s => !s.hided)                    // ← ne garder que visibles
-	  .filter(s => matches(s, q));
-	if (familyFilter) {
-	  out = out.filter(s => (s.family || "") === decodeURIComponent(familyFilter));
+	const render = () => {
+	  const q = search.value.trim();
+	  tbody.innerHTML = "";
+
+	  let out = sortSkills(skills)
+		.filter(s => !s.hided)            // ← masque les "hided"
+		.filter(s => matches(s, q));      // ← utilise bien matches(...)
+
+	  if (familyFilter) {
+		out = out.filter(s => (s.family || "") === decodeURIComponent(familyFilter));
+	  }                                  // ← ferme le if ici
+
+	  count.textContent = out.length;
+
+	  out.forEach(s => {
+		const row = document.createElement("div");
+		row.className = "row";
+		row.addEventListener("click", () => { location.href = `./skillDetail.html?id=${slug(s)}`; });
+
+		const c1 = document.createElement("div");
+		c1.className = "cell-emoji";
+		c1.textContent = s.family || "";
+
+		const c2 = document.createElement("div");
+		c2.className = "cell-name";
+		c2.textContent = s.name || "";
+		const lvl = (s.level || "").toLowerCase();            // couleur du nom selon niv
+		c2.classList.add(lvl === "niv3" ? "c-niv3" : lvl === "niv2" ? "c-niv2" : "c-niv1");
+
+		const c3 = document.createElement("div");
+		c3.className = "cell-level";
+		c3.textContent = s.level || "";
+
+		row.append(c1, c2, c3);
+		tbody.appendChild(row);
+	  });
+
+	  if (out.length === 0) {
+		tbody.innerHTML = `<div style="padding:12px" class="empty">Aucun résultat.</div>`;
 	  }
-    count.textContent=out.length;
-    out.forEach(s=>{
-      const row=document.createElement("div"); row.className="row"; row.addEventListener("click",()=>{ location.href=`./skillDetail.html?id=${slug(s)}`; });
-      const c1=document.createElement("div"); c1.className="cell-emoji"; c1.textContent=s.family||"";
-      const c2=document.createElement("div"); c2.className="cell-name"; c2.textContent=s.name||""; const lvl = (s.level || "").toLowerCase(); c2.classList.add(lvl === "niv3" ? "c-niv3" : lvl === "niv2" ? "c-niv2" : "c-niv1");
-      const c3=document.createElement("div"); c3.className="cell-level"; c3.textContent=s.level||"";
-      row.appendChild(c1);row.appendChild(c2);row.appendChild(c3); tbody.appendChild(row);
-    });
-    if(out.length===0){ tbody.innerHTML=`<div style="padding:12px" class="empty">Aucun résultat.</div>`; }
-  };
+	};
+
   search.addEventListener("input",render); render();
 }
 boot().catch(e=>{document.getElementById("tbody").innerHTML=`<div style="padding:12px;color:#ffb4b4">Erreur: ${e}</div>`;});
