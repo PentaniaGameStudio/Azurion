@@ -569,6 +569,21 @@
       "emojis": "✨🐲🐬",
       "name": "Invocation Aquatique",
       "description": ""
+    },
+    {
+      "emojis": "🗡🏹✨",
+      "name": "Archerie Magique",
+      "description": ""
+    },
+    {
+      "emojis": "🐾🐶",
+      "name": "Familiers",
+      "description": ""
+    },
+    {
+      "emojis": "🐾🐶​🦌",
+      "name": "Familier Cerf",
+      "description": ""
     }
   ],
   "skills": [
@@ -3808,6 +3823,490 @@
       ],
       "conditions": [],
       "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Posture Défensive Basique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Réduits les dégâts infilgés de 1.",
+        "Réduits les dégâts subis de 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Projection au Sol",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "Corps à Corps",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [
+        "La cible est étourdie et ne peut pas attaquer."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Esquive Fluide",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Peut tenter d'esquiver un coup physique en échange de 1 mana. (sauf si pris par surprise)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Concentration Martiale",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "1 action",
+      "damage": "",
+      "effects": [
+        "Augmente de 2 les dégâts du prochain coup."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜☘️",
+      "name": "Connaissance des Plantes",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Peut identifier une plante, champignon ou herbe et savoir si elle est comestible ou non."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜☘️",
+      "name": "Connaissance des Plantes avancées",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Identifier une plante, champignon ou herbe et savoir si elle est comestible, médicinale ou toxique."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜☘️",
+      "name": "Préparation d’Herbes",
+      "level": "Niv1",
+      "cost": "3 herbes médicinales",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Crée un onguent basique soignant 3D2 PV."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜☘️",
+      "name": "Observation Forestière",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Peut détecter si un environnement forestier est \"en danger\"",
+        "(Piège, Perturbation magique, Prédateur innabituel, ...)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "👁",
+      "name": "Œil perçant",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "+200m",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la vision du joueur de 200m.",
+        "Augmente de 40 les réussites de Tir à l'arc."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🏹✨",
+      "name": "Flèche d’Énergie",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "50m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [
+        "Tire une flèche magique (N'utilise pas de flèche)"
+      ],
+      "conditions": [
+        "Nécéssite un arc."
+      ],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🏹✨",
+      "name": "Flèche Lumineuse",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 0",
+      "target": "Cible Unique",
+      "range_": "50m",
+      "duration": "3 tours",
+      "damage": "Arme",
+      "effects": [
+        "Illumine une zone de 5m pendant 3 tours à l'impact."
+      ],
+      "conditions": [],
+      "limits": [
+        "Nécéssite un arc."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🗡🏹✨",
+      "name": "Flèche Vibrante",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "50m",
+      "duration": "",
+      "damage": "Arme",
+      "effects": [
+        "Les dégâts sont perce-armure."
+      ],
+      "conditions": [],
+      "limits": [
+        "Nécéssite un arc et une flèche."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🗡🏹✨",
+      "name": "Flèche Spirituelle",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 60",
+      "target": "Cible Unique",
+      "range_": "100m",
+      "duration": "",
+      "damage": "1D6",
+      "effects": [
+        "Peut atteindre une cible marquée, même à travers un obstacle."
+      ],
+      "conditions": [],
+      "limits": [
+        "Nécéssite un arc, une flèche et un ennemi marqué."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🗡🏹✨",
+      "name": "Flèche de Traque",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 20",
+      "target": "Cible Unique",
+      "range_": "50m",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [
+        "Marque la cible."
+      ],
+      "conditions": [],
+      "limits": [
+        "Nécéssite un arc et une flèche."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶​🦌",
+      "name": "Compagnon Fidèle",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Le cerf peut transporter du matériel et servir de monture légère."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶",
+      "name": "Sens Affutés",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "50% de chance que le Cerf prévienne une attaque surprise."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶",
+      "name": "Présence Apaisante",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 60",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Regagne 1 points de mana en calinant le cerf."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶",
+      "name": "Symbiose - Lien vital",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Passif : 40",
+      "target": "",
+      "range_": "",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Si le joueur devait prendre un coup fatal, votre lien profond avec votre familier vous permet de survivre de peu à ce coup.",
+        "1 mana au déclanchement"
+      ],
+      "conditions": [],
+      "limits": [
+        "Une seule symbiose active à la fois."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶",
+      "name": "Symbiose - Harmonie Instinctive",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Tant que votre familier est proche (-5m), le joueur peut relancer un jet raté de Mental une fois par combat."
+      ],
+      "conditions": [],
+      "limits": [
+        "Une seule symbiose active à la fois."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶​🦌",
+      "name": "Symbiose - Souverain de la Forêt",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Tant que votre familier est proche (-5m), bénéficiez d'un bonus de Social de 20 en forêt."
+      ],
+      "conditions": [],
+      "limits": [
+        "Une seule symbiose active à la fois."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🐾🐶​🦌",
+      "name": "Symbiose – Energie de la nature",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Tant que votre familier est proche (-5m), toute les herbes médicinales soignent 1PV supplémentaire."
+      ],
+      "conditions": [],
+      "limits": [
+        "Une seule symbiose active à la fois."
+      ]
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Posture d'Attaque Basique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts infilgés de 1.",
+        "Augmente les dégâts reçus de 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Paume Vibrante",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "",
+      "duration": "",
+      "damage": "1D4",
+      "effects": [
+        "Dégâts perce-armure."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜☘️",
+      "name": "Herbes Irritantes",
+      "level": "Niv1",
+      "cost": "3 herbes toxiques",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "3 tours",
+      "damage": "",
+      "effects": [
+        "Crée un onguent basique réduisant les caractéristiques principales de 20."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "👁",
+      "name": "Oeil du Chasseur",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté",
+      "target": "",
+      "range_": "",
+      "duration": "Tant qu'il vise la même cible",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts à chaque nouveau tir de 1. (Cumulatif jusqu'a 10)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "👁",
+      "name": "Clarté Sylvestre",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "En forêt, le joueur repère automatiquement toute créature dissimulée dans un rayon de 20m."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🗡🏹✨",
+      "name": "Flèche Enracinante",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "Cible Unique",
+      "range_": "50m",
+      "duration": "",
+      "damage": "Arme",
+      "effects": [
+        "Enracine la cible à l'impact. (Jet de physique pour se libérer)"
+      ],
+      "conditions": [],
+      "limits": [
+        "Nécéssite un arc et une flèche."
+      ]
     }
   ]
 }
