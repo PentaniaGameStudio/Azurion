@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Familles — Index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+/* ///summary: même thème, liste simple de familles avec indentation et compteur */
+:root{--bg:#0f1117;--panel:#151823;--panel2:#1b2030;--txt:#e8ecf1;--mut:#a8b0bf;--bd:#293042}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);
+font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Cantarell,"Noto Color Emoji","Segoe UI Emoji","Apple Color Emoji",sans-serif}
+.wrap{max-width:900px;margin:24px auto;padding:0 16px}
+h1{margin:0 0 12px;font-size:20px}
+.toolbar{display:flex;gap:10px;align-items:center;margin:12px 0}
+button,.btn{border:1px solid var(--bd);background:var(--panel2);color:var(--txt);padding:8px 12px;border-radius:10px;cursor:pointer;text-decoration:none}
+.card{background:var(--panel);border:1px solid var(--bd);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden}
+.list{padding:8px 12px}
+.item{padding:6px 8px;border-bottom:1px solid var(--bd)}
+.item a{color:inherit;text-decoration:none;display:inline-block;width:100%}
+.item a:hover{background:rgba(138,180,255,.08)}
+.indent-0{margin-left:0}.indent-1{margin-left:1.25rem}.indent-2{margin-left:2.5rem}.indent-3{margin-left:3.75rem}
+.muted{color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Afficher Familles</h1>
+  <div class="toolbar">
+    <a href="./skillIndex.html" class="btn">Afficher Compétences</a>
+  </div>
+  <section class="card list" id="list"></section>
+</div>
+
+<script>
+///summary: affiche familles groupées par 1er emoji, indentation = nb d’émojis - 1, lien -> skillIndex filtré
+const JSON_URL="./skills_data.json"; const VS16="\ufe0f";
+const firstGrapheme=s=>{ if(!s) return ""; return (s.length>=2&&s[1]===VS16)?s.slice(0,2):s[0]; };
+const emojiCount=s=>Array.from(s).filter(ch=>ch!==VS16).length;
+
+(async function(){
+  const res=await fetch(JSON_URL,{cache:"no-store"}); if(!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data=await res.json();
+  const families = Array.isArray(data)?(data.families||[]):(data.families||[]); // support deux formats
+  const skills   = Array.isArray(data)?(data.skills||[]):(data.skills||[]);
+  // map nb de skills par famille (émojis exact)
+  const countByFam = skills.reduce((m,s)=>{ const k=s.family||""; m[k]=(m[k]||0)+1; return m; },{});
+
+  // regrouper
+  const groups={};
+  families.forEach(f=>{
+    const root=firstGrapheme(f.emojis||""); const indent=Math.max(emojiCount(f.emojis||"")-1,0);
+    const name=(f.name||"").trim(); const label=name?`${f.emojis} : ${name}`:f.emojis;
+    (groups[root]=groups[root]||[]).push({indent,emojis:f.emojis,label});
+  });
+  const roots=Object.keys(groups).sort();
+  const list=document.getElementById("list"); list.innerHTML="";
+  if(roots.length===0){ list.innerHTML=`<div class="item muted">(aucune famille)</div>`; return; }
+
+  roots.forEach((r,ri)=>{
+    const arr=groups[r].sort((a,b)=>a.indent-b.indent||a.label.localeCompare(b.label,"fr"));
+    arr.forEach(it=>{
+      const cnt=countByFam[it.emojis]||0;
+      const div=document.createElement("div"); div.className="item";
+      const a=document.createElement("a");
+      a.className=`indent-${Math.min(it.indent,3)}`;
+      a.href=`./skillIndex.html?family=${encodeURIComponent(it.emojis)}`;
+      a.textContent = cnt ? `${it.label}  —  ${cnt} compétence(s)` : `${it.label}`;
+      div.appendChild(a); list.appendChild(div);
+    });
+    if(ri<roots.length-1){ const sep=document.createElement("div"); sep.className="item"; sep.style.borderBottom="none"; sep.innerHTML="&nbsp;"; list.appendChild(sep); }
+  });
+})().catch(e=>{document.getElementById("list").innerHTML=`<div class="item" style="color:#ffb4b4">Erreur: ${e}</div>`;});
+</script>
+</body>
+</html>
