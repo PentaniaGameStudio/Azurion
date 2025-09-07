@@ -91,9 +91,10 @@ async function boot(){
     const q=search.value.trim(); tbody.innerHTML="";
     let out = sortSkills(skills)
 	  .filter(s => !s.hided)                    // ← ne garder que visibles
-	  .filter(s => matchesQuery(s, q));
+	  .filter(s => matches(s, q));
 	if (familyFilter) {
 	  out = out.filter(s => (s.family || "") === decodeURIComponent(familyFilter));
+	  }
     count.textContent=out.length;
     out.forEach(s=>{
       const row=document.createElement("div"); row.className="row"; row.addEventListener("click",()=>{ location.href=`./skillDetail.html?id=${slug(s)}`; });
