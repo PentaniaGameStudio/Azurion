@@ -573,6 +573,7 @@
   ],
   "skills": [
     {
+      "hided": false,
       "family": "✨🟣​",
       "name": "Échange d’Ombre",
       "level": "Niv1",
@@ -591,6 +592,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🎤🧜",
       "name": "Chant de Sirène",
       "level": "Niv1",
@@ -609,6 +611,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "🎤🧜",
       "name": "Cri de Sirène",
       "level": "Niv1",
@@ -627,6 +630,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Lance d'Eau",
       "level": "Niv1",
@@ -644,6 +648,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Prison d'Eau",
       "level": "Niv1",
@@ -663,6 +668,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Éclaboussure",
       "level": "Niv1",
@@ -677,6 +683,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Brouillard",
       "level": "Niv1",
@@ -695,6 +702,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Main Aquatique",
       "level": "Niv1",
@@ -711,6 +719,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Vague Protectrice",
       "level": "Niv1",
@@ -728,6 +737,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨💧​",
       "name": "Soif de l’Océan",
       "level": "Niv1",
@@ -746,6 +756,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "🎤🧜",
       "name": "Chant de Ralliement",
       "level": "Niv1",
@@ -765,6 +776,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🎤🧜",
       "name": "Écho Perturbateur",
       "level": "Niv1",
@@ -783,6 +795,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🎤🧜",
       "name": "Chant Dissonant",
       "level": "Niv1",
@@ -801,6 +814,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "🎤🧜",
       "name": "Murmure Hypnotique",
       "level": "Niv1",
@@ -820,6 +834,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "⭐",
       "name": "Manipulation de la Vie",
       "level": "Niv1",
@@ -838,6 +853,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "⭐",
       "name": "Transformation Humaine / Sirène",
       "level": "Niv1",
@@ -852,6 +868,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "⭐",
       "name": "🪽 Vol",
       "level": "Niv1",
@@ -869,6 +886,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "⭐",
       "name": "🔥 Éveil Ardent",
       "level": "Niv1",
@@ -888,6 +906,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "⭐",
       "name": "Résistance aux Altérations",
       "level": "Niv1",
@@ -905,6 +924,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲💀",
       "name": "Invocation de Liche Mineure",
       "level": "Niv1",
@@ -919,6 +939,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲💀",
       "name": "Invocation de Liche",
       "level": "Niv2",
@@ -933,6 +954,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲💀",
       "name": "Invocation de Cerbère",
       "level": "Niv1",
@@ -947,6 +969,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🗡🔄",
       "name": "Résilience",
       "level": "Niv1",
@@ -967,6 +990,7 @@
       ]
     },
     {
+      "hided": true,
       "family": "🗡🔄",
       "name": "Aura-Zone",
       "level": "Niv1",
@@ -984,6 +1008,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🗡🔄",
       "name": "Absorption",
       "level": "Niv1",
@@ -1002,6 +1027,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "🛠⛏️",
       "name": "Expert du Minage",
       "level": "Niv1",
@@ -1019,6 +1045,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🗡🔄🔺",
       "name": "Projectile",
       "level": "Niv1",
@@ -1036,6 +1063,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🗡🔄🔺",
       "name": "Rétribution",
       "level": "Niv1",
@@ -1053,6 +1081,7 @@
       "limits": []
     },
     {
+      "hided": true,
       "family": "🗡🔄🔺",
       "name": "Choc Cynétique",
       "level": "Niv2",
@@ -1069,6 +1098,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "🗡",
       "name": "Bond de Géant",
       "level": "Niv1",
@@ -1087,6 +1117,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Lecture des Étoiles",
       "level": "Niv1",
@@ -1103,6 +1134,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "🧭🗺️",
       "name": "Lecture des Étoiles",
       "level": "Niv1",
@@ -1119,6 +1151,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Vent Arrière",
       "level": "Niv1",
@@ -1135,6 +1168,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Nœud Marin",
       "level": "Niv1",
@@ -1151,6 +1185,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Réparation de Fortune",
       "level": "Niv1",
@@ -1167,6 +1202,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Esquive des Récifs",
       "level": "Niv1",
@@ -1183,6 +1219,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Souffle Marin",
       "level": "Niv1",
@@ -1199,6 +1236,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Observation de l’Horizon",
       "level": "Niv1",
@@ -1215,6 +1253,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Appel du Large",
       "level": "Niv1",
@@ -1231,6 +1270,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Manœuvre d’Urgence",
       "level": "Niv2",
@@ -1247,6 +1287,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Lecture des Courants",
       "level": "Niv2",
@@ -1263,6 +1304,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Tir de Baliste",
       "level": "Niv2",
@@ -1279,6 +1321,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Tir de Harpon",
       "level": "Niv1",
@@ -1295,6 +1338,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Navigation Astrale",
       "level": "Niv2",
@@ -1311,6 +1355,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Chanson des Marins",
       "level": "Niv2",
@@ -1330,6 +1375,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Capitaine du Destin",
       "level": "Niv3",
@@ -1346,6 +1392,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓⛵",
       "name": "Tir de Canon",
       "level": "Niv3",
@@ -1363,6 +1410,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Lancer de Ligne",
       "level": "Niv1",
@@ -1381,6 +1429,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Appât Naturel",
       "level": "Niv1",
@@ -1397,6 +1446,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Filet de Rivière",
       "level": "Niv1",
@@ -1415,6 +1465,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Lecture de l’Eau",
       "level": "Niv1",
@@ -1432,6 +1483,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Poisson des Marais",
       "level": "Niv1",
@@ -1450,6 +1502,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Main Rapide",
       "level": "Niv1",
@@ -1466,6 +1519,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Harponage",
       "level": "Niv1",
@@ -1484,6 +1538,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Séchage de Poisson",
       "level": "Niv1",
@@ -1500,6 +1555,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Harponnage Marin",
       "level": "Niv2",
@@ -1518,6 +1574,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Filet Océanique",
       "level": "Niv2",
@@ -1536,6 +1593,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Lecture Marines",
       "level": "Niv2",
@@ -1552,6 +1610,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Prise Légendaire",
       "level": "Niv3",
@@ -1572,6 +1631,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "⚓🎣",
       "name": "Bénédiction des Mers",
       "level": "Niv3",
@@ -1588,6 +1648,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🦑",
       "name": "Apnée",
       "level": "Niv1",
@@ -1604,6 +1665,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🦑",
       "name": "Vision Aquatique",
       "level": "Niv2",
@@ -1620,6 +1682,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🦑",
       "name": "Esquive Aquatique",
       "level": "Niv1",
@@ -1636,6 +1699,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "⚓🦑",
       "name": "Agilité Marine",
       "level": "Niv3",
@@ -1652,6 +1716,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Rayon Éblouissant",
       "level": "Niv1",
@@ -1670,6 +1735,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Halo Protecteur",
       "level": "Niv1",
@@ -1686,6 +1752,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Étincelle Sacrée",
       "level": "Niv1",
@@ -1702,6 +1769,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Marque Lumineuse",
       "level": "Niv1",
@@ -1718,6 +1786,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Chaleur Réconfortante",
       "level": "Niv2",
@@ -1734,6 +1803,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Globe Lumineux",
       "level": "Niv1",
@@ -1750,6 +1820,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Détection de l'Ombre",
       "level": "Niv1",
@@ -1766,6 +1837,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Rayon Purificateur",
       "level": "Niv1",
@@ -1780,6 +1852,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Armure de Lumière",
       "level": "Niv2",
@@ -1796,6 +1869,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Rayon Sacré",
       "level": "Niv2",
@@ -1812,6 +1886,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Éclat Solaire",
       "level": "Niv2",
@@ -1826,6 +1901,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Jugement Solaire",
       "level": "Niv3",
@@ -1842,6 +1918,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨☀️",
       "name": "Bénédiction du Zénith",
       "level": "Niv3",
@@ -1861,6 +1938,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Étincelle",
       "level": "Niv1",
@@ -1877,6 +1955,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Fulgurance",
       "level": "Niv1",
@@ -1895,6 +1974,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Arc Mineur",
       "level": "Niv1",
@@ -1913,6 +1993,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Choc Étourdissant",
       "level": "Niv1",
@@ -1930,6 +2011,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Signal Vibrant",
       "level": "Niv1",
@@ -1946,6 +2028,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Survoltage",
       "level": "Niv1",
@@ -1962,6 +2045,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Éclair Rapide",
       "level": "Niv2",
@@ -1981,6 +2065,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Chaîne Foudroyante",
       "level": "Niv2",
@@ -1999,6 +2084,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Surcharge",
       "level": "Niv2",
@@ -2015,6 +2101,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Bouclier Tonnant",
       "level": "Niv2",
@@ -2032,6 +2119,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Colère Tonnante",
       "level": "Niv3",
@@ -2049,6 +2137,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨⚡",
       "name": "Tempête de Foudre",
       "level": "Niv3",
@@ -2065,6 +2154,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Éclat de Givre",
       "level": "Niv1",
@@ -2079,6 +2169,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Gel Superficiel",
       "level": "Niv1",
@@ -2095,6 +2186,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Morsure du Froid",
       "level": "Niv1",
@@ -2111,6 +2203,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Pic de Glace",
       "level": "Niv1",
@@ -2125,6 +2218,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Souffle Hivernal",
       "level": "Niv1",
@@ -2141,6 +2235,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Givre",
       "level": "Niv1",
@@ -2158,6 +2253,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Conservation",
       "level": "Niv1",
@@ -2174,6 +2270,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Lance de Glace",
       "level": "Niv2",
@@ -2188,6 +2285,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Prison de Glace",
       "level": "Niv2",
@@ -2206,6 +2304,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Gel Sanguin",
       "level": "Niv3",
@@ -2222,6 +2321,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❄️",
       "name": "Blizzard",
       "level": "Niv3",
@@ -2239,6 +2339,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Charme",
       "level": "Niv1",
@@ -2256,6 +2357,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Baiser Porte-Bonheur",
       "level": "Niv1",
@@ -2272,6 +2374,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Regard Attendrissant",
       "level": "Niv1",
@@ -2288,6 +2391,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Lien Passionnel",
       "level": "Niv2",
@@ -2305,6 +2409,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Fusion Émotionnelle",
       "level": "Niv2",
@@ -2322,6 +2427,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Élan du Cœur",
       "level": "Niv2",
@@ -2339,6 +2445,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Amour Éternel",
       "level": "Niv3",
@@ -2357,6 +2464,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨❤️​",
       "name": "Cœur Altruiste",
       "level": "Niv3",
@@ -2375,6 +2483,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Poison Mineur",
       "level": "Niv1",
@@ -2391,6 +2500,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Aveuglement Fugace",
       "level": "Niv1",
@@ -2407,6 +2517,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Faiblesse",
       "level": "Niv1",
@@ -2423,6 +2534,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Nausée",
       "level": "Niv1",
@@ -2439,6 +2551,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Saignement Mineur",
       "level": "Niv1",
@@ -2457,6 +2570,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Ankylose",
       "level": "Niv1",
@@ -2473,6 +2587,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Poison Corrosif",
       "level": "Niv2",
@@ -2490,6 +2605,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Agonie",
       "level": "Niv2",
@@ -2506,6 +2622,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Fièvre",
       "level": "Niv2",
@@ -2523,6 +2640,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Peste Putride",
       "level": "Niv3",
@@ -2539,6 +2657,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀",
       "name": "Malédiction",
       "level": "Niv3",
@@ -2559,6 +2678,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Suggestion",
       "level": "Niv1",
@@ -2577,6 +2697,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Lien Télépathique",
       "level": "Niv1",
@@ -2593,6 +2714,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Brume Mentale",
       "level": "Niv1",
@@ -2611,6 +2733,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Trou de Mémoire",
       "level": "Niv2",
@@ -2630,6 +2753,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Suggestion Renforcée",
       "level": "Niv2",
@@ -2648,6 +2772,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Lien Mental",
       "level": "Niv2",
@@ -2664,6 +2789,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Domination",
       "level": "Niv3",
@@ -2683,6 +2809,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌀🧠",
       "name": "Confusion",
       "level": "Niv3",
@@ -2702,6 +2829,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Éclat Stellaire",
       "level": "Niv1",
@@ -2716,6 +2844,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Lueur Astrale",
       "level": "Niv1",
@@ -2734,6 +2863,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Déphasage",
       "level": "Niv1",
@@ -2750,6 +2880,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Comète Mineure",
       "level": "Niv1",
@@ -2764,6 +2895,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Rayon Sidéral",
       "level": "Niv1",
@@ -2778,6 +2910,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Résonance Cosmique",
       "level": "Niv1",
@@ -2795,6 +2928,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Comète Stellaire",
       "level": "Niv2",
@@ -2809,6 +2943,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Éclat Cosmique",
       "level": "Niv2",
@@ -2823,6 +2958,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Faille Sidérale",
       "level": "Niv2",
@@ -2837,6 +2973,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Alignement Astral",
       "level": "Niv2",
@@ -2853,6 +2990,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Pluie de Météores",
       "level": "Niv3",
@@ -2867,6 +3005,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌌​",
       "name": "Anomalie Cosmique",
       "level": "Niv3",
@@ -2883,6 +3022,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Rafale",
       "level": "Niv1",
@@ -2899,6 +3039,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Mur d'Air",
       "level": "Niv1",
@@ -2916,6 +3057,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Souffle Ascendant",
       "level": "Niv1",
@@ -2932,6 +3074,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Tranche-Vent",
       "level": "Niv1",
@@ -2946,6 +3089,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Lame de Vent",
       "level": "Niv2",
@@ -2960,6 +3104,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Tornade",
       "level": "Niv2",
@@ -2974,6 +3119,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Ouragan",
       "level": "Niv3",
@@ -2988,6 +3134,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌪",
       "name": "Lame Cyclonique",
       "level": "Niv3",
@@ -3002,6 +3149,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Ronces Entravantes",
       "level": "Niv3",
@@ -3019,6 +3167,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Croissance Instantanée",
       "level": "Niv1",
@@ -3035,6 +3184,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Appel Animal",
       "level": "Niv1",
@@ -3051,6 +3201,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Camouflage Végétal",
       "level": "Niv1",
@@ -3068,6 +3219,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Spore Irritantes",
       "level": "Niv1",
@@ -3085,6 +3237,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Lianes Capturantes",
       "level": "Niv2",
@@ -3102,6 +3255,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Tronc Protecteur",
       "level": "Niv2",
@@ -3118,6 +3272,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Graines Explosives",
       "level": "Niv2",
@@ -3132,6 +3287,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Colosse de Bois",
       "level": "Niv3",
@@ -3148,6 +3304,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🌱",
       "name": "Forêt Vivante",
       "level": "Niv3",
@@ -3165,6 +3322,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Jet de Roche",
       "level": "Niv1",
@@ -3179,6 +3337,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Peau de Pierre",
       "level": "Niv1",
@@ -3195,6 +3354,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Secousse Mineure",
       "level": "Niv1",
@@ -3209,6 +3369,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Mur de Terre",
       "level": "Niv1",
@@ -3226,6 +3387,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Éclats de Pierre",
       "level": "Niv1",
@@ -3240,6 +3402,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Étreinte Tellurique",
       "level": "Niv1",
@@ -3256,6 +3419,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Masse Rocheuse",
       "level": "Niv2",
@@ -3270,6 +3434,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Bouclier de Terre",
       "level": "Niv2",
@@ -3286,6 +3451,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Faille",
       "level": "Niv2",
@@ -3300,6 +3466,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Peau de Granit",
       "level": "Niv2",
@@ -3316,6 +3483,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🏔",
       "name": "Golem",
       "level": "Niv1",
@@ -3333,6 +3501,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit d'Ondine",
       "level": "Niv1",
@@ -3349,6 +3518,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit de la Flamme",
       "level": "Niv1",
@@ -3365,6 +3535,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit de Foudre",
       "level": "Niv1",
@@ -3381,6 +3552,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit de Glace",
       "level": "Niv1",
@@ -3397,6 +3569,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit de Pierre",
       "level": "Niv1",
@@ -3413,6 +3586,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit de Vent",
       "level": "Niv1",
@@ -3429,6 +3603,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Esprit Naturel",
       "level": "Niv1",
@@ -3445,6 +3620,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Lien Élémentaire",
       "level": "Niv1",
@@ -3461,6 +3637,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire d’Eau",
       "level": "Niv2",
@@ -3477,6 +3654,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire de Feu",
       "level": "Niv2",
@@ -3493,6 +3671,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire de Foudre",
       "level": "Niv2",
@@ -3509,6 +3688,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire de Glace",
       "level": "Niv2",
@@ -3525,6 +3705,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire de Terre",
       "level": "Niv2",
@@ -3541,6 +3722,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire de Vent",
       "level": "Niv2",
@@ -3557,6 +3739,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Élémentaire Naturel",
       "level": "Niv2",
@@ -3573,6 +3756,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Seigneur Élémentaire",
       "level": "Niv3",
@@ -3590,6 +3774,7 @@
       "limits": []
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Tempête Élémentaire",
       "level": "Niv3",
@@ -3606,6 +3791,7 @@
       ]
     },
     {
+      "hided": false,
       "family": "✨🐲✨",
       "name": "Sursaut Élémentaire",
       "level": "Niv3",
@@ -3616,7 +3802,7 @@
       "duration": "",
       "damage": "6D6+4",
       "effects": [
-	  "Choissisez un élément désiré (Eau, Feu, Foudre, Glace, Terre, Vent ou Nature)",
+        "Choissisez un élément désiré (Eau, Feu, Foudre, Glace, Terre, Vent ou Nature)",
         "Change l'élément du Seigneur Élémentaire pour celui choisi.",
         "Infilge 6D6+4 de l'élément choisi."
       ],

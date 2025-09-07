@@ -1,139 +1,291 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<title>Compétences — Index</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-/* ///summary: Styles compacts, dark, responsive */
-:root{--bg:#0f1117;--panel:#151823;--panel2:#1b2030;--txt:#e8ecf1;--mut:#a8b0bf;--acc:#8ab4ff;--bd:#293042}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);
-font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Cantarell,"Noto Color Emoji","Segoe UI Emoji","Apple Color Emoji",sans-serif}
-.wrap{max-width:1200px;margin:24px auto;padding:0 16px}
-h1{margin:0 0 12px;font-size:20px}
-.toolbar{display:flex;gap:10px;align-items:center;margin:12px 0}
-button, .btn{border:1px solid var(--bd);background:var(--panel2);color:var(--txt);padding:8px 12px;border-radius:10px;cursor:pointer;text-decoration:none}
-input[type="search"]{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--panel);color:var(--txt);outline:none}
-.pill{padding:2px 8px;border-radius:999px;background:rgba(138,180,255,.12);color:var(--acc);font-size:12px}
-.grid{display:grid;gap:12px;grid-template-columns:1fr 1fr} @media(max-width:900px){.grid{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid var(--bd);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden}
-.list{display:flex;flex-direction:column;height:70vh}
-.thead{display:grid;grid-template-columns:140px 1fr 80px;gap:10px;padding:10px 12px;background:var(--panel2);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:2}
-.tbody{overflow:auto;padding:4px 0}
-.row{display:grid;grid-template-columns:140px 1fr 80px;gap:10px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--bd);cursor:pointer}
-.row:hover{background:rgba(138,180,255,.08)} .row.active{background:rgba(110,231,183,.10)}
-.cell-emoji{font-size:24px;line-height:1;text-align:center}.cell-name{font-weight:600}.cell-level{text-align:center;color:var(--mut)}
-.detail{padding:16px 16px 24px}
-.title{font-size:18px;margin:0 0 6px;display:flex;gap:8px;align-items:baseline}.title .emoji{font-size:26px}.title .name{font-weight:700}.title .lvl{color:var(--mut)}
-.kv{margin:8px 0}.k{color:var(--mut)} .indent-1{margin-left:1.25rem}.indent-2{margin-left:2.5rem}
-.empty{color:var(--mut);font-style:italic}
-/* Couleurs par niveau (Nom) */
-.cell-name.c-niv1 { color: #ffffff; }
-.cell-name.c-niv2 { color: #ffa500; } /* orange */
-.cell-name.c-niv3 { color: #ff4d4d; } /* rouge */
+  <meta charset="utf-8" />
+  <title>Compétences — Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+  /* ///summary
+     Thème sombre + layout 2 colonnes (Liste | Détail), styles compacts et responsives.
+  */
+  :root{--bg:#0f1117;--panel:#151823;--panel2:#1b2030;--txt:#e8ecf1;--mut:#a8b0bf;--acc:#8ab4ff;--bd:#293042}
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--txt);
+    font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Cantarell,"Noto Color Emoji","Segoe UI Emoji","Apple Color Emoji",sans-serif
+  }
+  .wrap{max-width:1200px;margin:24px auto;padding:0 16px}
+  h1{margin:0 0 12px;font-size:20px}
+  .toolbar{display:flex;gap:10px;align-items:center;margin:12px 0}
+  button,.btn{border:1px solid var(--bd);background:var(--panel2);color:var(--txt);padding:8px 12px;border-radius:10px;cursor:pointer;text-decoration:none}
+  input[type="search"]{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--panel);color:var(--txt);outline:none}
+  .pill{padding:2px 8px;border-radius:999px;background:rgba(138,180,255,.12);color:var(--acc);font-size:12px}
+  .grid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--panel);border:1px solid var(--bd);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden}
 
-</style>
+  /* Liste */
+  .list{display:flex;flex-direction:column;height:70vh}
+  .thead{
+    display:grid;grid-template-columns:140px 1fr 80px;
+    gap:10px;padding:10px 12px;background:var(--panel2);border-bottom:1px solid var(--bd);
+    position:sticky;top:0;z-index:2
+  }
+  .tbody{overflow:auto;padding:4px 0}
+  .row{
+    display:grid;grid-template-columns:140px 1fr 80px;gap:10px;
+    align-items:center;padding:8px 12px;border-bottom:1px solid var(--bd);cursor:pointer
+  }
+  .row:hover{background:rgba(138,180,255,.08)}
+  .row.active{background:rgba(110,231,183,.10)}
+  .cell-emoji{font-size:24px;line-height:1;text-align:center}
+  .cell-name{font-weight:600}
+  .cell-level{text-align:center;color:var(--mut)}
+
+  /* Détail */
+  .detail{padding:16px 16px 24px}
+  .title{font-size:18px;margin:0 0 6px;display:flex;gap:8px;align-items:baseline}
+  .title .emoji{font-size:26px}
+  .title .name{font-weight:700}
+  .title .lvl{color:var(--mut)}
+  .kv{margin:8px 0}
+  .k{color:var(--mut)}
+  .indent-1{margin-left:1.25rem}
+  .indent-2{margin-left:2.5rem}
+  .empty{color:var(--mut);font-style:italic}
+
+  /* ///summary Couleurs par niveau (Nom) */
+  .cell-name.c-niv1 { color:#ffffff; }
+  .cell-name.c-niv2 { color:#ffa500; } /* orange */
+  .cell-name.c-niv3 { color:#ff4d4d; } /* rouge */
+  .title .name.c-niv1 { color:#ffffff; }
+  .title .name.c-niv2 { color:#ffa500; }
+  .title .name.c-niv3 { color:#ff4d4d; }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Afficher Compétences</h1>
-  <div class="toolbar">
-    <a href="./skillFamily.html" class="btn">Afficher Familles</a>
-    <input id="search" type="search" placeholder="Rechercher (famille, nom, effets, ...)" />
-    <span id="count" class="pill">0</span>
+  <div class="wrap">
+    <h1>Afficher Compétences</h1>
+    <div class="toolbar">
+      <a href="./skillFamily.html" class="btn">Afficher Familles</a>
+      <input id="search" type="search" placeholder="Rechercher (famille, nom, effets, ...)" />
+      <span id="count" class="pill">0</span>
+    </div>
+
+    <div class="grid">
+      <!-- Liste -->
+      <section class="card list" aria-label="Liste des compétences">
+        <div class="thead"><div>Famille</div><div>Nom</div><div>Niv</div></div>
+        <div id="tbody" class="tbody" role="listbox" aria-label="Compétences triées"></div>
+      </section>
+
+      <!-- Détail -->
+      <section class="card detail" aria-live="polite">
+        <div id="detailEmpty" class="empty">Sélectionnez une compétence dans la liste pour voir ses détails.</div>
+        <div id="detail" hidden>
+          <h2 class="title">
+            <span id="d-emoji" class="emoji"></span>
+            <span id="d-name" class="name"></span>
+            <span id="d-lvl" class="lvl"></span>
+          </h2>
+          <div id="d-body"></div>
+        </div>
+      </section>
+    </div>
   </div>
 
-  <section class="card list" aria-label="Liste des compétences">
-    <div class="thead"><div>Famille</div><div>Nom</div><div>Niv</div></div>
-    <div id="tbody" class="tbody" role="listbox" aria-label="Compétences triées"></div>
-  </section>
-</div>
+  <script>
+  ///summary
+  // Charge ./skills_data.json, liste triée (Famille→Niv→Nom) filtrant hided, recherche plein texte,
+  // affiche le détail à droite; support d'un filtre de famille via ?family=<emojis>.
+  const JSON_URL = "./skills_data.json";
+  const lvlOrder = { niv1:1, niv2:2, niv3:3 };
 
-<script>
-///summary: charge skills_data.json, tri Famille→Niv→Nom, recherche, clic = détail
-const JSON_URL = "./skills_data.json";
-const lvlOrder = {niv1:1,niv2:2,niv3:3};
+  const slug = s => encodeURIComponent(`${s.family||""}__${s.name||""}`);
+  const qs   = new URLSearchParams(location.search);
+  const familyFilter = qs.get("family");
 
-const slug = s => encodeURIComponent(`${s.family||""}__${s.name||""}`);
-const q = new URLSearchParams(location.search);
-const familyFilter = q.get("family"); // permet d'arriver filtré depuis skillFamily
+  /** ///summary: Nettoie une liste de chaînes (trim + supprime vides) */
+  const normList = a => (Array.isArray(a)?a:[])
+    .map(s => (typeof s === "string" ? s.trim() : ""))
+    .filter(Boolean);
 
-const normList = a => (Array.isArray(a)?a:[]).map(s=>typeof s==="string"?s.trim():"").filter(Boolean);
-const sortSkills = arr => [...arr].sort((a,b)=>{
-  const f = (a.family||"").localeCompare(b.family||"","fr"); if(f) return f;
-  const oa = lvlOrder[(a.level||"").toLowerCase()]??999, ob = lvlOrder[(b.level||"").toLowerCase()]??999;
-  if(oa!==ob) return oa-ob;
-  return (a.name||"").localeCompare(b.name||"","fr",{sensitivity:"base"});
-});
-const matches = (s,query)=>{
-  if(!query) return true;
-  const parts=[s.family,s.name,s.level,s.cost,s.difficulty,s.target,s.range_,s.duration,s.damage,...(s.effects||[]),...(s.conditions||[]),...(s.limits||[])].map(x=>(x||"").toString().toLowerCase());
-  return parts.join(" ").includes(query.toLowerCase());
-};
-
-async function boot(){
-  const res=await fetch(JSON_URL,{cache:"no-store"});
-  if(!res.ok)
-	throw new Error(`HTTP ${res.status}`);
-  const data=await res.json();
-  const skills=Array.isArray(data)?data:(data.skills||[]);
-  skills.forEach(s=>{
-	  s.hided = (typeof s.hided === "boolean") ? s.hided
-		: (typeof s.hided === "string") ? s.hided.toLowerCase() === "true"
-		: !!s.hided;
-	  s.effects=normList(s.effects);
-	  s.conditions=normList(s.conditions);
-	  s.limits=normList(s.limits);
-	  s.level=s.level||"";
-	  s.duration=s.duration||"";
+  /** ///summary: Tri par famille, puis niveau (Niv1<Niv2<Niv3), puis nom alpha */
+  const sortSkills = arr => [...arr].sort((a,b)=>{
+    const byFam = (a.family||"").localeCompare(b.family||"","fr");
+    if (byFam) return byFam;
+    const oa = lvlOrder[(a.level||"").toLowerCase()] ?? 999;
+    const ob = lvlOrder[(b.level||"").toLowerCase()] ?? 999;
+    if (oa !== ob) return oa - ob;
+    return (a.name||"").localeCompare(b.name||"","fr",{sensitivity:"base"});
   });
-  const search=document.getElementById("search"); const tbody=document.getElementById("tbody"); const count=document.getElementById("count");
-	const render = () => {
-	  const q = search.value.trim();
-	  tbody.innerHTML = "";
 
-	  let out = sortSkills(skills)
-		.filter(s => !s.hided)            // ← masque les "hided"
-		.filter(s => matches(s, q));      // ← utilise bien matches(...)
+  /** ///summary: Recherche plein texte (famille, nom, niveau, champs divers, listes) */
+  const matches = (s, query) => {
+    if (!query) return true;
+    const parts = [
+      s.family, s.name, s.level, s.cost, s.difficulty, s.target, s.range_, s.duration, s.damage,
+      ...(s.effects||[]), ...(s.conditions||[]), ...(s.limits||[])
+    ].map(x => (x || "").toString().toLowerCase());
+    return parts.join(" ").includes(query.toLowerCase());
+  };
 
-	  if (familyFilter) {
-		out = out.filter(s => (s.family || "") === decodeURIComponent(familyFilter));
-	  }                                  // ← ferme le if ici
+  /** ///summary: Rendu du panneau détail (champs vides masqués, singulier/pluriel) */
+  function renderDetail(skill){
+    const empty = document.getElementById("detailEmpty");
+    const view  = document.getElementById("detail");
+    const body  = document.getElementById("d-body");
 
-	  count.textContent = out.length;
+    if (!skill){
+      view.hidden = true; empty.hidden = false;
+      return;
+    }
 
-	  out.forEach(s => {
-		const row = document.createElement("div");
-		row.className = "row";
-		row.addEventListener("click", () => { location.href = `./skillDetail.html?id=${slug(s)}`; });
+    empty.hidden = true; view.hidden = false;
 
-		const c1 = document.createElement("div");
-		c1.className = "cell-emoji";
-		c1.textContent = s.family || "";
+    document.getElementById("d-emoji").textContent = skill.family || "";
 
-		const c2 = document.createElement("div");
-		c2.className = "cell-name";
-		c2.textContent = s.name || "";
-		const lvl = (s.level || "").toLowerCase();            // couleur du nom selon niv
-		c2.classList.add(lvl === "niv3" ? "c-niv3" : lvl === "niv2" ? "c-niv2" : "c-niv1");
+    const nameEl = document.getElementById("d-name");
+    nameEl.textContent = skill.name || "";
+    nameEl.classList.remove("c-niv1","c-niv2","c-niv3");
+    const lvl = (skill.level || "").toLowerCase();
+    nameEl.classList.add(lvl === "niv3" ? "c-niv3" : lvl === "niv2" ? "c-niv2" : "c-niv1");
 
-		const c3 = document.createElement("div");
-		c3.className = "cell-level";
-		c3.textContent = s.level || "";
+    document.getElementById("d-lvl").textContent = skill.level ? `(${skill.level})` : "";
 
-		row.append(c1, c2, c3);
-		tbody.appendChild(row);
-	  });
+    body.innerHTML = "";
+    const line = (label, value, indent=1, raw=false)=>{
+      if (!value) return;
+      const d = document.createElement("div");
+      d.className = `kv${indent?` indent-${indent}`:""}`;
+      if (raw){
+        d.textContent = value;
+      } else {
+        const k = document.createElement("span"); k.className = "k"; k.textContent = label + " ";
+        const v = document.createElement("span"); v.textContent = value;
+        d.append(k, v);
+      }
+      body.appendChild(d);
+    };
 
-	  if (out.length === 0) {
-		tbody.innerHTML = `<div style="padding:12px" class="empty">Aucun résultat.</div>`;
-	  }
-	};
+    // Simples
+    line("Coût :",    skill.cost);
+    if (skill.difficulty) line("", skill.difficulty, 1, true); // déjà "Difficulté :" ou "Facilité :"
+    line("Cible :",   skill.target);
+    line("Portée :",  skill.range_);
+    line("Durée :",   skill.duration);
+    line("Dégâts :",  skill.damage);
 
-  search.addEventListener("input",render); render();
-}
-boot().catch(e=>{document.getElementById("tbody").innerHTML=`<div style="padding:12px;color:#ffb4b4">Erreur: ${e}</div>`;});
-</script>
+    const block = (sing, plur, arr) => {
+      const list = normList(arr);
+      if (list.length === 1){
+        line(`${sing} :`, list[0]);
+      } else if (list.length > 1){
+        line(`${plur} :`, "", 1, true);
+        list.forEach(it => line("", it, 2, true));
+      }
+    };
+    block("Effet","Effets",skill.effects);
+    block("Condition","Conditions",skill.conditions);
+    block("Limite","Limites",skill.limits);
+  }
+
+  /** ///summary: Rendu de la liste + sélection + auto-détail (1er item) */
+  function makeRenderer(skills){
+    const search = document.getElementById("search");
+    const tbody  = document.getElementById("tbody");
+    const count  = document.getElementById("count");
+
+    const render = () => {
+      const qStr = search.value.trim();
+      tbody.innerHTML = "";
+
+      let out = sortSkills(skills)
+        .filter(s => !s.hided)                 // masque les "hided"
+        .filter(s => matches(s, qStr));
+
+      if (familyFilter) {
+        out = out.filter(s => (s.family || "") === decodeURIComponent(familyFilter));
+      }
+
+      count.textContent = out.length;
+
+      out.forEach((s) => {
+        const row = document.createElement("div");
+        row.className = "row";
+        row.role = "option";
+
+        const c1 = document.createElement("div");
+        c1.className = "cell-emoji";
+        c1.textContent = s.family || "";
+
+        const c2 = document.createElement("div");
+        c2.className = "cell-name";
+        c2.textContent = s.name || "";
+        const lvl = (s.level || "").toLowerCase(); // couleur du nom
+        c2.classList.add(lvl === "niv3" ? "c-niv3" : lvl === "niv2" ? "c-niv2" : "c-niv1");
+
+        const c3 = document.createElement("div");
+        c3.className = "cell-level";
+        c3.textContent = s.level || "";
+
+        row.append(c1, c2, c3);
+        row.addEventListener("click", () => {
+          // Highlight sélection
+          [...tbody.children].forEach(el => el.classList.remove("active"));
+          row.classList.add("active");
+          renderDetail(s);
+        });
+
+        tbody.appendChild(row);
+      });
+
+      if (out.length === 0){
+        tbody.innerHTML = `<div style="padding:12px" class="empty">Aucun résultat.</div>`;
+        renderDetail(null);
+      } else {
+        // Auto-sélection du premier élément
+        const first = tbody.querySelector(".row");
+        if (first){
+          first.classList.add("active");
+          renderDetail(out[0]);
+        }
+      }
+    };
+
+    search.addEventListener("input", render);
+    render(); // premier rendu
+  }
+
+  (async function boot(){
+    try{
+      const res = await fetch(JSON_URL, {cache:"no-store"});
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      // data attendu: { families:[...], skills:[...] } OU directement [...]
+      const skills = Array.isArray(data) ? data : (data.skills || []);
+
+      // ///summary Normalisation (rétro-compatibilité)
+      skills.forEach(s=>{
+        // hided peut être bool ou string "true"/"false"
+        s.hided = (typeof s.hided === "boolean") ? s.hided
+               : (typeof s.hided === "string") ? s.hided.toLowerCase() === "true"
+               : !!s.hided;
+        s.effects    = normList(s.effects);
+        s.conditions = normList(s.conditions);
+        s.limits     = normList(s.limits);
+        s.level      = s.level || "";
+        s.duration   = s.duration || "";
+      });
+
+      makeRenderer(skills);
+    }catch(err){
+      console.error(err);
+      document.getElementById("tbody").innerHTML =
+        `<div style="padding:12px;color:#ffb4b4;">Erreur de chargement de ${JSON_URL}. Vérifie que le fichier existe et est à côté de cette page.</div>`;
+    }
+  })();
+  </script>
 </body>
 </html>
