@@ -32,44 +32,106 @@ button,.btn{border:1px solid var(--bd);background:var(--panel2);color:var(--txt)
 </div>
 
 <script>
-///summary: affiche familles groupées par 1er emoji, indentation = nb d’émojis - 1, lien -> skillIndex filtré
-const JSON_URL="./skills_data.json"; const VS16="\ufe0f";
-const firstGrapheme=s=>{ if(!s) return ""; return (s.length>=2&&s[1]===VS16)?s.slice(0,2):s[0]; };
-const emojiCount=s=>Array.from(s).filter(ch=>ch!==VS16).length;
+///summary: familles groupées par 1er emoji, ordre hiérarchique par chemin d’emojis, indentation fiable.
+const JSON_URL = "./skills_data.json";
 
-(async function(){
-  const res=await fetch(JSON_URL,{cache:"no-store"}); if(!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data=await res.json();
-  const families = Array.isArray(data)?(data.families||[]):(data.families||[]); // support deux formats
-  const skills   = Array.isArray(data)?(data.skills||[]):(data.skills||[]);
-  // map nb de skills par famille (émojis exact)
-  const countByFam = skills.reduce((m,s)=>{ const k=s.family||""; m[k]=(m[k]||0)+1; return m; },{});
+// Segmente en *graphemes* (vrais clusters emoji). Fallback si navigateur ancien.
+const seg = (typeof Intl !== "undefined" && Intl.Segmenter)
+  ? new Intl.Segmenter("fr", { granularity: "grapheme" })
+  : null;
+const toClusters = (s) => seg
+  ? [...seg.segment(s || "")].map(x => x.segment)
+  : Array.from(s || ""); // fallback approximatif
 
-  // regrouper
-  const groups={};
-  families.forEach(f=>{
-    const root=firstGrapheme(f.emojis||""); const indent=Math.max(emojiCount(f.emojis||"")-1,0);
-    const name=(f.name||"").trim(); const label=name?`${f.emojis} : ${name}`:f.emojis;
-    (groups[root]=groups[root]||[]).push({indent,emojis:f.emojis,label});
+// Nettoie les espaces zéro largeur (copier/coller d’emojis peut en injecter)
+const sanitize = (s) => (s || "").replace(/\u200b/g, ""); // ZWSP
+
+(async function () {
+  const res = await fetch(JSON_URL, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+
+  // Supporte {families, skills} ou tableau avec ces clés
+  const families = (Array.isArray(data) ? (data.families || []) : (data.families || []));
+  const skills   = (Array.isArray(data) ? (data.skills   || []) : (data.skills   || []));
+
+  // Normalise "hided" pour le comptage (bool ou "true"/"false")
+  skills.forEach(s => {
+    s.hided = (typeof s.hided === "boolean") ? s.hided
+           : (typeof s.hided === "string") ? s.hided.toLowerCase() === "true"
+           : !!s.hided;
   });
-  const roots=Object.keys(groups).sort();
-  const list=document.getElementById("list"); list.innerHTML="";
-  if(roots.length===0){ list.innerHTML=`<div class="item muted">(aucune famille)</div>`; return; }
 
-  roots.forEach((r,ri)=>{
-    const arr=groups[r].sort((a,b)=>a.indent-b.indent||a.label.localeCompare(b.label,"fr"));
-    arr.forEach(it=>{
-      const cnt=countByFam[it.emojis]||0;
-      const div=document.createElement("div"); div.className="item";
-      const a=document.createElement("a");
-      a.className=`indent-${Math.min(it.indent,3)}`;
-      a.href=`./skillIndex.html?family=${encodeURIComponent(it.emojis)}`;
-      a.textContent = cnt ? `${it.label}  —  ${cnt} compétence(s)` : `${it.label}`;
-      div.appendChild(a); list.appendChild(div);
+  // Compteur par famille (visible seulement)
+  const countByFam = skills.reduce((m, s) => {
+    if (!s.hided) {
+      const k = s.family || "";
+      m[k] = (m[k] || 0) + 1;
+    }
+    return m;
+  }, {});
+
+  // Groupes par racine (1er grapheme)
+  const groups = {};
+  families.forEach(f => {
+    const emojis   = sanitize(f.emojis || "");
+    const clusters = toClusters(emojis);
+    const root     = clusters[0] || "";
+    const indent   = Math.max(clusters.length - 1, 0);
+    const label    = (f.name && f.name.trim()) ? `${emojis} : ${f.name}` : emojis;
+    (groups[root] = groups[root] || []).push({ indent, emojis, label, clusters });
+  });
+
+  const roots = Object.keys(groups).sort((a, b) => a.localeCompare(b, "fr"));
+  const list  = document.getElementById("list");
+  list.innerHTML = "";
+
+  if (roots.length === 0) {
+    list.innerHTML = `<div class="item muted">(aucune famille)</div>`;
+    return;
+  }
+
+  roots.forEach((root, ri) => {
+    const arr = groups[root];
+
+    // Tri hiérarchique: compare le chemin d’emojis (parent avant enfant), puis label
+    arr.sort((a, b) => {
+      const la = a.clusters.length, lb = b.clusters.length;
+      const n  = Math.min(la, lb);
+      for (let i = 0; i < n; i++) {
+        if (a.clusters[i] !== b.clusters[i]) {
+          return a.clusters[i].localeCompare(b.clusters[i], "fr");
+        }
+      }
+      if (la !== lb) return la - lb; // parent avant enfant
+      return a.label.localeCompare(b.label, "fr");
     });
-    if(ri<roots.length-1){ const sep=document.createElement("div"); sep.className="item"; sep.style.borderBottom="none"; sep.innerHTML="&nbsp;"; list.appendChild(sep); }
+
+    // Rendu
+    arr.forEach(it => {
+      const cnt = countByFam[it.emojis] || 0;
+      const div = document.createElement("div"); div.className = "item";
+      const a   = document.createElement("a");
+      a.className = `indent-${Math.min(it.indent, 3)}`; // classes CSS existantes
+      a.href = `./skillIndex.html?family=${encodeURIComponent(it.emojis)}`;
+      a.textContent = cnt ? `${it.label} — ${cnt} compétence(s)` : it.label;
+      div.appendChild(a);
+      list.appendChild(div);
+    });
+
+    // Séparateur visuel entre racines
+    if (ri < roots.length - 1) {
+      const sep = document.createElement("div");
+      sep.className = "item";
+      sep.style.borderBottom = "none";
+      sep.innerHTML = "&nbsp;";
+      list.appendChild(sep);
+    }
   });
-})().catch(e=>{document.getElementById("list").innerHTML=`<div class="item" style="color:#ffb4b4">Erreur: ${e}</div>`;});
+})().catch(e => {
+  document.getElementById("list").innerHTML =
+    `<div class="item" style="color:#ffb4b4">Erreur: ${e}</div>`;
+});
 </script>
 </body>
 </html>
