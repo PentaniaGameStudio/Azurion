@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glyph Builder • JDR</title>
+  <style>
+    :root{
+      --bg:#0f1221; --panel:#161a2f; --muted:#8d95c9; --text:#e7eaff; --accent:#7c9bff; --good:#2ecc71; --warn:#f1c40f; --bad:#e74c3c;
+      --chip:#1f2444; --chipOn:#24305c; --border:#2a315c; --disabled:#5a639a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0b0e1a,#0f1221 30%,#0b0e1a);color:var(--text);font:14px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.25);backdrop-filter: blur(6px);position:sticky;top:0;z-index:10}
+    header h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.3px}
+    header small{color:var(--muted)}
+    .wrap{display:grid;grid-template-columns:320px 1fr;gap:16px;padding:16px}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 10px 22px rgba(0,0,0,.25)}
+    .card h2{margin:0;padding:12px 14px;border-bottom:1px solid var(--border);font-size:14px;color:#c9d2ff;letter-spacing:.4px;background:linear-gradient(180deg,#1a1f3b,#161a2f)}
+    .card .content{padding:12px 14px}
+    .stack{display:flex;flex-direction:column;gap:10px}
+    .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    input[type=text],textarea,select{width:100%;background:#0e1123;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+    textarea{min-height:80px;resize:vertical}
+    button{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:10px;cursor:pointer}
+    button:hover{border-color:var(--accent)}
+    .btn-accent{background:linear-gradient(180deg,#2a3a7f,#263171);border-color:#2d3b86}
+    .btn-danger{background:linear-gradient(180deg,#5a2331,#4a1a26);border-color:#7d2a3a}
+    .btn-ghost{background:transparent}
+    .btn-tab{border-radius:999px;padding:8px 12px}
+    .btn-tab.on{outline:2px solid #3a4b8f; background:var(--chipOn)}
+
+    .badge{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:#c9d2ff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+
+    .glyph{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 10px;border-radius:12px;background:var(--chip);border:1px solid var(--border)}
+    .glyph.on{background:var(--chipOn);border-color:#3a4b8f;box-shadow: inset 0 0 0 1px rgba(124,155,255,.35)}
+    .glyph .meta{display:flex;flex-direction:column;gap:2px}
+    .glyph .name{font-weight:700}
+    .glyph .sub{color:var(--muted);font-size:12px}
+
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;background:#121633;border:1px solid var(--border);border-radius:999px}
+    .totals{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .kpi{display:flex;gap:8px;align-items:center;background:#111534;border:1px dashed var(--border);padding:8px 10px;border-radius:12px}
+
+    .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    .catBtn{padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#121633;color:#cbd3ff;cursor:pointer}
+    .catBtn.on{background:#283477}
+
+    /* On masque l'ancien footer du panneau des glyphes */
+    .footer{display:none}
+
+    .muted{color:var(--muted)}
+    .tiny{font-size:12px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    /* --- Barre active centrée --- */
+    .active-bar{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      padding:14px 20px 10px;
+    }
+    .emoji-bubble{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      max-width:100%;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      padding:10px 14px;
+      border-radius:999px;
+      background:var(--chipOn);
+      border:1px solid #3a4b8f;
+      box-shadow: inset 0 0 0 1px rgba(124,155,255,.35), 0 6px 16px rgba(0,0,0,.25);
+      font-size:18px;
+    }
+    .center-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .center-window{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(180deg,#161a2f,#141838);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 16px;
+      box-shadow:0 10px 22px rgba(0,0,0,.25);
+      max-width:960px;
+      margin:0 auto;
+    }
+
+    /* Layout switcher (builder/analyzer) */
+    .views{display:block}
+    .hidden{display:none !important}
+
+    /* Analyzer */
+    .results{display:grid;grid-template-columns:1fr;gap:12px}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{border:1px solid var(--border);padding:8px 10px;text-align:left}
+    .table th{background:#1a1f3b;color:#c9d2ff}
+    .callout{border:1px solid var(--border);background:#121633;border-radius:12px;padding:10px 12px}
+    .chips{display:flex;gap:6px;flex-wrap:wrap}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:4px 8px;border-radius:999px}
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>✨ Glyphe Builder</h1>
+      <small class="muted">Modes : Créateur • Analyseur — Mana arrondi à l’entier supérieur</small>
+    </div>
+    <div class="row">
+      <button id="btnBuilder" class="btn-tab on">🎛️ Créateur de Glyphe</button>
+      <button id="btnAnalyzer" class="btn-tab">🧪 Analyseur de Glyphe</button>
+    </div>
+  </header>
+
+  <!-- ===== VUE CRÉATEUR ===== -->
+  <section id="builderView" class="views">
+    <!-- FENÊTRE CENTRALE -->
+    <section class="active-bar">
+      <div class="center-window">
+        <div id="emojiBubble" class="emoji-bubble">(Aucune glyphe sélectionnée)</div>
+        <div id="centerTotals" class="totals"></div>
+        <div class="center-actions">
+          <button id="copyBtn" class="btn-accent">📋 Copier</button>
+          <button id="resetBtn" class="btn-danger">♻️ Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <main class="wrap">
+      <!-- BDD / Compétences -->
+      <section class="card" id="dbCard">
+        <h2>📚 Compétences possédées</h2>
+        <div class="content stack">
+          <div class="tiny muted">Ajoute exactement le nom des séries connues (ex: « Série Basique 1 »).</div>
+          <div class="row">
+            <input id="skillInput" type="text" placeholder="Nom de la compétence…" />
+            <button class="btn-accent" id="addSkill">+ Ajouter</button>
+            <button class="btn-ghost" id="clearSkills">Effacer tout</button>
+          </div>
+          <div id="skillList" class="row"></div>
+          <hr style="border-color:var(--border);opacity:.4">
+          <div class="tiny muted">Les séries connues débloquent dynamiquement les glyphes ci-contre.</div>
+        </div>
+      </section>
+
+      <!-- Sélecteur de glyphes -->
+      <section class="card">
+        <h2>🔤 Glyphes disponibles</h2>
+        <div class="content">
+          <div class="cats" id="catTabs"></div>
+          <div id="glyphGrid" class="grid"></div>
+        </div>
+        <div class="footer">
+          <div class="totals" id="totals"></div>
+          <div class="row">
+            <button id="copyBtn_old" class="btn-accent">📋 Copier</button>
+            <button id="resetBtn_old" class="btn-danger">♻️ Reset</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ===== VUE ANALYSEUR ===== -->
+  <section id="analyzerView" class="views hidden">
+    <section class="active-bar">
+      <div class="center-window" style="max-width:1000px">
+        <div class="row" style="width:100%">
+          <input id="anInput" type="text" placeholder="Colle tes glyphes (ex: 🔥 💧 🛜 ↕️, ou noms: Feu, Zone, Ligne 4m…)" />
+          <button id="anPaste" class="btn-ghost">📥 Coller</button>
+          <button id="anRun" class="btn-accent">🔎 Analyser</button>
+          <button id="anAddToSel" class="btn-ghost" disabled>➕ Ajouter à la sélection</button>
+        </div>
+        <div id="anBubble" class="emoji-bubble">(en attente d’analyse)</div>
+        <div id="anTotals" class="totals"></div>
+      </div>
+    </section>
+
+    <div class="wrap" style="grid-template-columns:1fr">
+      <section class="card">
+        <h2>📈 Résultats de l’analyse</h2>
+        <div class="content results">
+          <div id="anDetected" class="callout">
+            <div class="tiny muted">Glyphes détectées :</div>
+            <div id="anDetectedChips" class="chips"></div>
+          </div>
+          <div id="anUnknown" class="callout">
+            <div class="tiny muted">Fragments non reconnus :</div>
+            <div id="anUnknownChips" class="chips"></div>
+          </div>
+          <div class="callout">
+            <table class="table" id="anTable">
+              <thead>
+                <tr><th>Glyphe</th><th>Catégorie</th><th>Diff</th><th>Mana</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+<script>
+// --- Données de référence --------------------------------------------------
+const GLYPH_TABLE = {
+  // palier difficulté ~5
+  "🔥 Feu":{diff:5,mana:0.3, cat:"Éléments"},
+  "💧 Eau":{diff:5,mana:0.3, cat:"Éléments"},
+  "🏔 Terre":{diff:5,mana:0.3, cat:"Éléments"},
+  "🌪 Vent":{diff:5,mana:0.3, cat:"Éléments"},
+  "💚 Soin":{diff:5,mana:0.3, cat:"Éléments"},
+  "❄️ Glace":{diff:5,mana:0.3, cat:"Éléments"},
+  "⚡ Foudre":{diff:5,mana:0.3, cat:"Éléments"},
+  "🎯 Cible unique":{diff:5,mana:0.3, cat:"Ciblage"},
+  "🌌 Zone":{diff:5,mana:0.5, cat:"Ciblage"},
+  "🔜 Cible la plus proche":{diff:5,mana:0.3, cat:"Ciblage"},
+  "↩️ Utilisateur":{diff:5,mana:0.5, cat:"Ciblage"},
+  "💀 Affaiblissement":{diff:5,mana:0.5, cat:"États"},
+  "💫 Étourdissement":{diff:5,mana:0.5, cat:"États"},
+  "🧊 Gel":{diff:5,mana:0.5, cat:"États"},
+  "🫧 Poison":{diff:5,mana:0.5, cat:"États"},
+  "💪 Physique":{diff:5,mana:0.5, cat:"Amplification"},
+  "💬 Social":{diff:5,mana:0.5, cat:"Amplification"},
+  "🧠 Mental":{diff:5,mana:0.5, cat:"Amplification"},
+  "💥 Destruction":{diff:5,mana:0.5, cat:"Actions"},
+  "🤚 Contact":{diff:5,mana:0.5, cat:"Actions"},
+
+  // palier difficulté ~10
+  "🟣 Ombre":{diff:10,mana:0.5, cat:"Éléments"},
+  "☀️ Lumière":{diff:10,mana:0.5, cat:"Éléments"},
+  "🌱 Nature":{diff:10,mana:0.5, cat:"Éléments"},
+  "💙 Bénédiction":{diff:10,mana:0.5, cat:"Éléments"},
+  "🛜 Conique":{diff:10,mana:0.5, cat:"Ciblage"},
+  "↕️ Ligne (4m)":{diff:10,mana:0.5, cat:"Ciblage"},
+  "🔢 Multi-cible (jusqu’à 4)":{diff:10,mana:0.4, cat:"Ciblage"},
+  "👥 Chaîne":{diff:10,mana:0.4, cat:"Ciblage"},
+  "🔥 Brûlure":{diff:10,mana:0.5, cat:"États"},
+  "💤 Sommeil":{diff:10,mana:0.5, cat:"États"},
+  "🌀 Confusion":{diff:10,mana:0.5, cat:"États"},
+  "🛡 Défensif":{diff:10,mana:0.5, cat:"Actions"},
+  "⚔️ Offensif":{diff:10,mana:0.5, cat:"Actions"},
+
+  // palier difficulté ~20
+  "🩸 Sang":{diff:20,mana:0.75, cat:"Éléments"},
+  "🪞 Illusion":{diff:20,mana:0.75, cat:"Éléments"},
+  "💀 Nécromantie":{diff:20,mana:0.75, cat:"Éléments"},
+  "🎶 Sons":{diff:20,mana:0.75, cat:"Éléments"},
+  "🌐 Toute entitée":{diff:20,mana:1, cat:"Ciblage"},
+  "👍 Allié":{diff:20,mana:1, cat:"Ciblage"},
+  "👎 Ennemi":{diff:20,mana:1, cat:"Ciblage"},
+  "❤️ Charme":{diff:20,mana:1, cat:"États"},
+  "🤐 Silence":{diff:20,mana:0.5, cat:"États"},
+  "👁‍🗨 Cécité":{diff:20,mana:0.5, cat:"États"},
+  "🪬 Marquage":{diff:20,mana:0.5, cat:"Actions"},
+
+  // palier difficulté ~40
+  "🕚 Temporel":{diff:40,mana:1.5, cat:"Éléments"},
+  "🌌 Cosmique":{diff:40,mana:1.5, cat:"Éléments"},
+  "🎲 Aléatoire":{diff:40,mana:1, cat:"Ciblage"},
+  "🧭 Directionnel":{diff:40,mana:0.5, cat:"Ciblage"},
+  "🔼 Power-Up":{diff:40,mana:2, cat:"Amplification"},
+  "🔽 Power-Down":{diff:40,mana:2, cat:"Amplification"},
+  "➕ Puissance":{diff:40,mana:2, cat:"Amplification"},
+  "📏 Portée":{diff:40,mana:2, cat:"Amplification"},
+  "⏳ Durée":{diff:40,mana:2, cat:"Amplification"},
+  "💣 Explosion":{diff:40,mana:2, cat:"Actions"},
+
+  // palier difficulté ~80 / Maître
+  "🪦 Mort":{diff:80,mana:3, cat:"Éléments"},
+  "🐦‍🔥 Résurection":{diff:80,mana:3, cat:"Éléments"},
+  "📍 Persistante (zone)":{diff:80,mana:1, cat:"Ciblage"},
+  "📊 Répétition":{diff:80,mana:2, cat:"Amplification"},
+  "✴️ Création":{diff:80,mana:4, cat:"Amplification"},
+  "🕧 Retardement":{diff:80,mana:2, cat:"Actions"},
+  "💯 Critique":{diff:80,mana:3, cat:"Contrôle"},
+  "🎲 Variance":{diff:80,mana:3, cat:"Contrôle"},
+
+  // Ultime
+  "♾️ Infinité":{diff:160,mana:5, cat:"Ultime"},
+  "🌒 Éclipse":{diff:160,mana:5, cat:"Ultime"}
+};
+
+const CATEGORIES = ["Éléments","Ciblage","États","Amplification","Actions","Contrôle","Ultime"];
+
+// séries -> glyphes débloqués
+const SERIES_MAP = {
+  "Série Basique 1": [
+    "🔥 Feu","💧 Eau","🏔 Terre","🌪 Vent","💚 Soin",
+    "🎯 Cible unique","🌌 Zone","🔜 Cible la plus proche",
+    "💥 Destruction","🤚 Contact"
+  ],
+  "Série Basique 2": [
+    "❄️ Glace","⚡ Foudre",
+    "🛡 Défensif","⚔️ Offensif","🪬 Marquage",
+    "💀 Affaiblissement","⚡ Étourdissement","🕧 Retardement"
+  ],
+  "Série Basique 3": [
+    "🟣 Ombre","☀️ Lumière",
+    "🛜 Conique","↕️ Ligne (4m)","🔢 Multi-cible (jusqu’à 4)",
+    "🧊 Gel","🔥 Brûlure","💤 Sommeil"
+  ],
+  "Série Basique 4": [
+    "💪 Physique","💬 Social","🧠 Mental",
+    "🔼 Power-Up","🔽 Power-Down",
+    "🌀 Confusion","🫧 Poison","❤️ Charme","❤️‍🔥 Berserk"
+  ],
+  "Série Adepte 1": [
+    "🌱 Nature","💙 Bénédiction","🩸 Sang",
+    "🌐 Toute entitée","👍 Allié","👎 Ennemi"
+  ],
+  "Série Adepte 2": [
+    "🪞 Illusion","💀 Nécromantie","🎶 Sons",
+    "💣 Explosion","⏳ Durée","➕ Puissance","📏 Portée"
+  ],
+  "Série Adepte 3": [
+    "🎲 Aléatoire","↩️ Utilisateur","👥 Chaîne",
+    "🧭 Directionnel","📍 Persistante (zone)",
+    "🤐 Silence","👁‍🗨 Cécité"
+  ],
+  "Série Maître 1": [
+    "🕚 Temporel","🌌 Cosmique","📊 Répétition","✴️ Création"
+  ],
+  "Série Maître 2": [
+    "🪦 Mort","🐦‍🔥 Résurection","💯 Critique","🎲 Variance"
+  ],
+  "Tome Interdit": [
+    "♾️ Infinité","🌒 Éclipse"
+  ]
+};
+
+// --- BDD locale (localStorage) --------------------------------------------
+const DB_KEY = 'glyph_skills_v1';
+const SELECTED_KEY = 'glyph_selected_v1';
+
+function loadSkills(){ try{ return JSON.parse(localStorage.getItem(DB_KEY) || '[]'); }catch{return []} }
+function saveSkills(arr){ localStorage.setItem(DB_KEY, JSON.stringify(arr)); renderSkills(); renderGlyphs(); }
+
+function loadSelection(){ try{ return JSON.parse(localStorage.getItem(SELECTED_KEY) || '[]'); }catch{return []} }
+function saveSelection(arr){ localStorage.setItem(SELECTED_KEY, JSON.stringify(arr)); renderCenterTotals(); renderGlyphs(); renderEmojiBubble(); }
+
+// helpers
+function uniq(arr){ return [...new Set(arr)]; }
+function flat(arr){ return arr.reduce((a,b)=>a.concat(b),[]); }
+function getUnlockedGlyphs(skills){ const pools = skills.map(s => SERIES_MAP[s]||[]); return uniq(flat(pools)); }
+
+// calculs
+function computeTotals(selected){
+  let mana=0, diff=0;
+  selected.forEach(g => { const d=GLYPH_TABLE[g]; if(d){ mana+=d.mana; diff+=d.diff; }});
+  mana = Math.ceil(mana);
+  return {mana, diff};
+}
+function formatSelection(selected){
+  const {mana,diff}=computeTotals(selected);
+  return `Glyphes: ${selected.join(' · ')}\\nMana: ${mana} | Difficulté: ${diff}`;
+}
+
+// --- UI refs (builder) -----------------------------------------------------
+const skillInput = document.getElementById('skillInput');
+const addSkillBtn = document.getElementById('addSkill');
+const clearSkillsBtn = document.getElementById('clearSkills');
+const skillList = document.getElementById('skillList');
+const glyphGrid = document.getElementById('glyphGrid');
+const catTabs = document.getElementById('catTabs');
+const emojiBubble = document.getElementById('emojiBubble');
+const centerTotals = document.getElementById('centerTotals');
+const copyBtn = document.getElementById('copyBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+// layout switch
+const btnBuilder = document.getElementById('btnBuilder');
+const btnAnalyzer = document.getElementById('btnAnalyzer');
+const builderView = document.getElementById('builderView');
+const analyzerView = document.getElementById('analyzerView');
+
+// analyzer refs
+const anInput = document.getElementById('anInput');
+const anPaste = document.getElementById('anPaste');
+const anRun = document.getElementById('anRun');
+const anAddToSel = document.getElementById('anAddToSel');
+const anBubble = document.getElementById('anBubble');
+const anTotals = document.getElementById('anTotals');
+const anDetectedChips = document.getElementById('anDetectedChips');
+const anUnknownChips = document.getElementById('anUnknownChips');
+const anTableBody = document.querySelector('#anTable tbody');
+
+let CURRENT_CAT = 'Toutes';
+const ALL_CATS = ['Toutes', ...CATEGORIES];
+
+function renderCatTabs(){
+  catTabs.innerHTML='';
+  ALL_CATS.forEach(cat=>{
+    const b=document.createElement('button');
+    b.className='catBtn'+(CURRENT_CAT===cat?' on':'');
+    b.textContent=cat;
+    b.onclick=()=>{ CURRENT_CAT=cat; renderGlyphs(); };
+    catTabs.appendChild(b);
+  });
+}
+function renderSkills(){
+  const skills = loadSkills();
+  skillList.innerHTML='';
+  skills.forEach((s,idx)=>{
+    const pill=document.createElement('div'); pill.className='pill';
+    const span=document.createElement('span'); span.textContent=s; pill.appendChild(span);
+    const x=document.createElement('button'); x.textContent='✖'; x.onclick=()=>{skills.splice(idx,1); saveSkills(skills);}; pill.appendChild(x);
+    skillList.appendChild(pill);
+  });
+}
+
+// *** CACHER les glyphes non débloquées (sauf celles déjà sélectionnées) ***
+function renderGlyphs(){
+  const skills = loadSkills();
+  const unlocked = new Set(getUnlockedGlyphs(skills));
+  const selected = new Set(loadSelection());
+
+  const entries = Object.entries(GLYPH_TABLE)
+    .map(([name,meta])=>({name, ...meta}))
+    .filter(e => (unlocked.has(e.name) || selected.has(e.name)) && (CURRENT_CAT==='Toutes' || e.cat===CURRENT_CAT));
+
+  entries.sort((a,b)=> a.cat.localeCompare(b.cat) || a.diff-b.diff || a.name.localeCompare(b.name));
+
+  glyphGrid.innerHTML='';
+  entries.forEach(e=>{
+    const on = selected.has(e.name);
+    const card=document.createElement('div');
+    card.className='glyph'+(on?' on':'');
+    const meta=document.createElement('div'); meta.className='meta';
+    const n=document.createElement('div'); n.className='name'; n.textContent=e.name; meta.appendChild(n);
+    const s=document.createElement('div'); s.className='sub'; s.textContent=`${e.cat} • Diff ${e.diff} • ${e.mana} mana`; meta.appendChild(s);
+
+    const act=document.createElement('div');
+    const t=document.createElement('button'); t.textContent= on? 'Retirer' : 'Ajouter';
+    t.onclick=()=>{
+      const arr=loadSelection();
+      const i=arr.indexOf(e.name);
+      if(i>-1){ arr.splice(i,1);} else { arr.push(e.name); }
+      saveSelection(arr);
+    };
+    act.appendChild(t);
+
+    card.appendChild(meta); card.appendChild(act);
+    glyphGrid.appendChild(card);
+  });
+}
+
+function renderCenterTotals(){
+  const selected = loadSelection();
+  const {mana,diff} = computeTotals(selected);
+  const a=(label,val)=>`<div class="kpi"><span class="muted">${label}</span><b class="mono">${val}</b></div>`;
+  centerTotals.innerHTML = a('🔣 Glyphes', selected.length)+a('🧪 Diff', diff)+a('💧 Mana', mana);
+}
+
+// Nouvelle bulle unique d’émojis centrée
+function renderEmojiBubble(){
+  const selected = loadSelection();
+  if(!selected.length){
+    emojiBubble.textContent='(Aucune glyphe sélectionnée)';
+    return;
+  }
+  const emojis = selected.map(name => (name.split(' ')[0] || '◻️')).join(' ');
+  emojiBubble.textContent = emojis;
+}
+
+// events - builder
+addSkillBtn && (addSkillBtn.onclick = ()=>{
+  const val = (skillInput.value||'').trim();
+  if(!val) return;
+  const skills = loadSkills();
+  if(!skills.includes(val)) skills.push(val);
+  skillInput.value='';
+  saveSkills(skills);
+});
+clearSkillsBtn && (clearSkillsBtn.onclick = ()=>{ if(confirm('Effacer toutes les compétences enregistrées ?')){ saveSkills([]); } });
+copyBtn && (copyBtn.onclick = ()=>{
+  const selected = loadSelection();
+  const text = formatSelection(selected);
+  navigator.clipboard.writeText(text).then(()=>{
+    copyBtn.textContent='✅ Copié !'; setTimeout(()=>copyBtn.textContent='📋 Copier',1200);
+  });
+});
+resetBtn && (resetBtn.onclick = ()=>{ if(confirm('Réinitialiser la sélection active ?')){ saveSelection([]); } });
+
+// init builder
+renderCatTabs();
+renderSkills();
+renderGlyphs();
+renderCenterTotals();
+renderEmojiBubble();
+
+// --- Switcher --------------------------------------------------------------
+function showBuilder(){
+  builderView.classList.remove('hidden');
+  analyzerView.classList.add('hidden');
+  btnBuilder.classList.add('on');
+  btnAnalyzer.classList.remove('on');
+}
+function showAnalyzer(){
+  analyzerView.classList.remove('hidden');
+  builderView.classList.add('hidden');
+  btnAnalyzer.classList.add('on');
+  btnBuilder.classList.remove('on');
+}
+btnBuilder.onclick = showBuilder;
+btnAnalyzer.onclick = showAnalyzer;
+
+// --- ANALYZER --------------------------------------------------------------
+const EMOJI_MAP = {};     // emoji -> glyph name
+const NAME_LIST = [];     // [{name, norm}]
+(function prep(){
+  Object.keys(GLYPH_TABLE).forEach(n=>{
+    const emoji = (n.split(' ')[0] || '').trim();
+    if(emoji) EMOJI_MAP[emoji] = n;
+    NAME_LIST.push({name:n, norm:normalize(n)});
+  });
+})();
+
+function normalize(s){
+  return s.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')  // remove accents
+    .replace(/[^\p{L}\p{N}\s]/gu,' ')                 // keep letters/digits/space
+    .replace(/\s+/g,' ').trim();
+}
+
+function tokenize(raw){
+  // keep emojis as tokens; split text by commas, pipes, middots, newlines
+  const emojis = [...raw.matchAll(/[\p{Emoji_Presentation}\p{Emoji}\uFE0F\u200D]+/gu)].map(m=>m[0]);
+  let text = raw;
+  emojis.forEach(e=> text = text.split(e).join(' '));
+  const parts = text.split(/[,|·;\/\n]+/).map(t=>t.trim()).filter(Boolean);
+  // also split remaining long segments into words (but we match fuzzy later)
+  const words = parts.flatMap(p => p.split(/\s+/)).filter(Boolean);
+  return {emojis, parts, words};
+}
+
+function findByEmoji(emojiList){
+  const found = [];
+  emojiList.forEach(e=>{ if(EMOJI_MAP[e]) found.push(EMOJI_MAP[e]); });
+  return found;
+}
+
+function findByExactPart(parts){
+  const found = [];
+  parts.forEach(p=>{
+    const norm = normalize(p);
+    const hit = NAME_LIST.find(x => x.norm === norm);
+    if(hit) found.push(hit.name);
+  });
+  return found;
+}
+
+function findByFuzzyWords(words){
+  const found = new Set();
+  const joined = normalize(words.join(' '));
+  NAME_LIST.forEach(x=>{
+    // require that at least one key word (>=3 chars) appears in the normalized name
+    const kws = words.map(normalize).filter(w=>w.length>=3);
+    if(kws.length && kws.some(w=> x.norm.includes(w))) found.add(x.name);
+  });
+  return [...found];
+}
+
+function analyzeInput(raw){
+  const {emojis, parts, words} = tokenize(raw);
+  const byEmoji = findByEmoji(emojis);
+  const byExact = findByExactPart(parts);
+  const byFuzzy = findByFuzzyWords(words);
+
+  // Score candidates: emoji hit > exact > fuzzy
+  const score = new Map();
+  function add(n, s){ score.set(n, Math.max(score.get(n)||0, s)); }
+  byEmoji.forEach(n=>add(n,3));
+  byExact.forEach(n=>add(n,2));
+  byFuzzy.forEach(n=>add(n,1));
+
+  // Keep only strong or medium matches; if too many, prefer those mentioned by emoji/exact
+  let candidates = [...score.entries()]
+    .filter(([n,s])=> s>=2) // threshold
+    .sort((a,b)=> b[1]-a[1]); // by score
+
+  const detected = uniq(candidates.map(([n])=>n));
+
+  // Unknowns: emojis not mapped + words/parts that didn't match anything
+  const unknown = [];
+  emojis.forEach(e=>{ if(!EMOJI_MAP[e]) unknown.push(e); });
+  // parts that are not matching any name after normalization and len >=3
+  parts.forEach(p=>{
+    const norm = normalize(p);
+    const exact = NAME_LIST.some(x=>x.norm===norm);
+    if(!exact && norm.length>=3) unknown.push(p);
+  });
+
+  const {mana,diff} = computeTotals(detected);
+  return {detected, unknown, mana, diff, emojis};
+}
+
+function renderAnalysis(res){
+  // bubble
+  if(!res.detected.length){
+    anBubble.textContent = '(aucune glyphe détectée)';
+  } else {
+    const bubbleEmojis = res.detected.map(n=> n.split(' ')[0]).join(' ');
+    anBubble.textContent = bubbleEmojis;
+  }
+
+  // totals
+  const a=(label,val)=>`<div class="kpi"><span class="muted">${label}</span><b class="mono">${val}</b></div>`;
+  anTotals.innerHTML = a('🔣 Glyphes', res.detected.length)+a('🧪 Diff', res.diff)+a('💧 Mana', res.mana);
+
+  // chips detected
+  anDetectedChips.innerHTML='';
+  res.detected.forEach(n=>{
+    const div=document.createElement('div'); div.className='chip'; div.textContent=n;
+    anDetectedChips.appendChild(div);
+  });
+
+  // chips unknown
+  anUnknownChips.innerHTML='';
+  if(res.unknown.length===0){
+    const ok=document.createElement('div'); ok.className='chip'; ok.textContent='—';
+    anUnknownChips.appendChild(ok);
+  } else {
+    res.unknown.forEach(u=>{
+      const div=document.createElement('div'); div.className='chip'; div.textContent=u;
+      anUnknownChips.appendChild(div);
+    });
+  }
+
+  // table
+  anTableBody.innerHTML='';
+  res.detected.forEach(n=>{
+    const d = GLYPH_TABLE[n];
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td>${n}</td><td>${d?.cat||'?'}</td><td class="mono">${d?.diff??'?'}</td><td class="mono">${d?.mana??'?'}</td>`;
+    anTableBody.appendChild(tr);
+  });
+
+  // add to selection
+  anAddToSel.disabled = res.detected.length===0;
+  anAddToSel.onclick = ()=>{
+    const sel = loadSelection();
+    const merged = uniq(sel.concat(res.detected));
+    saveSelection(merged);
+    // switch to builder to visualize
+    showBuilder();
+  };
+}
+
+// events - analyzer
+anPaste.onclick = async ()=>{
+  try{
+    const t = await navigator.clipboard.readText();
+    anInput.value = t;
+  }catch(e){
+    alert("Impossible d'accéder au presse-papier. Colle manuellement (Ctrl+V).");
+  }
+};
+anRun.onclick = ()=>{
+  const raw = (anInput.value||'').trim();
+  if(!raw){ renderAnalysis({detected:[],unknown:[],mana:0,diff:0,emojis:[]}); return; }
+  const res = analyzeInput(raw);
+  renderAnalysis(res);
+};
+
+// default view: builder
+showBuilder();
+</script>
+</body>
+</html>
