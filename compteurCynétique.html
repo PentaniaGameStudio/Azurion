@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compteur de point cynétique</title>
+<style>
+  :root{
+    --bg:#0f1221; --panel:#161a2f; --text:#e7eaff; --muted:#9aa3da;
+    --border:#2a315c; --chip:#1f2444; --accent:#7c9bff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#0f1221;color:var(--text);font:16px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{width:min(720px,96vw);background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.35);padding:18px 18px 20px}
+  h1{margin:0 0 8px;font-size:18px}
+  .muted{color:var(--muted)}
+  .row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .counter{display:grid;grid-template-columns:64px 1fr 64px;gap:10px;align-items:center;margin:10px 0}
+  button{cursor:pointer;background:linear-gradient(180deg,#22284d,#1c2042);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:10px 14px;font-weight:600;min-width:48px}
+  button:active{transform:translateY(1px)}
+  .bignum{width:100%;text-align:center;background:#0c1026;border:1px solid var(--border);border-radius:14px;font-size:48px;font-weight:800;padding:10px 12px}
+  .bignum::-webkit-outer-spin-button,.bignum::-webkit-inner-spin-button{appearance:none;margin:0}
+  .bignum[type=number]{appearance:textfield}
+  .box{background:#121633;border:1px solid var(--border);border-radius:12px;padding:12px}
+  input[type=number]{background:#0c1026;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;text-align:center}
+  .grid{display:grid;gap:8px;margin-top:14px}
+  .line{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .label{opacity:.9}
+  .pill{background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:6px 10px;font-family:ui-monospace,Consolas,Menlo,monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>🧮 Compteur de point cynétique</h1>
+    <div class="muted">Sauvegarde automatique</div>
+
+    <!-- Compteur principal -->
+    <div class="counter">
+      <button id="btnMinus">−</button>
+      <input id="count" class="bignum" type="number" step="1">
+      <button id="btnPlus">+</button>
+    </div>
+
+    <!-- Valeur X -->
+    <div class="box">
+      <div class="row">
+        <button id="btnXMinus">−</button>
+        <label for="xVal" class="label">Utiliser</label>
+        <input id="xVal" type="number" step="1" style="width:80px">
+        <label class="label">point(s) cynétique</label>
+        <button id="btnXPlus">+</button>
+      </div>
+    </div>
+
+    <!-- Lignes dynamiques -->
+    <div class="grid">
+      <div class="line"><span class="label">🗡🔄🔺 Projectile :</span><span id="tProjectile" class="pill">—</span></div>
+      <div class="line"><span class="label">🗡🔄🔺 Rétribution :</span><span id="tRetrib" class="pill">—</span></div>
+      <div class="line"><span class="label">🗡🔄🔺 Onde de Choc Cynétique :</span><span id="tShock" class="pill">—</span></div>
+      <div class="line"><span class="label">🗡🔄🔺 Colère Cynétique :</span><span id="tRage" class="pill">—</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const LS_KEY = 'cyn_counter_v1';
+const count = document.getElementById('count');
+const btnMinus = document.getElementById('btnMinus');
+const btnPlus = document.getElementById('btnPlus');
+const xVal = document.getElementById('xVal');
+const btnXMinus = document.getElementById('btnXMinus');
+const btnXPlus = document.getElementById('btnXPlus');
+const tProjectile = document.getElementById('tProjectile');
+const tRetrib = document.getElementById('tRetrib');
+const tShock = document.getElementById('tShock');
+const tRage = document.getElementById('tRage');
+
+function clamp(n){ return Math.max(0, Math.trunc(+n||0)); }
+function state(){ return {count:clamp(count.value), x:clamp(xVal.value)}; }
+function fmt(s){ return {
+  projectile: `${s.x}D2`,
+  retribution: `Arme + ${s.x}D2 + ${s.x}`,
+  shock: `${s.x}D2`,
+  rage: `${s.x}D3`
+};}
+function render(){
+  const s = state(), f = fmt(s);
+  tProjectile.textContent = f.projectile;
+  tRetrib.textContent = f.retribution;
+  tShock.textContent = f.shock;
+  tRage.textContent = f.rage;
+  localStorage.setItem(LS_KEY, JSON.stringify(s));
+}
+function load(){
+  try{ var s=JSON.parse(localStorage.getItem(LS_KEY)||'{}'); }catch{ s={}; }
+  count.value = s.count ?? 0;
+  xVal.value = s.x ?? 1;
+  render();
+}
+btnMinus.onclick = ()=>{ count.value = clamp(count.value)-1; render(); };
+btnPlus.onclick = ()=>{ count.value = clamp(count.value)+1; render(); };
+btnXMinus.onclick = ()=>{ xVal.value = clamp(xVal.value)-1; render(); };
+btnXPlus.onclick = ()=>{ xVal.value = clamp(xVal.value)+1; render(); };
+count.oninput = render;
+xVal.oninput = render;
+load();
+</script>
+</body>
+</html>
