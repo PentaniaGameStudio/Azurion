@@ -3845,7 +3845,9 @@
         "Réduits les dégâts subis de 1."
       ],
       "conditions": [],
-      "limits": ["Une seule posture à la fois"]
+      "limits": [
+        "Une seule posture à la fois"
+      ]
     },
     {
       "hided": false,
@@ -4225,7 +4227,9 @@
         "Augmente les dégâts reçus de 1."
       ],
       "conditions": [],
-      "limits": ["Une seule posture à la fois"]
+      "limits": [
+        "Une seule posture à la fois"
+      ]
     },
     {
       "hided": false,
@@ -4242,7 +4246,10 @@
         "Permet de contrer une attaque (N'annule pas l'attaque)"
       ],
       "conditions": [],
-      "limits": ["Une seule posture à la fois", "L'attaquant doit être au corps à corps"]
+      "limits": [
+        "Une seule posture à la fois",
+        "L'attaquant doit être au corps à corps"
+      ]
     },
     {
       "hided": false,
@@ -4361,8 +4368,8 @@
       "damage": "8D10+6",
       "effects": [
         "Les ombres des cibles sont \"clouées\" au sol, les empêchants de bouger",
-		"Les sources de lumières s'éteignent dans la zone",
-		"Marque toutes les cibles touchées (Marque d'Ombre)"
+        "Les sources de lumières s'éteignent dans la zone",
+        "Marque toutes les cibles touchées (Marque d'Ombre)"
       ],
       "conditions": [],
       "limits": []
@@ -4726,7 +4733,7 @@
     },
     {
       "hided": false,
-      "family": "🪬🌀​",
+      "family": "🪬🌪️​",
       "name": "Marque de Vent",
       "level": "Niv1",
       "cost": "",
@@ -4743,7 +4750,7 @@
     },
     {
       "hided": false,
-      "family": "🪬🌀​",
+      "family": "🪬🌪️​",
       "name": "Marque de Vent",
       "level": "Niv2",
       "cost": "",
@@ -5082,6 +5089,258 @@
       "effects": [
         "Augmente la durée des états de 3 tours.",
         "20% de chance de passer son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⏳",
+      "name": "Lecture des Glyphes",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Peut déchiffrer les glyphes anciennes & comprendre leurs fonctions."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⏳",
+      "name": "Érudition Mystique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Accorde un bonus de +1 aux jets de Savoir lors de l’examen d’objets antiques ou empreints de magie."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⏳",
+      "name": "Création de Glyphe Simple",
+      "level": "Niv1",
+      "cost": "1 Mana (3 runes max) ou 2 mana (6 runes max)",
+      "difficulty": "Difficulté",
+      "target": "1 Support (\"Pierre à Glyphe\" ou parchemin de préférence)",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Inscrit un sort sur la pierre qui pourras être lancé en jetant la pierre."
+      ],
+      "conditions": [
+        "Étude des Glyphes requise"
+      ],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Basique 1",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+        "- Éléments (🔥 Feu, 💧 Eau, 🏔 Terre, 🌪 Vent, 💚 Soin)",
+        "- Ciblage (🎯 Cible unique, 🌌 Zone, 🔜 Cible la plus proche)",
+        "- Action (💥 Destruction, 🤚 Contact)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Basique 2",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Éléments (❄️ Glace, ⚡ Foudre)",
+		"- Action (🛡 Défensif, ⚔️ Offensif, 🪬 Marquage)",
+		"- États (💀 Affaiblissement, 💫 Étourdissement)",
+		"- Action (🕧 Retardement)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Basique 3",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Éléments (🟣 Ombre, ☀️ Lumière)",
+		"- Ciblage (🛜 Conîque, ↕️ Ligne (4m), 🔢 Multi-Cible (jusqu'à 4))",
+		"- États (🧊 Gel, 🔥 Brûlure, 💤 Sommeil)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Basique 4",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Statistique (💪 Physique, 💬 Social, 🧠 Mental)",
+		"- Altération (🔼 Power-Up, 🔽 Power-Down)",
+		"- États (🌀 Confusion, 🫧 Poison, ❤️ Charme, ❤️‍🔥 Berserk)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Adepte 1",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Éléments (🌱 Nature, 💙 Bénédiction, 🩸 Sang)",
+		"- Ciblage (🌐 Toute entitée, 👍 Allié, 👎 Ennemi)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Adepte 2",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Éléments (🪞 Illusion, 💀 Nécromantie, 🎶 Sons)",
+		"- Action (💣 Explosion, ⏳ Durée)",
+		"- Amplification (➕ Puissance, 📏 Portée)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Adepte 3",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Cible (🔄 Aléatoire, ↩️ Utilisateur, 👥 Chaîne (5 max))",
+		"- Cible (🧭 Directionnel, 📍 Persistante (zone)",
+		"- États (🤐 Silence, 👁‍🗨 Cécité)"
+      ],
+      "conditions": ["Gravité = Attraction, Répulsion, Écrasement"],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Maître 1",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Éléments (🕚 Temporel, 🌌 Cosmique)",
+		"- Amplification (📊 Répétition, ✴️ Création)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Série Maître 2",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Connaissance étandue des Glyphes :",
+		"- Éléments (🪦 Mort, 🐦‍🔥 Résurection)",
+		"- Contrôle (🎯 Critique, 🎲 Variance)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": true,
+      "family": "📜⏳",
+      "name": "Étude des Glyphes - Tome Interdit",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+		"♾️ Glyphe d’Infinité",
+		"La durée de la glyphe est infinie jusqu'à ce que le support soit détruit.",
+		"",
+		"🌒 Éclipse",
+		"Empêche totalement l'utilisation de magie"
       ],
       "conditions": [],
       "limits": []
