@@ -6,6 +6,11 @@
       "description": "La magie commune"
     },
     {
+      "emojis": "🪬",
+      "name": "Marque",
+      "description": "La magie commune"
+    },
+    {
       "emojis": "✨🕚",
       "name": "Magie Temporelle",
       "description": ""
@@ -4364,7 +4369,7 @@
     },
     {
       "hided": false,
-      "family": "✨🟣​",
+      "family": "🪬🟣​",
       "name": "Marque d'Ombre",
       "level": "Niv1",
       "cost": "",
@@ -4381,7 +4386,7 @@
     },
     {
       "hided": false,
-      "family": "✨🟣​",
+      "family": "🪬🟣​",
       "name": "Marque d'Ombre",
       "level": "Niv2",
       "cost": "",
@@ -4398,7 +4403,7 @@
     },
     {
       "hided": false,
-      "family": "✨🟣​",
+      "family": "🪬🟣​",
       "name": "Marque d'Ombre",
       "level": "Niv3",
       "cost": "",
@@ -4415,7 +4420,7 @@
     },
     {
       "hided": false,
-      "family": "✨☀️​",
+      "family": "🪬☀️​",
       "name": "Marque de Lumière",
       "level": "Niv1",
       "cost": "",
@@ -4432,7 +4437,7 @@
     },
     {
       "hided": false,
-      "family": "✨☀️​",
+      "family": "🪬☀️​",
       "name": "Marque de Lumière",
       "level": "Niv2",
       "cost": "",
@@ -4449,7 +4454,7 @@
     },
     {
       "hided": false,
-      "family": "✨☀️​",
+      "family": "🪬☀️​",
       "name": "Marque de Lumière",
       "level": "Niv3",
       "cost": "",
@@ -4466,7 +4471,7 @@
     },
     {
       "hided": false,
-      "family": "✨⚡​",
+      "family": "🪬⚡​",
       "name": "Marque de Foudre",
       "level": "Niv1",
       "cost": "",
@@ -4483,7 +4488,7 @@
     },
     {
       "hided": false,
-      "family": "✨⚡​",
+      "family": "🪬⚡​",
       "name": "Marque de Foudre",
       "level": "Niv2",
       "cost": "",
@@ -4500,7 +4505,7 @@
     },
     {
       "hided": false,
-      "family": "✨⚡​",
+      "family": "🪬⚡​",
       "name": "Marque de Foudre",
       "level": "Niv3",
       "cost": "",
@@ -4517,7 +4522,7 @@
     },
     {
       "hided": false,
-      "family": "✨❄️​",
+      "family": "🪬❄️​",
       "name": "Marque de Glace",
       "level": "Niv1",
       "cost": "",
@@ -4534,7 +4539,7 @@
     },
     {
       "hided": false,
-      "family": "✨❄️​",
+      "family": "🪬❄️​",
       "name": "Marque de Glace",
       "level": "Niv2",
       "cost": "",
@@ -4551,7 +4556,7 @@
     },
     {
       "hided": false,
-      "family": "✨❄️​",
+      "family": "🪬❄️​",
       "name": "Marque de Glace",
       "level": "Niv3",
       "cost": "",
@@ -4568,7 +4573,7 @@
     },
     {
       "hided": false,
-      "family": "✨❤️​",
+      "family": "🪬❤️​",
       "name": "Marque d'Amour",
       "level": "Niv1",
       "cost": "",
@@ -4585,7 +4590,7 @@
     },
     {
       "hided": false,
-      "family": "✨❤️​",
+      "family": "🪬❤️​",
       "name": "Marque d'Amour",
       "level": "Niv2",
       "cost": "",
@@ -4602,7 +4607,7 @@
     },
     {
       "hided": false,
-      "family": "✨❤️​",
+      "family": "🪬❤️​",
       "name": "Marque d'Amour",
       "level": "Niv3",
       "cost": "",
@@ -4619,7 +4624,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌀​",
+      "family": "🪬🌀​",
       "name": "Marque Alterante",
       "level": "Niv1",
       "cost": "",
@@ -4636,7 +4641,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌀​",
+      "family": "🪬🌀​",
       "name": "Marque Alterante",
       "level": "Niv2",
       "cost": "",
@@ -4653,7 +4658,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌀​",
+      "family": "🪬🌀​",
       "name": "Marque Alterante",
       "level": "Niv3",
       "cost": "",
@@ -4670,7 +4675,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌌​",
+      "family": "🪬🌌​",
       "name": "Marque Cosmique",
       "level": "Niv1",
       "cost": "",
@@ -4687,7 +4692,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌌​",
+      "family": "🪬🌌​",
       "name": "Marque Cosmique",
       "level": "Niv2",
       "cost": "",
@@ -4704,7 +4709,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌌​​",
+      "family": "🪬🌌​​",
       "name": "Marque Cosmique",
       "level": "Niv3",
       "cost": "",
@@ -4721,7 +4726,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌀​",
+      "family": "🪬🌀​",
       "name": "Marque de Vent",
       "level": "Niv1",
       "cost": "",
@@ -4738,7 +4743,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌀​",
+      "family": "🪬🌀​",
       "name": "Marque de Vent",
       "level": "Niv2",
       "cost": "",
@@ -4756,7 +4761,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌪​​",
+      "family": "🪬🌪​​",
       "name": "Marque de Vent",
       "level": "Niv3",
       "cost": "",
@@ -4774,7 +4779,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌱",
+      "family": "🪬🌱",
       "name": "Marque Naturelle",
       "level": "Niv1",
       "cost": "",
@@ -4791,7 +4796,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌱",
+      "family": "🪬🌱",
       "name": "Marque Naturelle",
       "level": "Niv2",
       "cost": "",
@@ -4808,7 +4813,7 @@
     },
     {
       "hided": false,
-      "family": "✨🌱",
+      "family": "🪬🌱",
       "name": "Marque Naturelle",
       "level": "Niv3",
       "cost": "",
@@ -4825,7 +4830,7 @@
     },
     {
       "hided": false,
-      "family": "✨🏔",
+      "family": "🪬🏔",
       "name": "Marque Terrestre",
       "level": "Niv1",
       "cost": "",
@@ -4842,7 +4847,7 @@
     },
     {
       "hided": false,
-      "family": "✨🏔",
+      "family": "🪬🏔",
       "name": "Marque Terrestre",
       "level": "Niv2",
       "cost": "",
@@ -4859,7 +4864,7 @@
     },
     {
       "hided": false,
-      "family": "✨🏔",
+      "family": "🪬🏔",
       "name": "Marque Terrestre",
       "level": "Niv3",
       "cost": "",
@@ -4876,7 +4881,58 @@
     },
     {
       "hided": false,
-      "family": "✨💧​",
+      "family": "🪬🏹​",
+      "name": "Cible",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus à distance de 3"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🪬🏹​",
+      "name": "Cible",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus à distance de 6"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🪬🏹​",
+      "name": "Cible",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus à distance de 12"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🪬💧​",
       "name": "Marque d'Eau",
       "level": "Niv1",
       "cost": "",
@@ -4893,7 +4949,7 @@
     },
     {
       "hided": false,
-      "family": "✨💧​",
+      "family": "🪬💧​",
       "name": "Marque d'Eau",
       "level": "Niv2",
       "cost": "",
@@ -4910,7 +4966,7 @@
     },
     {
       "hided": false,
-      "family": "✨💧​​",
+      "family": "🪬💧​​",
       "name": "Marque d'Eau",
       "level": "Niv3",
       "cost": "",
@@ -4927,7 +4983,7 @@
     },
     {
       "hided": false,
-      "family": "✨💚​",
+      "family": "🪬💚​",
       "name": "Marque de Soin",
       "level": "Niv1",
       "cost": "",
@@ -4944,7 +5000,7 @@
     },
     {
       "hided": false,
-      "family": "✨💚​",
+      "family": "🪬💚​",
       "name": "Marque de Soin",
       "level": "Niv2",
       "cost": "",
@@ -4961,7 +5017,7 @@
     },
     {
       "hided": false,
-      "family": "✨💚​​",
+      "family": "🪬💚​​",
       "name": "Marque de Soin",
       "level": "Niv3",
       "cost": "",
@@ -4978,7 +5034,7 @@
     },
     {
       "hided": false,
-      "family": "✨🕚​",
+      "family": "🪬🕚​",
       "name": "Marque Temporelle",
       "level": "Niv1",
       "cost": "",
@@ -4996,7 +5052,7 @@
     },
     {
       "hided": false,
-      "family": "✨🕚​",
+      "family": "🪬🕚​",
       "name": "Marque Temporelle",
       "level": "Niv2",
       "cost": "",
@@ -5014,7 +5070,7 @@
     },
     {
       "hided": false,
-      "family": "✨🕚​",
+      "family": "🪬🕚​",
       "name": "Marque Temporelle",
       "level": "Niv3",
       "cost": "",
