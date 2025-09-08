@@ -3840,7 +3840,7 @@
         "Réduits les dégâts subis de 1."
       ],
       "conditions": [],
-      "limits": []
+      "limits": ["Une seule posture à la fois"]
     },
     {
       "hided": false,
@@ -4207,7 +4207,7 @@
     {
       "hided": false,
       "family": "🗡🥋",
-      "name": "Posture d'Attaque Basique",
+      "name": "Posture Offensive Basique",
       "level": "Niv1",
       "cost": "",
       "difficulty": "Difficulté : 0",
@@ -4220,7 +4220,24 @@
         "Augmente les dégâts reçus de 1."
       ],
       "conditions": [],
-      "limits": []
+      "limits": ["Une seule posture à la fois"]
+    },
+    {
+      "hided": false,
+      "family": "🗡🥋",
+      "name": "Posture de Contre-Attaque Basique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 0",
+      "target": "Soi-Même",
+      "range_": "",
+      "duration": "",
+      "damage": "Arme",
+      "effects": [
+        "Permet de contrer une attaque (N'annule pas l'attaque)"
+      ],
+      "conditions": [],
+      "limits": ["Une seule posture à la fois", "L'attaquant doit être au corps à corps"]
     },
     {
       "hided": false,
@@ -4335,10 +4352,680 @@
       "difficulty": "Difficulté : 280",
       "target": "Zone de 10m",
       "range_": "20m",
-      "duration": "",
+      "duration": "5 tours (Marque)",
       "damage": "8D10+6",
       "effects": [
-        "Les ombres des cibles sont \"clouées\" au sol, les empêchants de bouger"
+        "Les ombres des cibles sont \"clouées\" au sol, les empêchants de bouger",
+		"Les sources de lumières s'éteignent dans la zone",
+		"Marque toutes les cibles touchées (Marque d'Ombre)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🟣​",
+      "name": "Marque d'Ombre",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🟣​",
+      "name": "Marque d'Ombre",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🟣​",
+      "name": "Marque d'Ombre",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de 8."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨☀️​",
+      "name": "Marque de Lumière",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨☀️​",
+      "name": "Marque de Lumière",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨☀️​",
+      "name": "Marque de Lumière",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de 8."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨⚡​",
+      "name": "Marque de Foudre",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "10% de chance d'être paralysé."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨⚡​",
+      "name": "Marque de Foudre",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "20% de chance d'être paralysé."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨⚡​",
+      "name": "Marque de Foudre",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "30% de chance d'être paralysé."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨❄️​",
+      "name": "Marque de Glace",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "10% de chance de passer son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨❄️​",
+      "name": "Marque de Glace",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "20% de chance de passer son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨❄️​",
+      "name": "Marque de Glace",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "30% de chance de passer son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨❤️​",
+      "name": "Marque d'Amour",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "20% de chance de ne pas attaquer."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨❤️​",
+      "name": "Marque d'Amour",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "40% de chance de ne pas attaquer."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨❤️​",
+      "name": "Marque d'Amour",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "60% de chance de ne pas attaquer."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌀​",
+      "name": "Marque Alterante",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la durée des états de 1 tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌀​",
+      "name": "Marque Alterante",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la durée des états de 2 tours."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌀​",
+      "name": "Marque Alterante",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la durée des états de 3 tours."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌌​",
+      "name": "Marque Cosmique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente le coût des sorts de 2 mana."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌌​",
+      "name": "Marque Cosmique",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente le coût des sorts de 4 mana."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌌​​",
+      "name": "Marque Cosmique",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente le coût des sorts de 8 mana."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌀​",
+      "name": "Marque de Vent",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les effets de recul et de poussée de 25%"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌀​",
+      "name": "Marque de Vent",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les effets de recul et de poussée de 50%",
+        "Augmente les dégâts reçus de collision de 50%"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌪​​",
+      "name": "Marque de Vent",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les effets de recul et de poussée de 100%",
+        "Augmente les dégâts reçus de collision de 75%"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌱",
+      "name": "Marque Naturelle",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de sort Naturel de 3"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌱",
+      "name": "Marque Naturelle",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de sort Naturel de 6"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🌱",
+      "name": "Marque Naturelle",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus de sort Naturel de 12"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🏔",
+      "name": "Marque Terrestre",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus physique de 3"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🏔",
+      "name": "Marque Terrestre",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus physique de 6"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🏔",
+      "name": "Marque Terrestre",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les dégâts reçus physique de 12"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨💧​",
+      "name": "Marque d'Eau",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente le coût des sorts de 1 mana."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨💧​",
+      "name": "Marque d'Eau",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente le coût des sorts de 2 mana."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨💧​​",
+      "name": "Marque d'Eau",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente le coût des sorts de 4 mana."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨💚​",
+      "name": "Marque de Soin",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les soins reçus de 3"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨💚​",
+      "name": "Marque de Soin",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les soins reçus de 6"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨💚​​",
+      "name": "Marque de Soin",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente les soins reçus de 12"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🕚​",
+      "name": "Marque Temporelle",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la durée des états de 1 tour.",
+        "10% de chance de passer son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🕚​",
+      "name": "Marque Temporelle",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la durée des états de 2 tours.",
+        "20% de chance de passer son tour."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🕚​",
+      "name": "Marque Temporelle",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "5 tours",
+      "damage": "",
+      "effects": [
+        "Augmente la durée des états de 3 tours.",
+        "20% de chance de passer son tour."
       ],
       "conditions": [],
       "limits": []
