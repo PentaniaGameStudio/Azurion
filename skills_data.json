@@ -3923,7 +3923,7 @@
       "damage": "",
       "effects": [
         "Identifier une plante, champignon ou herbe et savoir si elle est comestible, médicinale ou toxique.",
-		"Connait plus en détails les effets."
+        "Connait plus en détails les effets."
       ],
       "conditions": [],
       "limits": []
@@ -4308,6 +4308,40 @@
       "limits": [
         "Nécéssite un arc et une flèche."
       ]
+    },
+    {
+      "hided": false,
+      "family": "✨🟣​",
+      "name": "Lance-Suaire",
+      "level": "Niv2",
+      "cost": "3 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "Cible Unique",
+      "range_": "20m",
+      "duration": "",
+      "damage": "3D4+4",
+      "effects": [
+        "L'ombre de la cible est \"clouée\" au sol, la cible ne peut plus se déplacer"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "✨🟣​",
+      "name": "Cataclysme des Ombres",
+      "level": "Niv3",
+      "cost": "12 mana",
+      "difficulty": "Difficulté : 280",
+      "target": "Zone de 10m",
+      "range_": "20m",
+      "duration": "",
+      "damage": "8D10+6",
+      "effects": [
+        "Les ombres des cibles sont \"clouées\" au sol, les empêchants de bouger"
+      ],
+      "conditions": [],
+      "limits": []
     }
   ]
 }
