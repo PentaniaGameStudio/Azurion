@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎭 Entraînement Vocal JDR — Cartes</title>
+
+  <!-- Préchargement des audios -->
+  <link rel="preload" as="audio" href="voice/Punch.mp3">
+  <link rel="preload" as="audio" href="voice/Touché.mp3">
+  <link rel="preload" as="audio" href="voice/Tranchante.mp3">
+  <link rel="preload" as="audio" href="voice/Vacillante.mp3">
+  <link rel="preload" as="audio" href="voice/Pressante.mp3">
+  <link rel="preload" as="audio" href="voice/Glissante.mp3">
+  <link rel="preload" as="audio" href="voice/Tordue.mp3">
+  <link rel="preload" as="audio" href="voice/Flottant.mp3">
+
+  <style>
+    :root{
+      --bg:#12121b; --panel:#1f2030; --accent:#ffcc66; --accent-2:#ffaa33; --text:#f5f5f7; --muted:#b9bed0;
+      --chip:#2a2b3e; --bubble:#2b2c44;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      display:flex; flex-direction:column; min-height:100vh; align-items:center; padding:24px;
+    }
+    h1{margin:0 0 8px; color:var(--accent); text-align:center;}
+    .lead{margin:0 0 18px; color:var(--muted); text-align:center;}
+
+    /* Toolbar en grille : 1 bouton pleine largeur sur 3 colonnes, puis 3 boutons */
+    .toolbar{
+      width:100%; max-width:1000px;
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(3, 1fr);
+      justify-items:center;
+      margin:14px 0 22px;
+    }
+    .toolbar .draw{
+      grid-column:1 / 4; /* occupe 3 colonnes = ligne entière */
+      width:100%;
+    }
+    .toolbar button{
+      width:100%;
+      border:none; border-radius:10px; padding:12px 18px; font-weight:700; cursor:pointer; background:var(--accent);
+      color:#1e1e2f; transition:.2s; box-shadow:0 2px 0 rgba(0,0,0,.2);
+    }
+    .toolbar button:hover{ background:var(--accent-2); transform:translateY(-1px); }
+
+    /* Grille cartes */
+    .grid{
+      display:grid; gap:20px; width:100%; max-width:1000px;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    }
+
+    /* Carte */
+    .card{
+      background:var(--panel); border:2px solid var(--accent); border-radius:14px; padding:16px 16px 10px;
+      box-shadow:0 8px 30px rgba(0,0,0,.25); position:relative; overflow:hidden; min-height:270px;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .card .header{
+      text-align:center; font-weight:900; letter-spacing:.4px;
+    }
+    .card .header .type{
+      display:inline-block; background:#2a2b3e; border:1px solid #3a3b5c; color:var(--text);
+      padding:6px 12px; border-radius:999px;
+    }
+    .name{
+      text-align:center;          /* centré */
+      font-weight:800;
+      font-size:16px;
+      padding-left:0;
+    }
+    .dialog{
+      display:flex; justify-content:center; align-items:center;
+    }
+    .bubble{
+      background:var(--bubble); border:1px solid #3a3b5c; color:var(--text);
+      border-radius:16px; padding:20px; font-size:18px; line-height:1.45; text-align:center; max-width:92%;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03), 0 10px 24px rgba(0,0,0,.25);
+      margin: 0 auto;
+    }
+    .footer{
+      margin-top:6px; display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center;
+    }
+    .voiceBlock{
+      display:flex; flex-direction:column; gap:4px; font-size:13px;
+    }
+    .voiceBlock .line1{ font-weight:800; }
+    .voiceBlock .line2{ color:var(--muted); }
+    .voiceBlock .line3{ color:var(--muted); font-style:italic; }
+    .play{
+      width:40px; height:40px; border-radius:10px; display:inline-grid; place-items:center; background:var(--accent);
+      color:#1e1e2f; font-weight:900; cursor:pointer; border:none;
+    }
+    .play:hover{ background:var(--accent-2); }
+    @media (max-width:420px){ .bubble{ font-size:16px; padding:16px; } }
+  </style>
+</head>
+<body>
+  <h1>🎭 Entraînement Vocal JDR</h1>
+  <p class="lead">Tirer une scène aléatoire pour vous entrainer a faire des voix!</p>
+
+  <div class="toolbar">
+    <button class="draw" id="draw">🎲 Tirer une scène</button>
+    <button id="rerollTimbre">🎧 Relancer Timbre</button>
+    <button id="rerollDiff">🧩 Relancer Difficulté</button>
+    <button id="rerollTexte">📝 Relancer Texte</button>
+  </div>
+
+  <div class="grid">
+    <!-- QUESTION -->
+    <section class="card" id="cardQ" aria-live="polite">
+      <div class="header"><span class="type">Question</span></div>
+      <div class="name" id="whoQ">—</div>
+      <div class="dialog"><div class="bubble" id="lineQ">Clique « Tirer une scène »</div></div>
+      <div class="footer">
+        <div class="voiceBlock">
+          <div class="line1">Voix : <span id="timbreQ">—</span></div>
+          <div class="line2" id="traitsQ">—</div>
+          <div class="line3">Difficulté : <span id="diffQ">—</span></div>
+        </div>
+        <button class="play" id="playQ" title="Lire l’échantillon du timbre de voix">▶</button>
+      </div>
+    </section>
+
+    <!-- RÉPONSE -->
+    <section class="card" id="cardA" aria-live="polite">
+      <div class="header"><span class="type">Réponse</span></div>
+      <div class="name" id="whoA">—</div>
+      <div class="dialog"><div class="bubble" id="lineA">Clique « Tirer une scène »</div></div>
+      <div class="footer">
+        <div class="voiceBlock">
+          <div class="line1">Voix : <span id="timbreA">—</span></div>
+          <div class="line2" id="traitsA">—</div>
+          <div class="line3">Difficulté : <span id="diffA">—</span></div>
+        </div>
+        <button class="play" id="playA" title="Lire l’échantillon du timbre de voix">▶</button>
+      </div>
+    </section>
+  </div>
+
+  <audio id="audio" preload="auto"></audio>
+
+  <script>
+    // --- Timbres (nom + traits + fichier audio) ---
+    const TIMBRES = [
+      { name:"Punch",      traits:"Rapide, Lourd, Direct",     file:"Punch.mp3" },
+      { name:"Touché",     traits:"Rapide, Léger, Direct",     file:"Touché.mp3" },
+      { name:"Tranchante", traits:"Rapide, Lourd, Indirect",   file:"Tranchante.mp3" },
+      { name:"Vacillante", traits:"Rapide, Léger, Indirect",   file:"Vacillante.mp3" },
+      { name:"Pressante",  traits:"Soutenu, Lourd, Direct",    file:"Pressante.mp3" },
+      { name:"Glissante",  traits:"Soutenu, Léger, Direct",    file:"Glissante.mp3" },
+      { name:"Tordue",     traits:"Soutenu, Lourd, Indirect",  file:"Tordue.mp3" },
+      { name:"Flottant",   traits:"Soutenu, Léger, Indirect",  file:"Flottant.mp3" }
+    ];
+
+    // --- Difficultés (modificateurs d’interprétation) ---
+    const DIFFICULTES = [
+	  { name:"Nasillarde",  hint:"Plus du nez" },
+	  { name:"Posée",       hint:"Plus de la gorge" },
+	  { name:"Plus grave",  hint:"Abaisser la hauteur" },
+	  { name:"Plus aiguë",  hint:"Monter la hauteur" },
+	  { name:"Étouffée",    hint:"Comme derrière une main/porte" },
+	  { name:"Enrouée",     hint:"Légère rugosité, attaque douce" },
+	  { name:"Essoufflée",  hint:"Manque d'air, reprises rapides" },
+	  { name:"Chuchotée",   hint:"Souffle dominant, articulation nette" },
+	  { name:"Marmonnée",   hint:"Peu d'ouverture, voyelles avalées" },
+	  { name:"Croquée",     hint:"Consonnes très nettes" },
+	  { name:"Traînante",   hint:"Syllabes étirées" },
+	  { name:"Hachée",      hint:"Saccadée, micro-pauses" },
+	  { name:"Télégraphique",hint:"Mots courts sans liant" },
+	  { name:"Chantante",   hint:"Intonations amples" },
+	  { name:"Monotone",    hint:"Hauteur quasi fixe" },
+	  { name:"Urgente",     hint:"Rapide, attaques fortes" },
+	  { name:"Dégoûtée",    hint:"Révulsion contenue" },
+	  { name:"Méprisante",  hint:"Supériorité froide" },
+	  { name:"Terrifiée",   hint:"Tension, micro-tremblements" },
+	  { name:"Ravie",       hint:"Sourire audible, tempo vif" },
+	  { name:"Contrite",    hint:"Bas, feutré" },
+	  { name:"Furieuse",    hint:"Pression, morsure" },
+	  { name:"Ivre",        hint:"Voyelles lâches, trajectoire floue" },
+	  { name:"Fiévreuse",   hint:"Souffle lourd, voix vacillante" },
+	  { name:"Rituelle",    hint:"Incantatoire, rythme régulier" },
+	  { name:"Mécanique",   hint:"Segments égaux, peu d'émotion" }
+    ];
+
+    // État courant
+    let DATA = { questions:[], answers:[] };
+    let current = {
+      // qIdx et qLineIdx sont stockés pour l’algorithme de réponse
+      Q: { who:"—", line:"—", timbre:TIMBRES[0], diff:DIFFICULTES[0], qIdx:0, qLineIdx:0 },
+      A: { who:"—", line:"—", timbre:TIMBRES[1], diff:DIFFICULTES[1] }
+    };
+
+    // Cache audio
+    const audioCache = new Map();
+    const sharedAudio = document.getElementById('audio');
+
+    // Helpers
+    const $ = (sel)=>document.querySelector(sel);
+    const rand = (arr)=>arr[Math.floor(Math.random()*arr.length)];
+
+    // Tire une PERSONNE question (index + 2 lignes), et renvoie {qIdx, who, line, qLineIdx}
+    function pickQuestionPersonAndLine(){
+      const P = DATA.questions.length;
+      const qIdx = Math.floor(Math.random()*P); // index du personnage Question
+      const persona = DATA.questions[qIdx];
+      // Sélectionne 0 ou 1 (2 répliques)
+      const qLineIdx = Math.random() < 0.5 ? 0 : 1;
+      const line = Array.isArray(persona.lines) ? (persona.lines[qLineIdx] ?? persona.lines[0] ?? "…") : "…";
+      return { qIdx, who: persona.name ?? "Inconnu", line, qLineIdx };
+    }
+
+    // À partir de (qIdx, qLineIdx) + un personnage Answer choisi, calcule la bonne ligne
+    function computeAnswerLine(answerPersona, qIdx, qLineIdx){
+      const P = DATA.questions.length;
+      const idx = (qIdx + qLineIdx) % P; // mapping logique demandé
+      const line = Array.isArray(answerPersona.lines) ? (answerPersona.lines[idx] ?? answerPersona.lines[0] ?? "…") : "…";
+      return line;
+    }
+
+    // Rendu
+    function render(){
+      // Question
+      $('#whoQ').textContent     = current.Q.who;
+      $('#lineQ').textContent    = current.Q.line;
+      $('#timbreQ').textContent  = current.Q.timbre.name;
+      $('#traitsQ').textContent  = current.Q.timbre.traits;
+      $('#diffQ').textContent    = `${current.Q.diff.name} — ${current.Q.diff.hint}`;
+
+      // Réponse
+      $('#whoA').textContent     = current.A.who;
+      $('#lineA').textContent    = current.A.line;
+      $('#timbreA').textContent  = current.A.timbre.name;
+      $('#traitsA').textContent  = current.A.timbre.traits;
+      $('#diffA').textContent    = `${current.A.diff.name} — ${current.A.diff.hint}`;
+    }
+
+    // Tirage principal
+    function drawScene(){
+      const qPick = pickQuestionPersonAndLine();
+      const [t1,t2] = twoDistinct(TIMBRES);
+      const [d1,d2] = twoDistinct(DIFFICULTES);
+
+      // Choix du personnage Réponse
+      const aPersona = rand(DATA.answers);
+      const aLine = computeAnswerLine(aPersona, qPick.qIdx, qPick.qLineIdx);
+
+      current.Q = { who:qPick.who, line:qPick.line, timbre:t1, diff:d1, qIdx:qPick.qIdx, qLineIdx:qPick.qLineIdx };
+      current.A = { who:aPersona.name ?? "Inconnu", line:aLine, timbre:t2, diff:d2 };
+
+      render();
+    }
+
+    // Re-roll Timbres (deux côtés)
+    function rerollTimbre(){
+      const [t1,t2] = twoDistinct(TIMBRES);
+      current.Q.timbre = t1;
+      current.A.timbre = t2;
+      render();
+    }
+    // Re-roll Difficultés (deux côtés)
+    function rerollDiff(){
+      const [d1,d2] = twoDistinct(DIFFICULTES);
+      current.Q.diff = d1;
+      current.A.diff = d2;
+      render();
+    }
+    // Re-roll Textes (re-tire la question et recalcule la réponse logique)
+    function rerollTexte(){
+      const qPick = pickQuestionPersonAndLine();
+      const aPersona = rand(DATA.answers);
+      const aLine = computeAnswerLine(aPersona, qPick.qIdx, qPick.qLineIdx);
+
+      current.Q.who = qPick.who;
+      current.Q.line = qPick.line;
+      current.Q.qIdx = qPick.qIdx;
+      current.Q.qLineIdx = qPick.qLineIdx;
+
+      current.A.who = aPersona.name ?? "Inconnu";
+      current.A.line = aLine;
+
+      render();
+    }
+
+    // Utilitaires
+    function twoDistinct(arr){
+      const a = rand(arr); let b = rand(arr); let guard=0;
+      while(b===a && guard<8){ b = rand(arr); guard++; }
+      return [a,b];
+    }
+
+    // Audio: précharge et joue depuis le cache
+    function preloadAudios(){
+      TIMBRES.forEach(t=>{
+        const src = `voice/${t.file}`;
+        const a = new Audio();
+        a.preload = 'auto';
+        a.src = src;
+        a.load();
+        audioCache.set(t.name, a);
+      });
+    }
+    function play(side){
+      const t = side==='Q' ? current.Q.timbre : current.A.timbre;
+      const cached = audioCache.get(t.name);
+      if(cached){
+        try{ cached.currentTime = 0; cached.play(); }catch(e){}
+      }else{
+        sharedAudio.src = `voice/${t.file}`;
+        sharedAudio.play().catch(()=>{});
+      }
+    }
+
+    // Events
+    $('#draw').addEventListener('click', drawScene);
+    $('#rerollTimbre').addEventListener('click', rerollTimbre);
+    $('#rerollDiff').addEventListener('click', rerollDiff);
+    $('#rerollTexte').addEventListener('click', rerollTexte);
+    $('#playQ').addEventListener('click', ()=>play('Q'));
+    $('#playA').addEventListener('click', ()=>play('A'));
+
+    // JSON
+    async function loadData(){
+      try{
+        const res = await fetch('voice/exemple.json', { cache:'no-store' });
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+
+        if(!Array.isArray(json.questions) || !Array.isArray(json.answers)) throw new Error('Structure JSON invalide.');
+        // Validation minimale : chaque question doit avoir au moins 2 lignes
+        json.questions.forEach((p,i)=>{
+          if(!Array.isArray(p.lines) || p.lines.length < 2){
+            console.warn(`Question persona #${i} n'a pas 2 lignes. Complétez 'lines' (2).`);
+          }
+        });
+        // Chaque answer doit avoir >= P lignes
+        const P = json.questions.length;
+        json.answers.forEach((p,i)=>{
+          if(!Array.isArray(p.lines) || p.lines.length < P){
+            console.warn(`Answer persona #${i} n'a pas ${P} lignes. Complétez 'lines' (P).`);
+          }
+        });
+
+        DATA.questions = json.questions;
+        DATA.answers   = json.answers;
+        drawScene();
+      }catch(e){
+        console.error(e);
+        // Fallback minimal
+        DATA.questions = [{name:"🛡️ Garde",lines:["Halte-là, étranger !","Vos papiers, maintenant."]}];
+        DATA.answers   = [{name:"💰 Marchand",lines:["Je viens pour affaires."]}];
+        drawScene();
+      }
+    }
+
+    // Démarrage
+    preloadAudios();
+    loadData();
+  </script>
+</body>
+</html>

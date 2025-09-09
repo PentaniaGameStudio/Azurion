@@ -1,0 +1,135 @@
+{
+  "questions": [
+    { "name": "🛡️ Garde", "lines": [
+      "Halte-là, étranger ! Vous approchez des portes de la cité sans escorte ni autorisation, et je ne vous laisserai pas franchir ce seuil sans connaître vos intentions exactes.",
+      "Montrez-moi immédiatement vos papiers d’entrée et le sceau officiel de passage, ou je serai forcé de vous retenir pour interrogatoire."
+    ]},
+    { "name": "👑 Roi", "lines": [
+      "Voyageur, vous vous tenez devant le trône de mes ancêtres : jurez-vous fidélité à la couronne et promettez-vous d’œuvrer pour la prospérité de ce royaume que tant d’ennemis convoitent ?",
+      "Mon royaume saigne sous les impôts, les guerres et les rebellion : dites-moi ce que vous apportez qui justifierais votre présence devant moi."
+    ]},
+    { "name": "🌾 Villageoise", "lines": [
+      "Seigneur étranger, nos champs se dessèchent et nos bêtes tombent malades : pourriez-vous nous venir en aide avant que la famine n’emporte mes enfants et tous ceux du hameau ?",
+      "Chaque nuit, des flammes surgissent à l’horizon et réduisent nos récoltes en cendres : je vous en supplie, aidez-nous à comprendre qui nous condamne ainsi."
+    ]},
+    { "name": "🧝 Elfe", "lines": [
+      "Voyageurs, vos pas résonnent trop fort dans ces bois anciens : la forêt elle-même m’a chargé de vous demander pourquoi vous osez troubler son silence millénaire.",
+      "La frontière sacrée que vous franchissez n’appartient qu’au peuple elfique : expliquez sans détour ce qui vous pousse à défier nos coutumes et nos gardiens."
+    ]},
+    { "name": "🐉 Dragon", "lines": [
+      "Qui ose troubler mon sommeil millénaire ? Insignifiants mortels, justifiez votre audace, avant que mon souffle ardent ne consume vos os et vos rêves.",
+      "J’entends vos pas résonner dans ma caverne comme des battements de cœur apeurés : dites-moi, êtes-vous venus m’apporter un tribut digne de ma grandeur ou simplement offrir vos vies en sacrifice ?"
+    ]},
+	{ "name": "🦊 Esprit Renard",
+	  "lines": [
+		"Voyageur imprudent, chaque secret a un prix… que m’offrirez-vous en échange d’un simple mot de vérité ?",
+		"Pourquoi donc troubler mon repos sous la lune ? Êtes-vous venu chercher la chance, ou bien offrir votre âme en gage ?"
+	  ]}
+  ],
+  "answers": [
+    {
+	  "name": "💰 Marchand",
+	  "lines": [
+		"Je viens pour affaire, porteur de marchandises rares et d’accords honnêtes, nul besoin de craindre mes intentions.",
+		"Voici mes registres et sceaux de comptoir, dûment signés : je ne suis qu’un humble vendeur en quête de clients.",
+		"Je cherche à écouler mes denrées et à nourrir mes enfants : un commerce juste pourrait sauver plus d’un foyer.",
+		"Si les flammes ravagent vos terres, peut-être puis-je troquer mes réserves de grain contre un abri sûr pour ma famille.",
+		"J’apporte à la couronne des épices, des étoffes et l’or de mes coffres : tout roi aime un tribut qui enrichit son trésor.",
+		"Je viens humblement proposer des accords commerciaux, qui allégeront vos guerres sans peser sur vos impôts.",
+		"Pour vos champs malades, j’offre mes potions de guérison et mes remèdes de voyage, contre un prix équitable.",
+		"J’ai vu ces flammes de mes propres yeux, et je possède des outils et de l’huile qui pourraient aider à les contenir.",
+		"Je ne cherche pas à troubler vos coutumes, mais à échanger perles contre bois et soieries contre herbes rares.",
+		"Ô grand dragon, je n’ose rien exiger de vous : je viens avec des bijoux, des vins et des offrandes, espérant apaiser votre faim.",
+		"Je connais la valeur de chaque secret, renard malin : je t’offre une bourse d’or bien lourde contre ton mot de vérité.",
+		"Je ne vends pas mon âme, mais j’ai quelques contrats à céder… peut-être l’un d’eux t’intéresserait ?"
+	  ]
+	},
+	{
+	  "name": "🎻 Barde",
+	  "lines": [
+		"Je ne porte ni arme ni menace, seulement mon luth et mes histoires : laissez-moi chanter vos murailles plutôt que de les franchir de force.",
+		"Je n’ai point de papiers, mais j’ai des chansons pour distraire vos geôles et des contes pour alléger vos gardes.",
+		"Je n’ai rien à donner sinon ma musique : mais une mélodie pourrait nourrir l’âme de vos enfants mieux que du pain sec.",
+		"Si les flammes dévorent vos récoltes, prêtez-moi vos oreilles : je chanterai une complainte qui rappellera aux dieux leur devoir de compassion.",
+		"Je ne puis jurer que par mes notes : mais qu’est-ce qu’une couronne sans les ballades qui forgent sa mémoire ?",
+		"J’apporte la gloire et le rire, le réconfort et l’écho des victoires : ma présence est offrande aux cœurs fatigués.",
+		"Pour vos bêtes et vos champs, je puis composer un chant qui apaise la terre et fait danser la pluie.",
+		"J’élèverai une complainte contre l’ombre qui incendie vos nuits, et ma voix sera flèche contre vos malédictions.",
+		"Les bois me connaissent, car j’ai appris leurs refrains : je ne défie pas vos gardiens, je ne fais que chanter avec eux.",
+		"Ô dragon, je n’ai rien d’autre qu’une ode : laissez-moi vous offrir un hymne immortel, digne de votre grandeur et de votre colère.",
+		"Je ne possède que mes chansons : accepte une ballade à ta gloire en échange de ton secret.",
+		"Je cherche la chance, toujours la chance… mais si tu veux mon âme, tu devras d’abord l’entendre chanter."
+	  ]
+	},
+
+    {
+  "name": "⚔️ Guerrier",
+  "lines": [
+    "Je n’entre pas en traître : je viens l’épée au clair, prêt à défendre ma cause devant tout tribunal.",
+    "Voici mes cicatrices en guise de papiers : chaque marque est un serment d’avoir protégé les miens au péril de ma vie.",
+    "Si vos champs souffrent, mettez une arme dans ma main et montrez-moi l’ennemi : je saurai trancher la racine du mal.",
+    "Contre les flammes, j’ai mon bouclier et ma bravoure : laissez-moi me battre aux côtés de votre peuple.",
+    "Je jure sur mon honneur de protéger la couronne tant que mon bras pourra lever une lame.",
+    "Je n’apporte ni or ni tribut, mais la force de mon bras et le serment de ne jamais faillir sur le champ de bataille.",
+    "Pour vos bêtes et vos enfants, je combattrai la peste ou le voleur qui les affame.",
+    "Si des flammes surgissent la nuit, je veillerai armé, et je pourchasserai l’ombre qui les allume.",
+    "Je ne viens pas pour profaner vos frontières : je viens comme un frère d’armes, prêt à défendre vos terres.",
+    "Dragon, je n’apporte ni or ni bijoux : je vous offre mon courage, car aucun mortel n’a encore su l’éteindre.",
+	"Je n’offre ni or ni promesse : je peux seulement jurer mon épée et ma force, si ton secret sert une juste cause.",
+	"Je ne suis pas venu mendier la chance, mais gagner la victoire : mon âme restera mienne."
+  ]
+},
+{
+  "name": "🧙 Mage",
+  "lines": [
+    "Gardien, je ne suis pas un intrus mais un chercheur de savoir : mes pas me conduisent là où les secrets dorment.",
+    "Je n’ai point de sceau mais des grimoires scellés : laissez-moi entrer et je renforcerai vos murailles de mes enchantements.",
+    "Les champs meurent parce que des forces occultes s’y infiltrent : donnez-moi accès à vos terres et je déchiffrerai la malédiction.",
+    "Ces flammes sont le signe d’un rituel interdit : je puis l’interrompre si vous me permettez de travailler en paix.",
+    "Ô Roi, la couronne n’a pas seulement besoin de serments mais de clairvoyance : je vous offre mes visions et mes présages.",
+    "Je ne viens pas mendier mais offrir mes arcanes : un royaume guidé par la magie ne plie pas sous les complots.",
+    "Je connais des remèdes anciens qui peuvent sauver vos bêtes, si vous me laissez préparer mes potions.",
+    "Les flammes de vos nuits sont liées à un sceau brisé : je puis le refermer, mais cela exige de la confiance.",
+    "Les arbres chuchotent en langue ancienne : je ne viens pas défier vos coutumes, mais dialoguer avec vos esprits.",
+    "Dragon, j’apporte des paroles plus anciennes que vos songes : laissez-moi parler et je vous révélerai un secret oublié.",
+	"Un secret pour un secret : je t’offrirai un fragment de savoir interdit en échange de ta vérité.",
+	"Je ne cherche pas la chance mais la connaissance, et je suis prêt à payer le prix… sauf celui de mon âme."
+  ]
+},
+{
+  "name": "🩸 Vampire",
+  "lines": [
+    "Gardien, je ne viens pas en ennemi… mais l’air de votre cité m’attire comme le parfum d’un banquet interdit.",
+    "Des papiers ? Ha ! Voici la seule preuve de mon passage : le souvenir que je laisserai dans vos veines si vous insistez.",
+    "Des champs qui se dessèchent ? Quoi de plus naturel… tout finit par se flétrir. Mais je pourrais vous offrir une nuit d’abondance… au prix de votre sang.",
+    "Ces flammes qui consument vos récoltes, je les connais : elles ressemblent à la faim qui me ronge chaque soir.",
+    "Ô Roi, votre trône s’élève sur des siècles de serments brisés… je peux vous jurer fidélité, mais n’oubliez pas : mes serments durent éternellement.",
+    "Je n’apporte ni or ni fer, mais l’immortalité de mon regard et la force des ténèbres qui m’accompagnent.",
+    "Vos bêtes tombent malades ? Je puis les soulager… ou en faire mes serviteurs dociles, à votre convenance.",
+    "Les flammes nocturnes… peut-être sont-elles les ombres de mes frères. Je puis les détourner, si vous m’invitez à votre table.",
+    "Forêt elfique, je n’ai que faire de vos frontières : je les traverse comme la brume, sans y laisser de trace.",
+    "Dragon, je n’offre ni or ni vin : seulement le goût amer de l’éternité, que je partage avec ceux qui osent me défier.",
+	"Que m’offrirais-tu, esprit ? Mon sang est précieux, mais le tien… il pétille déjà de malice.",
+	"Je n’ai nul besoin de chance, car l’éternité me sourit : quant à mon âme, elle est hors de ta portée depuis bien longtemps."
+  ]
+},
+{
+  "name": "🐺 Loup-Garou",
+  "lines": [
+    "Halte ? Tes murs ne m’arrêtent pas, garde. Je suis le vent qui court et la griffe qui déchire : je viens réclamer passage.",
+    "Tes papiers ? Mon sang est ma preuve, mes crocs mon serment. Si tu veux un sceau, grave-le dans ma chair.",
+    "Tes champs meurent parce que tu as oublié la terre sauvage : laisse-moi labourer de mes griffes, et elle te nourrira encore.",
+    "Tes flammes nocturnes, je les ai flairées : elles puent la peur et la vengeance. Je peux les traquer jusqu’à leur source.",
+    "Ô Roi, je ne plie pas le genou devant ta couronne, mais je peux être ton bouclier si tu respectes ma meute.",
+    "Je n’apporte ni or ni tribut, seulement la loyauté féroce d’un loup qui ne trahit jamais sa meute.",
+    "Tes bêtes sont faibles parce qu’elles vivent en cage : rends-les à la forêt et elles guériront d’elles-mêmes.",
+    "Les flammes qui t’assaillent, je les éteindrai en arrachant la gorge de celui qui les a allumées.",
+    "Elfe, je ne viens pas défier tes arbres, mais chasser dans leurs ombres. La forêt et moi partageons le même sang.",
+    "Dragon, je n’apporte ni offrande ni servitude : je viens hurler devant ton antre, pour que tu saches qu’un loup n’a pas peur du feu.",
+	"Je ne connais qu’un prix : la chasse. Si tu veux un secret, viens courir à mes côtés, renard rusé.",
+	"Je n’ai pas besoin de chance, et mon âme n’est pas à vendre : elle appartient à ma meute et à la lune."
+  ]
+}
+
+  ]
+}
