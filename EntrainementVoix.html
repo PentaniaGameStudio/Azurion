@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🎭 Entraînement Vocal JDR — Cartes</title>
 
-  <!-- Préchargement des audios -->
-  <link rel="preload" as="audio" href="voice/Punch.mp3">
-  <link rel="preload" as="audio" href="voice/Touché.mp3">
-  <link rel="preload" as="audio" href="voice/Tranchante.mp3">
-  <link rel="preload" as="audio" href="voice/Vacillante.mp3">
-  <link rel="preload" as="audio" href="voice/Pressante.mp3">
-  <link rel="preload" as="audio" href="voice/Glissante.mp3">
-  <link rel="preload" as="audio" href="voice/Tordue.mp3">
-  <link rel="preload" as="audio" href="voice/Flottant.mp3">
 
   <style>
     :root{
@@ -55,6 +46,23 @@
       grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
     }
 
+
+	.mini-btn{
+	  border:none;
+	  border-radius:8px;
+	  padding:4px 10px;
+	  font-size:12px;
+	  font-weight:700;
+	  cursor:pointer;
+	  background:var(--accent);
+	  color:#1e1e2f;
+	  transition:.2s;
+	}
+	.mini-btn:hover{
+	  background:var(--accent-2);
+	  transform:translateY(-1px);
+	}
+	
     /* Carte */
     .card{
       background:var(--panel); border:2px solid var(--accent); border-radius:14px; padding:16px 16px 10px;
@@ -129,7 +137,10 @@
 
     <!-- RÉPONSE -->
     <section class="card" id="cardA" aria-live="polite">
-      <div class="header"><span class="type">Réponse</span></div>
+      <div class="header">
+		  <span class="type">Réponse</span>
+		  <button class="mini-btn" id="rerollAnswer">Relancer</button>
+		</div>
       <div class="name" id="whoA">—</div>
       <div class="dialog"><div class="bubble" id="lineA">Clique « Tirer une scène »</div></div>
       <div class="footer">
@@ -141,9 +152,9 @@
         <button class="play" id="playA" title="Lire l’échantillon du timbre de voix">▶</button>
       </div>
     </section>
-  </div>
+</div>
 
-  <audio id="audio" preload="auto"></audio>
+  </div>
 
   <script>
     // --- Timbres (nom + traits + fichier audio) ---
@@ -241,20 +252,29 @@
     }
 
     // Tirage principal
-    function drawScene(){
-      const qPick = pickQuestionPersonAndLine();
-      const [t1,t2] = twoDistinct(TIMBRES);
-      const [d1,d2] = twoDistinct(DIFFICULTES);
+	function drawScene(){
+	  const qPick = pickQuestionPersonAndLine();
+	  const [t1,t2] = twoDistinct(TIMBRES);
+	  const [d1,d2] = twoDistinct(DIFFICULTES);
 
-      // Choix du personnage Réponse
-      const aPersona = rand(DATA.answers);
-      const aLine = computeAnswerLine(aPersona, qPick.qIdx, qPick.qLineIdx);
+	  // Choix du personnage Réponse
+	  const aPersona = rand(DATA.answers);
+	  const aLine = computeAnswerLine(aPersona, qPick.qIdx, qPick.qLineIdx);
 
-      current.Q = { who:qPick.who, line:qPick.line, timbre:t1, diff:d1, qIdx:qPick.qIdx, qLineIdx:qPick.qLineIdx };
-      current.A = { who:aPersona.name ?? "Inconnu", line:aLine, timbre:t2, diff:d2 };
+	  current.Q = { who:qPick.who, line:qPick.line, timbre:t1, diff:d1, qIdx:qPick.qIdx, qLineIdx:qPick.qLineIdx };
+	  current.A = { who:aPersona.name ?? "Inconnu", line:aLine, timbre:t2, diff:d2 };
 
-      render();
-    }
+	  render();
+	}
+
+	function rerollAnswer(){
+	  const aPersona = rand(DATA.answers);
+	  const aLine = computeAnswerLine(aPersona, current.Q.qIdx, current.Q.qLineIdx);
+	  current.A.who = aPersona.name ?? "Inconnu";
+	  current.A.line = aLine;
+	  render();
+	}
+	document.getElementById('rerollAnswer').addEventListener('click', rerollAnswer);
 
     // Re-roll Timbres (deux côtés)
     function rerollTimbre(){
@@ -294,27 +314,13 @@
       return [a,b];
     }
 
-    // Audio: précharge et joue depuis le cache
-    function preloadAudios(){
-      TIMBRES.forEach(t=>{
-        const src = `voice/${t.file}`;
-        const a = new Audio();
-        a.preload = 'auto';
-        a.src = src;
-        a.load();
-        audioCache.set(t.name, a);
-      });
-    }
     function play(side){
-      const t = side==='Q' ? current.Q.timbre : current.A.timbre;
-      const cached = audioCache.get(t.name);
-      if(cached){
-        try{ cached.currentTime = 0; cached.play(); }catch(e){}
-      }else{
-        sharedAudio.src = `voice/${t.file}`;
-        sharedAudio.play().catch(()=>{});
-      }
-    }
+	  const t = side==='Q' ? current.Q.timbre : current.A.timbre;
+	  sharedAudio.pause();             // stoppe tout audio en cours
+	  sharedAudio.currentTime = 0;     // revient au début
+	  sharedAudio.src = `voice/${t.file}`;
+	  sharedAudio.play().catch(()=>{});
+	}
 
     // Events
     $('#draw').addEventListener('click', drawScene);
