@@ -215,23 +215,18 @@
     const $ = (sel)=>document.querySelector(sel);
     const rand = (arr)=>arr[Math.floor(Math.random()*arr.length)];
 
-    // Tire une PERSONNE question (index + 2 lignes), et renvoie {qIdx, who, line, qLineIdx}
-    function pickQuestionPersonAndLine(){
-      const P = DATA.questions.length;
-      const qIdx = Math.floor(Math.random()*P); // index du personnage Question
-      const persona = DATA.questions[qIdx];
-      // Sélectionne 0 ou 1 (2 répliques)
-      const qLineIdx = Math.random() < 0.5 ? 0 : 1;
-      const line = Array.isArray(persona.lines) ? (persona.lines[qLineIdx] ?? persona.lines[0] ?? "…") : "…";
-      return { qIdx, who: persona.name ?? "Inconnu", line, qLineIdx };
-    }
+    // Tire une PERSONNE question (index), et renvoie {qIdx, who, line, qLineIdx}
+	function pickQuestionPersonAndLine(){
+	  const P = DATA.questions.length;
+	  const qIdx = Math.floor(Math.random()*P);
+	  const persona = DATA.questions[qIdx];
+	  const line = persona.line ?? "…";
+	  return { qIdx, who: persona.name ?? "Inconnu", line };
+	}
 
-    // À partir de (qIdx, qLineIdx) + un personnage Answer choisi, calcule la bonne ligne
-	// Chaque personnage Question a 2 répliques -> index réponse = (qIdx * 2) + qLineIdx
-	function computeAnswerLine(answerPersona, qIdx, qLineIdx){
-	  const idx = (qIdx * 2) + qLineIdx; // 0-based : qLineIdx = 0 (1ère) ou 1 (2ème)
+	function computeAnswerLine(answerPersona, qIdx){
 	  const line = Array.isArray(answerPersona.lines)
-		? (answerPersona.lines[idx] ?? answerPersona.lines[0] ?? "…")
+		? (answerPersona.lines[qIdx] ?? answerPersona.lines[0] ?? "…")
 		: "…";
 	  return line;
 	}
@@ -260,11 +255,10 @@
 	  const [t1,t2] = twoDistinct(TIMBRES);
 	  const [d1,d2] = twoDistinct(DIFFICULTES);
 
-	  // Choix du personnage Réponse
 	  const aPersona = rand(DATA.answers);
-	  const aLine = computeAnswerLine(aPersona, qPick.qIdx, qPick.qLineIdx);
+	  const aLine = computeAnswerLine(aPersona, qPick.qIdx);
 
-	  current.Q = { who:qPick.who, line:qPick.line, timbre:t1, diff:d1, qIdx:qPick.qIdx, qLineIdx:qPick.qLineIdx };
+	  current.Q = { who:qPick.who, line:qPick.line, timbre:t1, diff:d1, qIdx:qPick.qIdx };
 	  current.A = { who:aPersona.name ?? "Inconnu", line:aLine, timbre:t2, diff:d2 };
 
 	  render();
