@@ -108,6 +108,8 @@
     @media (max-width:420px){ .bubble{ font-size:16px; padding:16px; } }
   </style>
 </head>
+<audio id="audio"></audio>
+
 <body>
   <h1>🎭 Entraînement Vocal JDR</h1>
   <p class="lead">Tirer une scène aléatoire pour vous entrainer a faire des voix!</p>
@@ -207,8 +209,6 @@
       A: { who:"—", line:"—", timbre:TIMBRES[1], diff:DIFFICULTES[1] }
     };
 
-    // Cache audio
-    const audioCache = new Map();
     const sharedAudio = document.getElementById('audio');
 
     // Helpers
@@ -227,12 +227,15 @@
     }
 
     // À partir de (qIdx, qLineIdx) + un personnage Answer choisi, calcule la bonne ligne
-    function computeAnswerLine(answerPersona, qIdx, qLineIdx){
-      const P = DATA.questions.length;
-      const idx = (qIdx + qLineIdx) % P; // mapping logique demandé
-      const line = Array.isArray(answerPersona.lines) ? (answerPersona.lines[idx] ?? answerPersona.lines[0] ?? "…") : "…";
-      return line;
-    }
+	// Chaque personnage Question a 2 répliques -> index réponse = (qIdx * 2) + qLineIdx
+	function computeAnswerLine(answerPersona, qIdx, qLineIdx){
+	  const idx = (qIdx * 2) + qLineIdx; // 0-based : qLineIdx = 0 (1ère) ou 1 (2ème)
+	  const line = Array.isArray(answerPersona.lines)
+		? (answerPersona.lines[idx] ?? answerPersona.lines[0] ?? "…")
+		: "…";
+	  return line;
+	}
+
 
     // Rendu
     function render(){
@@ -364,8 +367,6 @@
       }
     }
 
-    // Démarrage
-    preloadAudios();
     loadData();
   </script>
 </body>
