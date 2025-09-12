@@ -381,6 +381,11 @@
       "description": ""
     },
     {
+      "emojis": "🛠⚗️",
+      "name": "Inscrustation Alchimique",
+      "description": ""
+    },
+    {
       "emojis": "📜⏳",
       "name": "Savoirs Antique",
       "description": ""
@@ -5179,10 +5184,10 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Éléments (❄️ Glace, ⚡ Foudre)",
-		"- Action (🛡 Défensif, ⚔️ Offensif, 🪬 Marquage)",
-		"- États (💀 Affaiblissement, 💫 Étourdissement)",
-		"- Action (🕧 Retardement)"
+        "- Éléments (❄️ Glace, ⚡ Foudre)",
+        "- Action (🛡 Défensif, ⚔️ Offensif, 🪬 Marquage)",
+        "- États (💀 Affaiblissement, 💫 Étourdissement)",
+        "- Action (🕧 Retardement)"
       ],
       "conditions": [],
       "limits": []
@@ -5200,9 +5205,9 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Éléments (🟣 Ombre, ☀️ Lumière)",
-		"- Ciblage (🛜 Conîque, ↕️ Ligne (4m), 🔢 Multi-Cible (jusqu'à 4))",
-		"- États (🧊 Gel, 🔥 Brûlure, 💤 Sommeil)"
+        "- Éléments (🟣 Ombre, ☀️ Lumière)",
+        "- Ciblage (🛜 Conîque, ↕️ Ligne (4m), 🔢 Multi-Cible (jusqu'à 4))",
+        "- États (🧊 Gel, 🔥 Brûlure, 💤 Sommeil)"
       ],
       "conditions": [],
       "limits": []
@@ -5220,9 +5225,9 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Statistique (💪 Physique, 💬 Social, 🧠 Mental)",
-		"- Altération (🔼 Power-Up, 🔽 Power-Down)",
-		"- États (🌀 Confusion, 🫧 Poison, ❤️ Charme, ❤️‍🔥 Berserk)"
+        "- Statistique (💪 Physique, 💬 Social, 🧠 Mental)",
+        "- Altération (🔼 Power-Up, 🔽 Power-Down)",
+        "- États (🌀 Confusion, 🫧 Poison, ❤️ Charme, ❤️‍🔥 Berserk)"
       ],
       "conditions": [],
       "limits": []
@@ -5240,8 +5245,8 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Éléments (🌱 Nature, 💙 Bénédiction, 🩸 Sang)",
-		"- Ciblage (🌐 Toute entitée, 👍 Allié, 👎 Ennemi)"
+        "- Éléments (🌱 Nature, 💙 Bénédiction, 🩸 Sang)",
+        "- Ciblage (🌐 Toute entitée, 👍 Allié, 👎 Ennemi)"
       ],
       "conditions": [],
       "limits": []
@@ -5259,9 +5264,9 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Éléments (🪞 Illusion, 💀 Nécromantie, 🎶 Sons)",
-		"- Action (💣 Explosion, ⏳ Durée)",
-		"- Amplification (➕ Puissance, 📏 Portée)"
+        "- Éléments (🪞 Illusion, 💀 Nécromantie, 🎶 Sons)",
+        "- Action (💣 Explosion, ⏳ Durée)",
+        "- Amplification (➕ Puissance, 📏 Portée)"
       ],
       "conditions": [],
       "limits": []
@@ -5279,11 +5284,13 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Cible (🔄 Aléatoire, ↩️ Utilisateur, 👥 Chaîne (5 max))",
-		"- Cible (🧭 Directionnel, 📍 Persistante (zone)",
-		"- États (🤐 Silence, 👁‍🗨 Cécité)"
+        "- Cible (🔄 Aléatoire, ↩️ Utilisateur, 👥 Chaîne (5 max))",
+        "- Cible (🧭 Directionnel, 📍 Persistante (zone)",
+        "- États (🤐 Silence, 👁‍🗨 Cécité)"
       ],
-      "conditions": ["Gravité = Attraction, Répulsion, Écrasement"],
+      "conditions": [
+        "Gravité = Attraction, Répulsion, Écrasement"
+      ],
       "limits": []
     },
     {
@@ -5299,8 +5306,8 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Éléments (🕚 Temporel, 🌌 Cosmique)",
-		"- Amplification (📊 Répétition, ✴️ Création)"
+        "- Éléments (🕚 Temporel, 🌌 Cosmique)",
+        "- Amplification (📊 Répétition, ✴️ Création)"
       ],
       "conditions": [],
       "limits": []
@@ -5318,8 +5325,8 @@
       "damage": "",
       "effects": [
         "Connaissance étandue des Glyphes :",
-		"- Éléments (🪦 Mort, 🐦‍🔥 Résurection)",
-		"- Contrôle (💯 Critique, 🎲 Variance)"
+        "- Éléments (🪦 Mort, 🐦‍🔥 Résurection)",
+        "- Contrôle (💯 Critique, 🎲 Variance)"
       ],
       "conditions": [],
       "limits": []
@@ -5336,11 +5343,631 @@
       "duration": "",
       "damage": "",
       "effects": [
-		"♾️ Glyphe d’Infinité",
-		"La durée de la glyphe est infinie jusqu'à ce que le support soit détruit.",
-		"",
-		"🌒 Éclipse",
-		"Empêche totalement l'utilisation de magie"
+        "♾️ Glyphe d’Infinité",
+        "La durée de la glyphe est infinie jusqu'à ce que le support soit détruit.",
+        "",
+        "🌒 Éclipse",
+        "Empêche totalement l'utilisation de magie"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Alchimiste",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Études Arcanologique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduit de 1 le coût en mana des sorts (minimum 1)."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Études Arconologique Avancée",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduit de 1 le coût en mana des sorts (minimum 1)."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Études Arcanologique Experte",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduit de 1 le coût en mana des sorts (minimum 1)."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Savoir Éthérique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Difficulté : 40",
+      "target": "Flux Éthérique",
+      "range_": "50m",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet de ressentir les flux magiques dans un rayon de 50m.",
+        "(Radar magique)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Initiation aux Cercles",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'utilisation de cercle magique, qui double la puissance d'un sort.",
+        "Un cercle magique nécéssite d'être posé (1 tour supplémentaire)"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Connaissance Magique",
+      "level": "NivX",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de X% la réussite des sorts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Études Magique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de 5% la réussite des sorts"
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Études Magique Avancée",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de 10% la réussite des sorts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Études Magique Experte",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Augmente de 20% la réussite des sorts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Analyse Magique",
+      "level": "Niv2",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'analyser un sort."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Résistance Magique",
+      "level": "Niv1",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduits de 1 les dégâts magiques reçus."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Résistance Magique",
+      "level": "Niv2",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduits de 3 les dégâts magiques reçus."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Résistance Magique Experte",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduits de 6 les dégâts magiques reçus."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜✨",
+      "name": "Maîtrise des Flux Magiques",
+      "level": "Niv3",
+      "cost": "",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Réduits de 2 les dégâts magiques reçus.",
+        "Augmente de 2 les dégâts magiques infligés.",
+        "Réduit de 1 le coût en mana des sorts."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Interruption Magique",
+      "level": "Niv1",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'interrompre un sort magique de niv 1. (avant lancement)"
+      ],
+      "conditions": [
+        "L'interruption a lieu en réaction, hors de son tour mais vous ne pourrez plus agir pendant votre tour."
+      ],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Interruption Magique",
+      "level": "Niv2",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 80",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'interrompre un sort magique de niv 2. (avant lancement)"
+      ],
+      "conditions": [
+        "L'interruption a lieu en réaction, hors de son tour mais vous ne pourrez plus agir pendant votre tour."
+      ],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚛️",
+      "name": "Interruption Magique",
+      "level": "Niv3",
+      "cost": "1 mana",
+      "difficulty": "Difficulté : 120",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'interrompre un sort magique de niv 3. (avant lancement)"
+      ],
+      "conditions": [
+        "L'interruption a lieu en réaction, hors de son tour mais vous ne pourrez plus agir pendant votre tour."
+      ],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Création de Potion",
+      "level": "Niv1",
+      "cost": "Fioles + Ingrédients",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet la création de Potion de rang 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Création de Potion",
+      "level": "Niv2",
+      "cost": "Fioles + Ingrédients",
+      "difficulty": "Difficulté : 80",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet la création de Potion de rang 2."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Création de Potion",
+      "level": "Niv3",
+      "cost": "Fioles + Ingrédients",
+      "difficulty": "Difficulté : 120",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet la création de Potion de rang 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Transmutation",
+      "level": "Niv1",
+      "cost": "Matière à transformer",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'inscription de cercles alchimiques de rang 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Transmutation",
+      "level": "Niv2",
+      "cost": "Matière à transformer",
+      "difficulty": "Difficulté : 80",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'inscription de cercles alchimiques de rang 2."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Transmutation",
+      "level": "Niv3",
+      "cost": "Matière à transformer",
+      "difficulty": "Difficulté : 120",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'inscription de cercles alchimiques de rang 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Cristallomancie",
+      "level": "Niv1",
+      "cost": "Matière à transformer",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet la création de cristal magique de rang 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Cristallomancie",
+      "level": "Niv2",
+      "cost": "Matière à transformer",
+      "difficulty": "Difficulté : 80",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet la création de cristal magique de rang 2."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Cristallomancie",
+      "level": "Niv3",
+      "cost": "Matière à transformer",
+      "difficulty": "Difficulté : 120",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet la création de cristal magique de rang 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Allomancie",
+      "level": "Niv1",
+      "cost": "Matière à transformer",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'utilisation de cristal Allomantique de rang 1."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Allomancie",
+      "level": "Niv2",
+      "cost": "Matière à transformer",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'utilisation de cristal Allomantique de rang 2."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Allomancie",
+      "level": "Niv3",
+      "cost": "Matière à transformer",
+      "difficulty": "Passif",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet l'utilisation de cristal Allomantique de rang 3."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🛠⚗️",
+      "name": "Incrustation",
+      "level": "Niv1",
+      "cost": "Équipement + Pierre Allomantique",
+      "difficulty": "Difficulté : 40",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'incruster des pierres allomantique de rang 1 dans un équipement pour en améliorer les caractéristiques."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🛠⚗️",
+      "name": "Incrustation",
+      "level": "Niv2",
+      "cost": "Équipement + Pierre Allomantique",
+      "difficulty": "Difficulté : 80",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'incruster des pierres allomantique de rang 2 dans un équipement pour en améliorer les caractéristiques."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "🛠⚗️",
+      "name": "Incrustation",
+      "level": "Niv3",
+      "cost": "Équipement + Pierre Allomantique",
+      "difficulty": "Difficulté : 120",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet d'incruster des pierres allomantique de rang 3 dans un équipement pour en améliorer les caractéristiques."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Bio-alchimie",
+      "level": "Niv1",
+      "cost": "Cobaye",
+      "difficulty": "Difficulté : 60",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet des transmutations de rang 1 sur un cobaye."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Bio-alchimie",
+      "level": "Niv2",
+      "cost": "Cobaye",
+      "difficulty": "Difficulté : 100",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet des transmutations de rang 2 sur un cobaye."
+      ],
+      "conditions": [],
+      "limits": []
+    },
+    {
+      "hided": false,
+      "family": "📜⚗️",
+      "name": "Bio-alchimie",
+      "level": "Niv3",
+      "cost": "Cobaye",
+      "difficulty": "Difficulté : 180",
+      "target": "",
+      "range_": "",
+      "duration": "",
+      "damage": "",
+      "effects": [
+        "Permet des transmutations de rang 3 sur un cobaye."
       ],
       "conditions": [],
       "limits": []
