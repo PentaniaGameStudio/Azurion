@@ -1,4 +1,4 @@
-// /PotionBuilder/js/core/events.js
+// PotionBuilder/js/core/events.js
 const topics = new Map(); // topic -> Set<handler>
 
 /** @param {string} topic @param {(data:any)=>void} handler */

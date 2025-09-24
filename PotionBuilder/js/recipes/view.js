@@ -1,8 +1,8 @@
 // /PotionBuilder/js/recipes/view.js
-import { qs, el, clear } from "/PotionBuilder/js/core/dom.js";
-import { sub } from "/PotionBuilder/js/core/events.js";
-import { getRecipes, findIngredientByName } from "/PotionBuilder/js/shared/data.js";
-import { resetSelection, silent_setBinder, silent_setCatalyst, silent_toggleReactant, refresh } from "/PotionBuilder/js/core/store.js";
+import { qs, el, clear } from "PotionBuilder/js/core/dom.js";
+import { sub } from "PotionBuilder/js/core/events.js";
+import { getRecipes, findIngredientByName } from "PotionBuilder/js/shared/data.js";
+import { resetSelection, silent_setBinder, silent_setCatalyst, silent_toggleReactant, refresh } from "PotionBuilder/js/core/store.js";
 
 const list = qs("#recipesList");
 let builtOnce = false;

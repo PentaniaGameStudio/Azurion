@@ -1,9 +1,9 @@
 // /PotionBuilder/js/creator/ingredients-panel.js
-import { qs, qsa, clear } from "/PotionBuilder/js/core/dom.js";
-import { sub } from "/PotionBuilder/js/core/events.js";
-import { getState, setCategory, setBinder, setCatalyst, toggleReactant } from "/PotionBuilder/js/core/store.js";
-import { getIngredients } from "/PotionBuilder/js/shared/data.js";
-import { ingredientCard } from "/PotionBuilder/js/shared/ui-kit.js";
+import { qs, qsa, clear } from "PotionBuilder/js/core/dom.js";
+import { sub } from "PotionBuilder/js/core/events.js";
+import { getState, setCategory, setBinder, setCatalyst, toggleReactant } from "PotionBuilder/js/core/store.js";
+import { getIngredients } from "PotionBuilder/js/shared/data.js";
+import { ingredientCard } from "PotionBuilder/js/shared/ui-kit.js";
 
 const elTabs = qs("#ingCatTabs");
 const elGrid = qs("#ingredientsGrid");

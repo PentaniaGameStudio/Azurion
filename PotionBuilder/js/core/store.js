@@ -1,5 +1,5 @@
 // /PotionBuilder/js/core/store.js
-import { pub } from "/PotionBuilder/js/core/events.js";
+import { pub } from "PotionBuilder/js/core/events.js";
 
 const LS_KEY = "PotionBuilder:v1";
 const DEFAULT = {

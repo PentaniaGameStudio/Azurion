@@ -12,9 +12,9 @@ let _recipes = null;
 let _recipesCache = null;
 let _ingredientsCache = null;
 const PATHS = {
-  tree: "/PotionBuilder/assets/data.js",
-  ingredients: "/PotionBuilder/assets/ingredients.json",
-  recipes: "/PotionBuilder/assets/recipes.json"
+  tree: "PotionBuilder/assets/data.js",
+  ingredients: "PotionBuilder/assets/ingredients.json",
+  recipes: "PotionBuilder/assets/recipes.json"
 };
 
 // --- Chargement ORIGIN_TREE ---

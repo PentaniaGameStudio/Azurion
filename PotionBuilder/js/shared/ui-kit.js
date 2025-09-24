@@ -1,5 +1,5 @@
-import { el } from "/PotionBuilder/js/core/dom.js";
-import { getState, setOrigins } from "/PotionBuilder/js/core/store.js";
+import { el } from "PotionBuilder/js/core/dom.js";
+import { getState, setOrigins } from "PotionBuilder/js/core/store.js";
 
 // --- Chips / Pills ---
 export function chip(text) {

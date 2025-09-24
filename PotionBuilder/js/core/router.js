@@ -1,6 +1,6 @@
 // /PotionBuilder/js/core/router.js
-import { qs, addClass, removeClass } from "/PotionBuilder/js/core/dom.js";
-import { sub, pub } from "/PotionBuilder/js/core/events.js";
+import { qs, addClass, removeClass } from "PotionBuilder/js/core/dom.js";
+import { sub, pub } from "PotionBuilder/js/core/events.js";
 
 const BTN_CRE = qs("#btnCreator");
 const BTN_REC = qs("#btnRecipe");

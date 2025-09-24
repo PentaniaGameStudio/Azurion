@@ -1,5 +1,5 @@
 // /PotionBuilder/js/creator/compute.js
-import { findIngredientByName, getRecipes } from "/PotionBuilder/js/shared/data.js";
+import { findIngredientByName, getRecipes } from "PotionBuilder/js/shared/data.js";
 
 /**
  * @param {{binder:string|null,catalyst:string|null,reactants:string[]}} sel

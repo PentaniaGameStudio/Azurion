@@ -1,9 +1,9 @@
 // /PotionBuilder/js/creator/view.js
-import { qs, clear } from "/PotionBuilder/js/core/dom.js";
-import { sub } from "/PotionBuilder/js/core/events.js";
-import { getState, setOrigins } from "/PotionBuilder/js/core/store.js";
-import { getOriginTree, getIngredients } from "/PotionBuilder/js/shared/data.js";
-import { renderOriginTree } from "/PotionBuilder/js/shared/ui-kit.js";
+import { qs, clear } from "PotionBuilder/js/core/dom.js";
+import { sub } from "PotionBuilder/js/core/events.js";
+import { getState, setOrigins } from "PotionBuilder/js/core/store.js";
+import { getOriginTree, getIngredients } from "PotionBuilder/js/shared/data.js";
+import { renderOriginTree } from "PotionBuilder/js/shared/ui-kit.js";
 
 const btnOpen  = qs("#btnOriginDropdown");
 const dd       = qs("#originDropdown");

@@ -1,8 +1,8 @@
 // /PotionBuilder/js/creator/books-panel.js
-import { qs, clear } from "/PotionBuilder/js/core/dom.js";
-import { sub } from "/PotionBuilder/js/core/events.js";
-import { getState, addBook, removeBook, clearBooks } from "/PotionBuilder/js/core/store.js";
-import { pill } from "/PotionBuilder/js/shared/ui-kit.js";
+import { qs, clear } from "PotionBuilder/js/core/dom.js";
+import { sub } from "PotionBuilder/js/core/events.js";
+import { getState, addBook, removeBook, clearBooks } from "PotionBuilder/js/core/store.js";
+import { pill } from "PotionBuilder/js/shared/ui-kit.js";
 
 const elTabs = qs("#booksTabs");
 const elOwned = qs("#booksOwned");

@@ -1,9 +1,9 @@
 // /PotionBuilder/js/shared/current-potion.js
-import { sub } from "/PotionBuilder/js/core/events.js";
-import { getState, getCurrentPotion, resetSelection } from "/PotionBuilder/js/core/store.js";
+import { sub } from "PotionBuilder/js/core/events.js";
+import { getState, getCurrentPotion, resetSelection } from "PotionBuilder/js/core/store.js";
 
-import { qs, clear } from "/PotionBuilder/js/core/dom.js";
-import { findIngredientByName } from "/PotionBuilder/js/shared/data.js";
+import { qs, clear } from "PotionBuilder/js/core/dom.js";
+import { findIngredientByName } from "PotionBuilder/js/shared/data.js";
 
 const elEmojis = qs("#cpEmojis");
 const elTotals = qs("#cpTotals");
@@ -15,7 +15,7 @@ let computePotion = null; // injecté dynamiquement si le module existe
 
 (async function lazyLoadCompute(){
   try {
-    const mod = await import("/PotionBuilder/js/creator/compute.js");
+    const mod = await import("PotionBuilder/js/creator/compute.js");
     if (mod && typeof mod.computePotion === "function") computePotion = mod.computePotion;
   } catch {
     // pas grave : fallback
