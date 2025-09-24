@@ -1,4 +1,4 @@
-// /PotionBuilder/js/shared/data.js
+// /../shared/data.js
 // Objectif : fournir ORIGIN_TREE, getIngredients(), getRecipes(), plus quelques helpers.
 // - Tente d'importer /assets/data.js comme module (export ORIGIN_TREE).
 // - Sinon, fallback : fetch du JS puis extraction du literal.
@@ -12,9 +12,9 @@ let _recipes = null;
 let _recipesCache = null;
 let _ingredientsCache = null;
 const PATHS = {
-  tree: "PotionBuilder/assets/data.js",
-  ingredients: "PotionBuilder/assets/ingredients.json",
-  recipes: "PotionBuilder/assets/recipes.json"
+  tree: ".../assets/data.js",
+  ingredients: ".../assets/ingredients.json",
+  recipes: ".../assets/recipes.json"
 };
 
 // --- Chargement ORIGIN_TREE ---

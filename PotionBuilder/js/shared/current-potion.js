@@ -1,5 +1,5 @@
 // /PotionBuilder/js/shared/current-potion.js
-import { sub } from "PotionBuilder/js/core/events.js";
+import { sub } from "../core/events.js";
 import { getState, getCurrentPotion, resetSelection } from "../core/store.js";
 
 import { qs, clear } from "../core/dom.js";
