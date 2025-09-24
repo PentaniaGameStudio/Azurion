@@ -12,9 +12,9 @@ let _recipes = null;
 let _recipesCache = null;
 let _ingredientsCache = null;
 const PATHS = {
-  tree: ".../assets/data.js",
-  ingredients: ".../assets/ingredients.json",
-  recipes: ".../assets/recipes.json"
+  tree:        new URL("../../assets/data.js", import.meta.url),
+  ingredients: new URL("../../assets/ingredients.json", import.meta.url),
+  recipes:     new URL("../../assets/recipes.json", import.meta.url)
 };
 
 // --- Chargement ORIGIN_TREE ---
@@ -117,3 +117,4 @@ export async function findIngredientByName(name) {
   const list = await getIngredients();
   return list.find(i => i?.name === name) || null;
 }
+
