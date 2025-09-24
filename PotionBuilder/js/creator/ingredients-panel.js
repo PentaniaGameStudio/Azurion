@@ -3,7 +3,7 @@ import { qs, qsa, clear } from "../core/dom.js";
 import { sub } from "../core/events.js";
 import { getState, setCategory, setBinder, setCatalyst, toggleReactant } from "../core/store.js";
 import { getIngredients } from "../shared/data.js";
-import { ingredientCard } from "../shared/ui-kit.jsui-kit.js";
+import { ingredientCard } from "../shared/ui-kit.js";
 
 const elTabs = qs("#ingCatTabs");
 const elGrid = qs("#ingredientsGrid");
@@ -100,3 +100,4 @@ function initEvents(){
 // boot
 initEvents();
 render();
+
