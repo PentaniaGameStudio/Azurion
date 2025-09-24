@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glyph Builder • JDR</title>
+  <link rel="icon" type="image/x-icon" href="GlyphBuilder/asset/favicon.ico" />
+  <link rel="stylesheet" href="GlyphBuilder/asset/glyph.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>✨ Glyphe Builder</h1>
+      <small class="muted">Modes : Créateur • Analyseur — Mana arrondi à l’entier supérieur</small>
+    </div>
+    <div class="row">
+      <button data-route="builder" class="btn-tab on" id="btnBuilder">🎛️ Créateur de Glyphe</button>
+      <button data-route="analyzer" class="btn-tab" id="btnAnalyzer">🧪 Analyseur de Glyphe</button>
+    </div>
+  </header>
+
+  <!-- ===== VUE CRÉATEUR ===== -->
+  <section id="builderView" class="views">
+    <section class="active-bar">
+      <div class="center-window">
+        <div id="emojiBubble" class="emoji-bubble">(Aucune glyphe sélectionnée)</div>
+        <div id="centerTotals" class="totals"></div>
+        <div class="center-actions">
+          <button id="copyBtn" class="btn-accent">📋 Copier</button>
+          <button id="resetBtn" class="btn-danger">♻️ Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <main class="wrap">
+      <!-- Compétences -->
+      <section class="card" id="dbCard">
+        <h2>📚 Compétences possédées</h2>
+        <div class="content stack">
+          <div class="tiny muted">Ajoute exactement le nom des séries connues (ex: « Série Basique 1 »).</div>
+          <div class="row">
+            <input id="skillInput" type="text" placeholder="Nom de la compétence…" />
+            <button class="btn-accent" id="addSkill">+ Ajouter</button>
+            <button class="btn-ghost" id="clearSkills">Effacer tout</button>
+          </div>
+          <div id="skillList" class="row"></div>
+          <hr style="border-color:var(--border);opacity:.4">
+          <div class="tiny muted">Les séries connues débloquent dynamiquement les glyphes ci-contre.</div>
+        </div>
+      </section>
+
+      <!-- Sélecteur de glyphes -->
+      <section class="card">
+        <h2>🔤 Glyphes disponibles</h2>
+        <div class="content">
+          <div class="cats" id="catTabs"></div>
+          <div id="glyphGrid" class="grid"></div>
+        </div>
+        <div class="footer">
+          <div class="totals" id="totals"></div>
+          <div class="row">
+            <button id="copyBtn_old" class="btn-accent">📋 Copier</button>
+            <button id="resetBtn_old" class="btn-danger">♻️ Reset</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ===== VUE ANALYSEUR ===== -->
+  <section id="analyzerView" class="views hidden">
+    <section class="active-bar">
+      <div class="center-window" style="max-width:1000px">
+        <div class="row" style="width:100%">
+          <input id="anInput" type="text" placeholder="Colle tes glyphes (ex: 🔥 💧 🛜 ↕️, ou noms: Feu, Zone, Ligne 4m…)" />
+          <button id="anPaste" class="btn-ghost">📥 Coller</button>
+          <button id="anRun" class="btn-accent">🔎 Analyser</button>
+          <button id="anAddToSel" class="btn-ghost" disabled>➕ Ajouter à la sélection</button>
+        </div>
+        <div id="anBubble" class="emoji-bubble">(en attente d’analyse)</div>
+        <div id="anTotals" class="totals"></div>
+      </div>
+    </section>
+
+    <div class="wrap" style="grid-template-columns:1fr">
+      <section class="card">
+        <h2>📈 Résultats de l’analyse</h2>
+        <div class="content results">
+          <div id="anDetected" class="callout">
+            <div class="tiny muted">Glyphes détectées :</div>
+            <div id="anDetectedChips" class="chips"></div>
+          </div>
+          <div id="anUnknown" class="callout">
+            <div class="tiny muted">Fragments non reconnus :</div>
+            <div id="anUnknownChips" class="chips"></div>
+          </div>
+          <div class="callout">
+            <table class="table" id="anTable">
+              <thead>
+                <tr><th>Glyphe</th><th>Catégorie</th><th>Diff</th><th>Mana</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <script type="module" src="GlyphBuilder/js/main.js"></script>
+</body>
+</html>
