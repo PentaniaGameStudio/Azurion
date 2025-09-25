@@ -1,101 +1,390 @@
 [
   {
-    "name": "Eau pure",
-    "cat": "Liant",
-    "difficulty": 0,
-    "shortEffect": "Stabilitié",
-    "effect": "Potion stable",
-    "origins": ["Elenart"],
-    "books": ["Alchimiste Novice"]
-  },
-  {
     "name": "Miel",
     "cat": "Liant",
-    "difficulty": 1,
-    "shortEffect": "Onguent Long Durée",
-    "effect": "Onguent visqueux (application longue)",
-    "origins": ["Hearthlen"],
-    "books": ["Alchimiste Novice"]
+    "difficulty": -10,
+    "shortEffect": "Liant doux",
+    "effect": "Adoucit les mélanges, facilitant l’absorption des effets. Peut prolonger légèrement la durée d’action.",
+    "origins": [],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
-    "name": "Alcool",
+    "name": "Eau pure",
     "cat": "Liant",
-    "difficulty": 2,
-    "shortEffect": "Amplification",
-    "effect": "Amplifie les effets mais toxique en excès",
-    "origins": ["Frostgard"],
-    "books": ["Alchimiste Novice"]
+    "difficulty": 20,
+    "shortEffect": "Stabilisation",
+    "effect": "Stabilise la potion, réduisant la difficulté de préparation.",
+    "origins": [],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
-    "name": "Champignon luminescent",
-    "cat": "Catalyseur",
-    "difficulty": 1,
-    "shortEffect": "Déclenchement Immédiat",
-    "effect": "Déclenchement immédiat amélioré",
-    "origins": ["Balefort"],
-    "books": ["Bestiaire des Catalyseurs","Alchimiste Novice"]
+    "name": "Sel commun",
+    "cat": "Réactif",
+    "difficulty": 0,
+    "shortEffect": "Conservation",
+    "effect": "Fige et stabilise certains effets. Peut transformer une potion en poudre.",
+    "origins": [],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
     "name": "Racine de Scorliose",
-    "cat": "Catalyseur",
-    "difficulty": 2,
+    "cat": "Réactif",
+    "difficulty": 20,
     "shortEffect": "Prolongation",
-    "effect": "Prolonge la durée des effets",
-    "origins": ["Vertidas"],
-    "books": ["Herbier de base","Alchimiste Novice"]
+    "effect": "Rend les effets de la concoction plus longues, mais rend la concotion plus instable.",
+    "origins": [],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
-    "name": "Venin dilué",
+    "name": "Champignon mousseux",
+    "cat": "Réactif",
+    "difficulty": 10,
+    "shortEffect": "Antiseptique",
+    "effect": "Assèche et purifie les plaies. Peut transformer une potion liquide en pâteux ou en onguent.",
+    "origins": [],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
+  },
+  {
+    "name": "Écorce tendre",
     "cat": "Catalyseur",
-    "difficulty": 3,
-    "shortEffect": "Amplification",
-    "effect": "Amplifie fortement mais empoisonne si mal dosé",
-    "origins": ["Eolande","Vertidas"],
-    "books": ["Alchimiste Novice"]
+    "difficulty": 15,
+    "shortEffect": "Résine modératrice",
+    "effect": "Tempère les mélanges trop instables. Peut absorber une partie des effets négatifs.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant",
+      "Racines et Écorces de Silvanea"
+    ]
+  },
+  {
+    "name": "Charbon Végétal",
+    "cat": "Catalyseur",
+    "difficulty": 10,
+    "shortEffect": "Détoxifiant",
+    "effect": "Absorbe toxines et impurtés. Réduit les risques d'effets secondaires mais affaiblit parfois la puissance.",
+    "origins": [],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
+  },
+  {
+    "name": "Argile claire",
+    "cat": "Liant",
+    "difficulty": -5,
+    "shortEffect": "Épaississant",
+    "effect": "Donne une consistance plus ferme. Aide à transformer une potion en baume ou pâte malléable.",
+    "origins": [],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ]
+  },
+  {
+    "name": "Baie rougeâtre",
+    "cat": "Réactif",
+    "difficulty": 20,
+    "shortEffect": "Vigeur",
+    "effect": "Stimule le corps, rendant vigueur et chaleur.",
+    "origins": [
+      "Silvanea",
+      "Terragard"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
     "name": "Herbe de Lunessa",
     "cat": "Réactif",
-    "difficulty": 1,
-    "shortEffect": "Soin Progressif",
-    "effect": "Soin progressif",
-    "origins": ["Elenart","Forêt Céleste"],
-    "books": ["Herbier de base","Alchimiste Novice"]
+    "difficulty": 30,
+    "shortEffect": "Soin progressif",
+    "effect": "Déclenche un processus de guérison lent et constant. Apaise la douleur en quelques instants.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant",
+      "Racines et Écorces de Silvanea"
+    ]
   },
   {
     "name": "Fleur de Solméa",
     "cat": "Réactif",
-    "difficulty": 1,
+    "difficulty": 20,
     "shortEffect": "Énergie",
-    "effect": "Énergie immédiate (retire Fatigue)",
-    "origins": ["Icegard"],
-    "books": ["Herbier de base","Alchimiste Novice"]
+    "effect": "Apporte une vitalité soudaine, restaurant fatigue et vigueur.",
+    "origins": [
+      "Tothymia"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
-    "name": "Écaille de triton",
-    "cat": "Réactif",
-    "difficulty": 2,
-    "shortEffect": "Affinité aquatique",
-    "effect": "Affinité aquatique (nager plus vite, respiration sous l’eau)",
-    "origins": ["Seacrest","Arbre Monde"],
-    "books": ["Alchimiste Novice"]
+    "name": "Venin dilué",
+    "cat": "Catalyseur",
+    "difficulty": 25,
+    "shortEffect": "Amplification",
+    "effect": "Renforce les effets principaux d'une concoction, mais augmente aussi le risque d'effet indésirable.",
+    "origins": [],
+    "books": [
+      "Le Secrets des Catalyseurs : Tome 1",
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
-    "name": "Poudre de soufre",
+    "name": "Champignon de Nartha",
     "cat": "Réactif",
-    "difficulty": 2,
-    "shortEffect": "Instabilité Explosive",
-    "effect": "Instabilité explosive",
-    "origins": ["Forgepeak"],
-    "books": ["Alchimiste Novice"]
+    "difficulty": 20,
+    "shortEffect": "Stimulant",
+    "effect": "Provoque une accélération du rythme corporel, augmentant réflexes et vigilance. Fatigue mentalement au bout d'un moment.",
+    "origins": [
+      "Terragard",
+      "Durinhold"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
-    "name": "Huile de poisson",
+    "name": "Herbe de Sanford",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Détoxifiant",
+    "effect": "Absorbe certains poisons pour réduire les effets indésirables.",
+    "origins": [
+      "Silvanea",
+      "Terragard"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
+  },
+  {
+    "name": "Baie de Lunor",
     "cat": "Réactif",
-    "difficulty": 1,
-    "shortEffect": "Combustible huileux",
-    "effect": "Combustible huileux",
-    "origins": ["Gorakhan"],
-    "books": ["Alchimiste Novice"]
+    "difficulty": 15,
+    "shortEffect": "Restauration légère",
+    "effect": "Redonne un peu d'énergie et aide à la circulation sanguine.",
+    "origins": [
+      "Silvanea",
+      "Vertidas"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant"
+    ]
+  },
+  {
+    "name": "Sang de Loup",
+    "cat": "Réactif",
+    "difficulty": 25,
+    "shortEffect": "Fureur Animale",
+    "effect": "Réveille les instincts bestiaux, accroît l'agressivité et la puissance physique.",
+    "origins": [],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Venin de Basilic",
+    "cat": "Réactif",
+    "difficulty": 35,
+    "shortEffect": "Paralysant",
+    "effect": "Paralyse temporairement les mouvements.",
+    "origins": [],
+    "books": []
+  },
+  {
+    "name": "Écaille de Basilic",
+    "cat": "Réactif",
+    "difficulty": 20,
+    "shortEffect": "Résistance Paralysie",
+    "effect": "Apporte une résistance à la paralysie",
+    "origins": [
+      "Terragard",
+      "Durinhold"
+    ],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Glande de Troll",
+    "cat": "Catalyseur",
+    "difficulty": 40,
+    "shortEffect": "Régénération instable",
+    "effect": "Favorise la régénration rapide des tissus pendant plusieurs tours, mais peut apporter des effets indésirables.",
+    "origins": [
+      "Orcanfeld",
+      "Terragard"
+    ],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Griffe d’Ours brun",
+    "cat": "Réactif",
+    "difficulty": 25,
+    "shortEffect": "Force",
+    "effect": "Stimule la musculature, accroissant la puissance physique pendant un court laps de temps.",
+    "origins": [
+      "Terragard"
+    ],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Cendre d’Osseux",
+    "cat": "Catalyseur",
+    "difficulty": 30,
+    "shortEffect": "Amélioration",
+    "effect": "Améliore grandement les effets néfaste d'un concoction.",
+    "origins": [],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Graisse de Sanglier",
+    "cat": "Liant",
+    "difficulty": 5,
+    "shortEffect": "Stabilisation grasse",
+    "effect": "Épaissit la potion tout en aidant à la stabilisation.",
+    "origins": [],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Plume de Harpie",
+    "cat": "Catalyseur",
+    "difficulty": 30,
+    "shortEffect": "Légèreté",
+    "effect": "Allège le corps, augmentant la souplesse et la rapidité.",
+    "origins": [],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ]
+  },
+  {
+    "name": "Sève claire de Sylvanea",
+    "cat": "Liant",
+    "difficulty": -15,
+    "shortEffect": "Fluidité",
+    "effect": "Facilite les mélanges, adoucit les saveurs, et réduit légèrement les instabilités.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Résine de Terevon",
+    "cat": "Liant",
+    "difficulty": -10,
+    "shortEffect": "Fixateur",
+    "effect": "Épaissit et stabilise les effets.",
+    "origins": [],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Pollen d’Aégis",
+    "cat": "Catalyseur",
+    "difficulty": 15,
+    "shortEffect": "Volatilité",
+    "effect": "Rend la conconction plus légère, lui donnant un effet \"fumant\".",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Feuille d’Estralis",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Amplification",
+    "effect": "Amplie les effets liés à la magie. Instable si combinée à des venins.",
+    "origins": [
+      "Orcanfeld"
+    ],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Champignon Lueurbleue",
+    "cat": "Réactif",
+    "difficulty": 10,
+    "shortEffect": "Luminescence",
+    "effect": "Produit une faible bioluminescence.",
+    "origins": [
+      "Terragard"
+    ],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Herbe de Nymphéas",
+    "cat": "Réactif",
+    "difficulty": 15,
+    "shortEffect": "Apaisement",
+    "effect": "Apaise le corps et l'esprit, aidant à un sommeil léger.",
+    "origins": [],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Racine de Verdelis",
+    "cat": "Réactif",
+    "difficulty": 20,
+    "shortEffect": "Résilience",
+    "effect": "Accorde une endurance physique accrue.",
+    "origins": [
+      "Orcanfeld"
+    ],
+    "books": [
+      "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Fleur de Cendrelis",
+    "cat": "Liant",
+    "difficulty": -10,
+    "shortEffect": "Stabilisateur",
+    "effect": "Fixe les éléments instable.",
+    "origins": [],
+    "books": [
+      "Herbier de Tothymia"
+    ]
   }
 ]

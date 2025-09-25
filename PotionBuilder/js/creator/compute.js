@@ -1,6 +1,6 @@
 // /PotionBuilder/js/creator/compute.js
-import { findIngredientByName, getRecipes } from "../shared/data.js";
-
+import { findIngredientByName, getRecipes, isUnlockedByBooks } from "../shared/data.js";
+import { getState } from "../core/store.js";
 /**
  * @param {{binder:string|null,catalyst:string|null,reactants:string[]}} sel
  * @returns {Promise<{ totalDifficulty:number, mathLine:string, recipe:null|{name:string,emoji?:string,bonus?:number} }>}
@@ -33,7 +33,9 @@ export async function computePotion(sel){
   // aux ingrédients d'une variante (ordre indifférent, ni plus ni moins).
   let matched = null;
   const recipes = await getRecipes();
+  const ownedBooks = getState().books;
   for (const r of recipes){
+    if (!isUnlockedByBooks(r.books, ownedBooks)) continue;
     const variants = Array.isArray(r.ingredients) ? r.ingredients : [];
     const ok = variants.some(variant => {
       if (!Array.isArray(variant)) return false;

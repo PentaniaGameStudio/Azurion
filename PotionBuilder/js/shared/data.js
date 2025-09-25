@@ -81,26 +81,35 @@ export async function getIngredients() {
 export async function getRecipes(){
   if (Array.isArray(_recipesCache)) return _recipesCache;
 
-  const res = await fetch(PATHS.recipes, { cache: "no-store" });
-  if (!res.ok) throw new Error(`recipes fetch failed: ${res.status}`);
+  const raw = await loadJSONOnce(PATHS.recipes, "recipes.json");
+  const arr = Array.isArray(raw) ? raw : [];
 
-  const arr = await res.json();
+  _recipesCache = arr.map((r) => {
+    const name = String(r?.name || "").trim();
+    const emoji = String(r?.emoji || "🧪").trim() || "🧪";
+    const desc = String(r?.desc || "").trim();
+    const bonus = Number.isFinite(Number(r?.bonus)) ? Number(r.bonus) : 0;
 
-  // Dédoublonne les variantes identiques pour un même nom de recette
-  const seen = new Set();
-  _recipesCache = arr.map(r => ({
-    emoji: r.emoji || "🧪",
-    name:  String(r.name || "").trim(),
-    bonus: Number(r.bonus || 0),
-    ingredients: (Array.isArray(r.ingredients) ? r.ingredients : []).filter(v => {
-      if (!Array.isArray(v)) return false;
-      const key = JSON.stringify([...v].sort());
-      const sig = `${r.name}|${key}`;
-      if (seen.has(sig)) return false;
-      seen.add(sig);
-      return true;
-    })
-  }));
+    const books = Array.isArray(r?.books)
+      ? Array.from(new Set(r.books.map(b => String(b || "").trim()).filter(Boolean)))
+      : [];
+
+    const seenVariants = new Set();
+    const ingredients = (Array.isArray(r?.ingredients) ? r.ingredients : [])
+      .filter(Array.isArray)
+      .map(variant => variant
+        .map(item => String(item || "").trim())
+        .filter(Boolean))
+      .filter(variant => {
+        if (!variant.length) return false;
+        const sig = JSON.stringify([...variant].sort());
+        if (seenVariants.has(sig)) return false;
+        seenVariants.add(sig);
+        return true;
+      });
+
+    return { emoji, name, desc, bonus, ingredients, books };
+  });
 
   return _recipesCache;
 }
@@ -118,3 +127,9 @@ export async function findIngredientByName(name) {
   return list.find(i => i?.name === name) || null;
 }
 
+export function isUnlockedByBooks(requiredBooks, ownedBooks){
+  const req = Array.isArray(requiredBooks) ? requiredBooks.filter(Boolean) : [];
+  if (!req.length) return true;
+  const owned = Array.isArray(ownedBooks) ? ownedBooks : [];
+  return owned.some(book => req.includes(book));
+}

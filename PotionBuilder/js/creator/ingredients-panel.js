@@ -2,7 +2,7 @@
 import { qs, qsa, clear } from "../core/dom.js";
 import { sub } from "../core/events.js";
 import { getState, setCategory, setBinder, setCatalyst, toggleReactant } from "../core/store.js";
-import { getIngredients } from "../shared/data.js";
+import { getIngredients, isUnlockedByBooks } from "../shared/data.js";
 import { ingredientCard } from "../shared/ui-kit.js";
 
 const elTabs = qs("#ingCatTabs");
@@ -15,6 +15,12 @@ const CAT_MAP = {
   "Réactif": "reactant"
 };
 
+const CAT_ORDER = {
+  "Liant": 0,
+  "Catalyseur": 1,
+  "Réactif": 2
+};
+
 function passesCategoryFilter(item, cat){
   if (!cat || cat === "all") return true;
   const t = CAT_MAP[item.cat] || "";
@@ -24,13 +30,6 @@ function passesOriginFilter(item, origins){
   if (!origins?.length) return true;
   const list = item.origins || [];
   return list.some(o => origins.includes(o));
-}
-function isUnlockedByBooks(item, ownedBooks){
-  const req = item.books || [];
-  if (!req.length) return true; // pas de prérequis -> dispo
-  if (!ownedBooks?.length) return false;
-  // déblocage si intersection non vide
-  return req.some(b => ownedBooks.includes(b));
 }
 
 function selectIngredient(item){
@@ -48,12 +47,21 @@ async function render(){
   elTabs?.querySelectorAll(".catBtn").forEach(b => b.classList.toggle("on", b.dataset.cat === state.filters.cat));
 
   clear(elGrid);
-  const filtered = list.filter(i =>
+   const filtered = list.filter(i =>
     passesCategoryFilter(i, state.filters.cat) &&
     passesOriginFilter(i, state.filters.origins)
   );
 
-  if (!filtered.length){
+  const sorted = filtered.slice().sort((a, b) => {
+    const ca = CAT_ORDER[a?.cat] ?? 99;
+    const cb = CAT_ORDER[b?.cat] ?? 99;
+    if (ca !== cb) return ca - cb;
+    const na = String(a?.name || "").toLocaleLowerCase();
+    const nb = String(b?.name || "").toLocaleLowerCase();
+    return na.localeCompare(nb);
+  });
+
+  if (!sorted.length){
     const empty = document.createElement("div");
     empty.className = "muted";
     empty.textContent = "Aucun ingrédient ne correspond aux filtres.";
@@ -61,11 +69,11 @@ async function render(){
     return;
   }
 
-  filtered.forEach(item => {
+  sorted.forEach(item => {
     const card = ingredientCard(item);
 
     // Locked si pas débloqué par livre
-    const unlocked = isUnlockedByBooks(item, state.books);
+    const unlocked = isUnlockedByBooks(item?.books, state.books);
     if (!unlocked)
       return;
     else

@@ -218,3 +218,14 @@ hr{border:0;border-top:1px solid var(--border);opacity:.5}
   box-shadow:0 0 0 2px rgba(255,200,80,.25) inset, 0 2px 0 rgba(0,0,0,.15);
 }
 .recipe-variant-btn:active{ transform: translateY(1px) }
+
+.recipe-variant-btn[disabled]{
+  cursor:not-allowed;
+  opacity:.55;
+  filter:saturate(.4);
+  box-shadow:none;
+}
+
+.recipe-group.locked{opacity:.7;filter:saturate(.5);}
+.recipe-desc{margin:0;color:var(--muted);text-align:center;max-width:420px;}
+.recipe-info{font-size:12px;text-align:center;}
