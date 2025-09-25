@@ -212,7 +212,10 @@
     "difficulty": 35,
     "shortEffect": "Paralysant",
     "effect": "Paralyse temporairement les mouvements.",
-    "origins": [],
+    "origins":  [
+      "Terragard",
+      "Durinhold"
+    ],
     "books": []
   },
   {
