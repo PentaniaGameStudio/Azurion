@@ -1,5 +1,6 @@
 // /PotionBuilder/js/core/store.js
 import { pub } from "./events.js";
+import { normalizeBookTitle } from "../shared/data.js";
 
 const LS_KEY = "PotionBuilder:v1";
 const DEFAULT = {
@@ -36,9 +37,18 @@ export function getState(){ return structuredClone(state); }
 
 // ---------- BOOKS ----------
 export function addBook(title){
-  if (!title || !title.trim()) return;
-  if (!state.books.includes(title)) {
-    state.books.push(title.trim());
+  const original = String(title ?? "").trim();
+  if (!original) return;
+
+  const normalized = normalizeBookTitle(original);
+  if (!normalized) return;
+
+  const hasAlready = state.books
+    .map(normalizeBookTitle)
+    .includes(normalized);
+
+  if (!hasAlready) {
+    state.books.push(original);
     save(); pub("books:changed", getState());
   }
 }

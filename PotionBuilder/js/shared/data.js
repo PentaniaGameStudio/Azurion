@@ -91,7 +91,7 @@ export async function getRecipes(){
     const bonus = Number.isFinite(Number(r?.bonus)) ? Number(r.bonus) : 0;
 
     const books = Array.isArray(r?.books)
-      ? Array.from(new Set(r.books.map(b => String(b || "").trim()).filter(Boolean)))
+      ? dedupeBooks(r.books)
       : [];
 
     const seenVariants = new Set();
@@ -127,9 +127,31 @@ export async function findIngredientByName(name) {
   return list.find(i => i?.name === name) || null;
 }
 
+export function normalizeBookTitle(title){
+  return String(title ?? "").trim().toLocaleLowerCase("fr");
+}
+
+function dedupeBooks(list){
+  const map = new Map();
+  list.forEach((raw) => {
+    const original = String(raw ?? "").trim();
+    if (!original) return;
+    const norm = normalizeBookTitle(original);
+    if (!norm || map.has(norm)) return;
+    map.set(norm, original);
+  });
+  return [...map.values()];
+}
+
 export function isUnlockedByBooks(requiredBooks, ownedBooks){
-  const req = Array.isArray(requiredBooks) ? requiredBooks.filter(Boolean) : [];
+  const req = Array.isArray(requiredBooks) ? dedupeBooks(requiredBooks) : [];
   if (!req.length) return true;
+
   const owned = Array.isArray(ownedBooks) ? ownedBooks : [];
-  return owned.some(book => req.includes(book));
+  const ownedSet = new Set(owned.map(normalizeBookTitle).filter(Boolean));
+  if (!ownedSet.size) return false;
+
+  return req
+    .map(normalizeBookTitle)
+    .some(norm => norm && ownedSet.has(norm));
 }

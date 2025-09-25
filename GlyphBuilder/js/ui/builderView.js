@@ -2,12 +2,54 @@
 import { $, el } from '../core/dom.js';
 import { loadSkills, saveSkills, loadSelection, saveSelection } from '../core/storage.js';
 import { GLYPH_TABLE, SERIES_MAP, ALL_CATS } from '../domain/data.js';
-import { computeTotals, formatSelection } from '../services/calculations.js';
+import { computeTotals } from '../services/calculations.js';
 import { pill, kpi, glyphCard } from './components.js';
 
 const uniq = arr => [...new Set(arr)];
 const flat = arr => arr.reduce((a,b)=>a.concat(b),[]);
-const getUnlockedGlyphs = (skills) => uniq(flat(skills.map(s => SERIES_MAP[s]||[])));
+const normalizeSkillName = (value) => String(value ?? '').trim().toLocaleLowerCase('fr');
+
+const SERIES_INDEX = (() => {
+  const map = new Map();
+  Object.entries(SERIES_MAP).forEach(([label, glyphs]) => {
+    const norm = normalizeSkillName(label);
+    if (!norm || map.has(norm)) return;
+    map.set(norm, { label, glyphs });
+  });
+  return map;
+})();
+
+const canonicalizeSkillName = (value) => {
+  const original = String(value ?? '').trim();
+  if (!original) return '';
+  const norm = normalizeSkillName(original);
+  return SERIES_INDEX.get(norm)?.label || original;
+};
+
+function getStoredSkills(){
+  const raw = loadSkills();
+  const list = Array.isArray(raw) ? raw : [];
+  const seen = new Set();
+  const cleaned = [];
+
+  list.forEach((entry) => {
+    const canonical = canonicalizeSkillName(entry);
+    const norm = normalizeSkillName(canonical);
+    if (!norm || seen.has(norm)) return;
+    seen.add(norm);
+    cleaned.push(canonical);
+  });
+
+  const mutated = cleaned.length !== list.length || cleaned.some((val, idx) => val !== list[idx]);
+  if (mutated) saveSkills(cleaned);
+
+  return cleaned;
+}
+
+const getUnlockedGlyphs = (skills) => uniq(flat(skills.map((s) => {
+  const norm = normalizeSkillName(s);
+  return SERIES_INDEX.get(norm)?.glyphs || [];
+})));
 
 export function mountBuilder(){
   renderCatTabs();
@@ -37,13 +79,19 @@ function renderCatTabs(){
 
 function renderSkills(){
   const skillList = $('#skillList');
-  const skills = loadSkills();
+  const skills = getStoredSkills();
   skillList.innerHTML='';
-  skills.forEach((s,idx)=> skillList.appendChild(pill(s, ()=>{ const arr=loadSkills(); arr.splice(idx,1); saveSkills(arr); renderSkills(); renderGlyphs(); })));
+  skills.forEach((s,idx)=> skillList.appendChild(pill(s, ()=>{
+    const arr = getStoredSkills();
+    arr.splice(idx,1);
+    saveSkills(arr);
+    renderSkills();
+    renderGlyphs();
+  })));
 }
 
 function renderGlyphs(){
-  const skills = loadSkills();
+  const skills = getStoredSkills();
   const unlocked = new Set(getUnlockedGlyphs(skills));
   const selected = new Set(loadSelection());
 
@@ -90,11 +138,16 @@ function bindActions(){
   const resetBtn = $('#resetBtn');
 
   addSkillBtn?.addEventListener('click', ()=>{
-    const val = (skillInput.value||'').trim();
-    if(!val) return;
-    const skills = loadSkills();
-    if(!skills.includes(val)) skills.push(val);
-    saveSkills(skills);
+    const canonical = canonicalizeSkillName(skillInput.value);
+    const norm = normalizeSkillName(canonical);
+    if(!norm) return;
+
+    const skills = getStoredSkills();
+    const hasSkill = skills.some(s => normalizeSkillName(s) === norm);
+    if (!hasSkill) {
+      skills.push(canonical);
+      saveSkills(skills);
+    }
     skillInput.value='';
     renderSkills();
     renderGlyphs();
