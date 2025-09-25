@@ -1,11 +1,13 @@
 // /PotionBuilder/js/recipes/view.js
 import { qs, el, clear } from "../core/dom.js";
 import { sub } from "../core/events.js";
-import { getRecipes, findIngredientByName, isUnlockedByBooks } from "../shared/data.js";
+import { getRecipes, getIngredients, findIngredientByName, isUnlockedByBooks } from "../shared/data.js";
 import { getState, resetSelection, silent_setBinder, silent_setCatalyst, silent_toggleReactant, refresh } from "../core/store.js";
+import { catEmoji } from "../shared/ui-kit.js";
 
 const list = qs("#recipesList");
 let recipesCache = null;
+let ingredientsCache = null;
 let isActive = false;
 
 async function applyVariant(variantNames, recipe){
@@ -18,7 +20,7 @@ async function applyVariant(variantNames, recipe){
     if (!ing) continue;
     if (ing.cat === "Liant") silent_setBinder(name);
     else if (ing.cat === "Catalyseur") silent_setCatalyst(name);
-    else silent_toggleReactant(name);
+        else silent_toggleReactant(name);
   }
   
   refresh();
@@ -29,7 +31,34 @@ function ensureRecipes(){
   return getRecipes().then(list => (recipesCache = list));
 }
 
-function groupCard(recipe){
+function ensureIngredients(){
+  if (ingredientsCache) return Promise.resolve(ingredientsCache);
+  return getIngredients().then(list => (ingredientsCache = Array.isArray(list) ? list : []));
+}
+
+function buildEmojiMap(ingredients = []){
+  const map = new Map();
+  ingredients.forEach((ing) => {
+    const name = String(ing?.name || "").trim();
+    if (!name) return;
+    map.set(name, catEmoji(ing?.cat));
+  });
+  return map;
+}
+
+function formatVariant(variantArr = [], emojiByIngredient){
+  return variantArr
+    .map((name) => {
+      const clean = String(name || "").trim();
+      if (!clean) return null;
+      const emoji = emojiByIngredient?.get(clean);
+      return [emoji, clean].filter(Boolean).join(" ").trim();
+    })
+    .filter(Boolean)
+    .join(" + ");
+}
+
+function groupCard(recipe, emojiByIngredient){
   const group = el("div", { class: "recipe-group" });
   const title = el("div", { class: "recipe-group-title" }, `${recipe.emoji || "🧪"} ${recipe.name}`);
 
@@ -44,7 +73,12 @@ function groupCard(recipe){
   variants.forEach((variantArr, i) => {
     const n = i + 1;
     const btn = el("button", { class: "recipe-variant-btn", type: "button" }, `recette ${n}`);
-    btn.title = Array.isArray(variantArr) ? variantArr.join(", ") : "";
+    const variantList = Array.isArray(variantArr) ? formatVariant(variantArr, emojiByIngredient) : "";
+    const tooltipParts = [
+      `${recipe.emoji || "🧪"} ${recipe.name}`.trim(),
+      variantList.trim(),
+    ].filter(Boolean);
+    btn.title = tooltipParts.join("\n");
     btn.addEventListener("click", () => applyVariant(variantArr, recipe));
     row.appendChild(btn);
   });
@@ -62,12 +96,13 @@ function groupCard(recipe){
 function render(){
   if (!list || !isActive) return;
   (async () => {
-    const recipes = await ensureRecipes();
+    const [recipes, ingredients] = await Promise.all([ensureRecipes(), ensureIngredients()]);
+    const emojiByIngredient = buildEmojiMap(ingredients);
     const ownedBooks = getState().books;
     clear(list);
     recipes
       .filter(r => isUnlockedByBooks(r?.books, ownedBooks))
-      .forEach(r => list.appendChild(groupCard(r)));
+      .forEach(r => list.appendChild(groupCard(r, emojiByIngredient)));
   })().catch(e => console.error("[recipes] render error", e));
 }
 

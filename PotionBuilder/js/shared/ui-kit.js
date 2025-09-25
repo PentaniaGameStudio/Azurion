@@ -134,7 +134,7 @@ export function renderOriginTree(treeObj, { selected = new Set() } = {}) {
 }
 
 
-function catEmoji(cat){
+export function catEmoji(cat){
   if (cat === "Liant") return "💧";
   if (cat === "Catalyseur") return "⚗️";
   if (cat === "Réactif") return "🧬";
@@ -150,7 +150,14 @@ function catEmoji(cat){
  * ⚠️ On n’affiche PAS les livres.
  */
 export function ingredientCard({ name, cat, difficulty, shortEffect, effect, origins = [] }) {
-  const root = el("article", { class: "ing-card", title: name });
+  const emoji = catEmoji(cat);
+  const titleParts = [
+    [name, emoji].filter(Boolean).join(" ").trim(),
+    String(effect || shortEffect || "").trim(),
+  ].filter(Boolean);
+  const tooltip = titleParts.join("\n");
+  const attrs = tooltip ? { class: "ing-card", title: tooltip } : { class: "ing-card" };
+  const root = el("article", attrs);
 
   // --- Vérifier si cet ingrédient est actuellement sélectionné ---
   const sel = getState().selection;
@@ -164,12 +171,12 @@ export function ingredientCard({ name, cat, difficulty, shortEffect, effect, ori
   }
 
   // Tête
-const head = el(
-  "div",
-  { class: "ing-top" },                                // <-- flex + space-between (déjà dans le CSS)
-  el("span", { class: "ing-name" }, name),
-  el("span", { class: "ing-cat", title: cat, "aria-label": cat }, catEmoji(cat)) // <-- cat à DROITE
-);
+  const head = el(
+    "div",
+    { class: "ing-top" },                                // <-- flex + space-between (déjà dans le CSS)
+    el("span", { class: "ing-name" }, name),
+    el("span", { class: "ing-cat", title: cat, "aria-label": cat }, emoji) // <-- cat à DROITE
+  );
 
   // Corps
   const desc = el("div", { class: "ing-effect" }, shortEffect || effect || "");
