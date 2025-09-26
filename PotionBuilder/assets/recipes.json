@@ -56,27 +56,6 @@
   },
   {
     "emoji": "🧪",
-    "name": "Potion de Réflexes",
-    "desc": "Réflexes rapides, vigilance accrue.\n(Possibilité d'esquive et de contre-attaque pendant 5 tours)",
-    "ingredients": [
-      [
-        "Argile claire",
-        "Résine tendre",
-        "Champignon de Nartha"
-      ],
-      [
-        "Argile claire",
-        "Herbe de Sanford",
-        "Champignon de Nartha"
-      ]
-    ],
-    "books": [
-      "Manuel d'Alchimie Débutant"
-    ],
-    "bonus": 5.0
-  },
-  {
-    "emoji": "🧪",
     "name": "Élixir de Vigueur",
     "desc": "Réchauffe le corps et apporte un regain brutal d’énergie.\n(Résistance froid / - Fatigue Physique)",
     "ingredients": [
@@ -148,6 +127,23 @@
     "books": [
       "Manuel d'Alchimie Débutant"
     ],
-    "bonus": 5.0
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧪",
+    "name": "Potion de Réflexes",
+    "desc": "Réflexes rapides, vigilance accrue.\n(Possibilité d'esquive et de contre-attaque pendant 5 tours)",
+    "ingredients": [
+      [
+        "Eau pure",
+        "Herbe de Sanford",
+        "Baie rougeâtre",
+        "Champignon de Nartha"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 10.0
   }
 ]

@@ -59,7 +59,7 @@
   {
     "name": "Charbon Végétal",
     "cat": "Catalyseur",
-    "difficulty": 10,
+    "difficulty": 5,
     "shortEffect": "Détoxifiant",
     "effect": "Absorbe toxines et impurtés. Réduit les risques d'effets secondaires mais affaiblit la puissance.",
     "origins": [],
@@ -153,7 +153,7 @@
   {
     "name": "Herbe de Sanford",
     "cat": "Catalyseur",
-    "difficulty": 20,
+    "difficulty": 10,
     "shortEffect": "Détoxifiant",
     "effect": "Absorbe certains poisons pour réduire les effets indésirables.",
     "origins": [
@@ -272,7 +272,7 @@
   {
     "name": "Plume de Harpie",
     "cat": "Catalyseur",
-    "difficulty": 30,
+    "difficulty": 20,
     "shortEffect": "Légèreté",
     "effect": "Allège le corps, augmentant la souplesse et la rapidité.",
     "origins": [],
@@ -381,7 +381,7 @@
   {
     "name": "Résine tendre",
     "cat": "Catalyseur",
-    "difficulty": 20,
+    "difficulty": 5,
     "shortEffect": "Résine modératrice",
     "effect": "Tempère les mélanges trop instables. Peut absorber une partie des effets négatifs.",
     "origins": [
@@ -453,7 +453,7 @@
   {
     "name": "Poudre de Soufre",
     "cat": "Catalyseur",
-    "difficulty": 20,
+    "difficulty": 10,
     "shortEffect": "Chaleur",
     "effect": "Produit une chaleur sèche et explosive.",
     "origins": [],
