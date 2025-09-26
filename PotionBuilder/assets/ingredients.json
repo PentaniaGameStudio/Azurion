@@ -2,9 +2,9 @@
   {
     "name": "Miel",
     "cat": "Liant",
-    "difficulty": -10,
+    "difficulty": -25,
     "shortEffect": "Liant doux",
-    "effect": "Adoucit les mélanges, facilitant l’absorption des effets. Peut prolonger légèrement la durée d’action.",
+    "effect": "Sucre et adoucit les mélanges, facilitant l’absorption des effets. Peut prolonger légèrement la durée d’action.",
     "origins": [],
     "books": [
       "Manuel d'Alchimie Débutant"
@@ -13,7 +13,7 @@
   {
     "name": "Eau pure",
     "cat": "Liant",
-    "difficulty": 20,
+    "difficulty": -30,
     "shortEffect": "Stabilisation",
     "effect": "Stabilise la potion, réduisant la difficulté de préparation.",
     "origins": [],
@@ -57,26 +57,11 @@
     ]
   },
   {
-    "name": "Écorce tendre",
-    "cat": "Catalyseur",
-    "difficulty": 15,
-    "shortEffect": "Résine modératrice",
-    "effect": "Tempère les mélanges trop instables. Peut absorber une partie des effets négatifs.",
-    "origins": [
-      "Silvanea"
-    ],
-    "books": [
-      "Herbier de Tothymia",
-      "Manuel d'Alchimie Débutant",
-      "Racines et Écorces de Silvanea"
-    ]
-  },
-  {
     "name": "Charbon Végétal",
     "cat": "Catalyseur",
     "difficulty": 10,
     "shortEffect": "Détoxifiant",
-    "effect": "Absorbe toxines et impurtés. Réduit les risques d'effets secondaires mais affaiblit parfois la puissance.",
+    "effect": "Absorbe toxines et impurtés. Réduit les risques d'effets secondaires mais affaiblit la puissance.",
     "origins": [],
     "books": [
       "Herbier de Tothymia",
@@ -86,7 +71,7 @@
   {
     "name": "Argile claire",
     "cat": "Liant",
-    "difficulty": -5,
+    "difficulty": -20,
     "shortEffect": "Épaississant",
     "effect": "Donne une consistance plus ferme. Aide à transformer une potion en baume ou pâte malléable.",
     "origins": [],
@@ -143,7 +128,7 @@
     "cat": "Catalyseur",
     "difficulty": 25,
     "shortEffect": "Amplification",
-    "effect": "Renforce les effets principaux d'une concoction, mais augmente aussi le risque d'effet indésirable.",
+    "effect": "Renforce les effets d'une concoction, mais augmente aussi le risque d'effet indésirable.",
     "origins": [],
     "books": [
       "Le Secrets des Catalyseurs : Tome 1",
@@ -212,8 +197,14 @@
     "difficulty": 35,
     "shortEffect": "Paralysant",
     "effect": "Paralyse temporairement les mouvements.",
-    "origins": [],
-    "books": []
+    "origins": [
+      "Terragard",
+      "Durinhold"
+    ],
+    "books": [
+      "Bestiaire Alchimique de Terragard",
+      "Manuel d'Alchimie Débutant"
+    ]
   },
   {
     "name": "Écaille de Basilic",
@@ -232,9 +223,9 @@
   {
     "name": "Glande de Troll",
     "cat": "Catalyseur",
-    "difficulty": 40,
+    "difficulty": 20,
     "shortEffect": "Régénération instable",
-    "effect": "Favorise la régénration rapide des tissus pendant plusieurs tours, mais peut apporter des effets indésirables.",
+    "effect": "Favorise la régénération rapide des tissus pendant plusieurs tours, mais peut apporter des effets indésirables.",
     "origins": [
       "Orcanfeld",
       "Terragard"
@@ -259,7 +250,7 @@
   {
     "name": "Cendre d’Osseux",
     "cat": "Catalyseur",
-    "difficulty": 30,
+    "difficulty": 20,
     "shortEffect": "Amélioration",
     "effect": "Améliore grandement les effets néfaste d'un concoction.",
     "origins": [],
@@ -270,7 +261,7 @@
   {
     "name": "Graisse de Sanglier",
     "cat": "Liant",
-    "difficulty": 5,
+    "difficulty": -15,
     "shortEffect": "Stabilisation grasse",
     "effect": "Épaissit la potion tout en aidant à la stabilisation.",
     "origins": [],
@@ -331,7 +322,7 @@
     "cat": "Catalyseur",
     "difficulty": 20,
     "shortEffect": "Amplification",
-    "effect": "Amplie les effets liés à la magie. Instable si combinée à des venins.",
+    "effect": "Amplie les effets liés à la magie mais rend la concotion instable si ajouté à du venin.",
     "origins": [
       "Orcanfeld"
     ],
@@ -379,12 +370,95 @@
   {
     "name": "Fleur de Cendrelis",
     "cat": "Liant",
-    "difficulty": -10,
+    "difficulty": -30,
     "shortEffect": "Stabilisateur",
     "effect": "Fixe les éléments instable.",
     "origins": [],
     "books": [
       "Herbier de Tothymia"
+    ]
+  },
+  {
+    "name": "Résine tendre",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Résine modératrice",
+    "effect": "Tempère les mélanges trop instables. Peut absorber une partie des effets négatifs.",
+    "origins": [
+      "Tothymia"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Manuel d'Alchimie Débutant",
+      "Racines et Écorces de Silvanea"
+    ]
+  },
+  {
+    "name": "Poudre de Quartz",
+    "cat": "Liant",
+    "difficulty": -20,
+    "shortEffect": "Stabilisant",
+    "effect": "Sert de base solide. Aide à la stabilisation des concoctions.",
+    "origins": [],
+    "books": [
+      "Manuel d'Alchimie Débutant",
+      "Pierres et Métaux des Montagnes de Terragard"
+    ]
+  },
+  {
+    "name": "Poussière de Basalte",
+    "cat": "Liant",
+    "difficulty": -15,
+    "shortEffect": "Stabilisateur",
+    "effect": "Sert de base solide. Aide à la stabilisation de la concoctions.",
+    "origins": [],
+    "books": [
+      "Pierres et Métaux des Montagnes de Terragard"
+    ]
+  },
+  {
+    "name": "Poudre de Fer",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Amplification Magique",
+    "effect": "Réagit fortement aux flux magiques. Accentue les effets liés à la magie ou aux éclairs.",
+    "origins": [],
+    "books": [
+      "Manuel d'Alchimie Débutant",
+      "Pierres et Métaux des Montagnes de Terragard"
+    ]
+  },
+  {
+    "name": "Éclat de Pyrite",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Étincelles",
+    "effect": "Introduit un effet électrique ou inflammable à la concoction.",
+    "origins": [],
+    "books": [
+      "Pierres et Métaux des Montagnes de Terragard"
+    ]
+  },
+  {
+    "name": "Éclat de Mithril",
+    "cat": "Catalyseur",
+    "difficulty": 50,
+    "shortEffect": "Amplification",
+    "effect": "Exalte tous les effets présents dans la concoction.",
+    "origins": [],
+    "books": [
+      "Pierres et Métaux des Montagnes de Terragard"
+    ]
+  },
+  {
+    "name": "Poudre de Soufre",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Chaleur",
+    "effect": "Produit une chaleur sèche et explosive.",
+    "origins": [],
+    "books": [
+      "Pierres et Métaux des Montagnes de Terragard"
     ]
   }
 ]

@@ -2,7 +2,7 @@
   {
     "emoji": "🧪",
     "name": "Potion de Soin (Simple)",
-    "desc": "Apaise les douleurs et soigne légérement.",
+    "desc": "Apaise les douleurs et soigne légérement.\n(Soigne 1D6 pendant 3 tours)",
     "ingredients": [
       [
         "Eau pure",
@@ -13,28 +13,35 @@
     "books": [
       "Manuel d'Alchimie Débutant"
     ],
-    "bonus": 10.0
+    "bonus": 5.0
   },
   {
     "emoji": "🧫",
     "name": "Onguent Purifiant",
-    "desc": "Soin très légérement & soigne l'altération \"Saignement\"",
+    "desc": "Soin très légérement & soigne l'altération \"Saignement\"\n(+1D2 vie / Soigne \"Saignement\")",
     "ingredients": [
       [
         "Miel",
         "Charbon Végétal",
+        "Baie de Lunor",
+        "Champignon mousseux"
+      ],
+      [
+        "Miel",
+        "Herbe de Sanford",
+        "Baie de Lunor",
         "Champignon mousseux"
       ]
     ],
     "books": [
       "Manuel d'Alchimie Débutant"
     ],
-    "bonus": 10.0
+    "bonus": 5.0
   },
   {
     "emoji": "🧪",
     "name": "Potion d’Énergie Vive",
-    "desc": "Supprime la fatigue mentale et restaure la concentration.",
+    "desc": "Supprime la fatigue mentale et restaure la concentration.\n(- Fatigue mentale)",
     "ingredients": [
       [
         "Eau pure",
@@ -45,28 +52,33 @@
     "books": [
       "Manuel d'Alchimie Débutant"
     ],
-    "bonus": 10.0
+    "bonus": 5.0
   },
   {
     "emoji": "🧪",
     "name": "Potion de Réflexes",
-    "desc": "Réflexes rapides, vigilance accrue.",
+    "desc": "Réflexes rapides, vigilance accrue.\n(Possibilité d'esquive et de contre-attaque pendant 5 tours)",
     "ingredients": [
       [
         "Argile claire",
-        "Écorce tendre",
+        "Résine tendre",
+        "Champignon de Nartha"
+      ],
+      [
+        "Argile claire",
+        "Herbe de Sanford",
         "Champignon de Nartha"
       ]
     ],
     "books": [
       "Manuel d'Alchimie Débutant"
     ],
-    "bonus": 10.0
+    "bonus": 5.0
   },
   {
     "emoji": "🧪",
     "name": "Élixir de Vigueur",
-    "desc": "Réchauffe le corps et apporte un regain brutal d’énergie.",
+    "desc": "Réchauffe le corps et apporte un regain brutal d’énergie.\n(Résistance froid / - Fatigue Physique)",
     "ingredients": [
       [
         "Eau pure",
@@ -83,10 +95,11 @@
   {
     "emoji": "🧼",
     "name": "Baume du Sanglier",
-    "desc": "Renforce les muscles et augmente la résistance physique pendant quelques temps.",
+    "desc": "Renforce les muscles et augmente la résistance physique pendant quelques temps.\n(-1 dégâts subis / +15 physique pendant 3 tours)",
     "ingredients": [
       [
         "Graisse de Sanglier",
+        "Résine tendre",
         "Griffe d’Ours brun"
       ]
     ],
@@ -96,18 +109,45 @@
     "bonus": 10.0
   },
   {
-    "emoji": "💨",
+    "emoji": "🍚",
     "name": "Poudre de Basilic",
-    "desc": "Provoque une rigidité musculaire légère chez ceux qui l’inhalent.",
+    "desc": "Provoque une rigidité musculaire légère chez ceux qui l’inhalent.\n(+ Paralysie 2 tours)",
     "ingredients": [
       [
         "Venin de Basilic",
         "Sel commun"
+      ],
+      [
+        "Poudre de Quartz",
+        "Venin de Basilic"
       ]
     ],
     "books": [
       "Bestiaire Alchimique de Terragard"
     ],
-    "bonus": 10.0
+    "bonus": 5.0
+  },
+  {
+    "emoji": "🧫",
+    "name": "Onguent Purifiant (amélioré)",
+    "desc": "Soin très légérement & soigne l'altération \"Saignement\"\n(+1D4 vie pendant 3 tours / Soigne \"Saignement\")",
+    "ingredients": [
+      [
+        "Miel",
+        "Charbon Végétal",
+        "Champignon mousseux",
+        "Herbe de Lunessa"
+      ],
+      [
+        "Miel",
+        "Herbe de Sanford",
+        "Champignon mousseux",
+        "Herbe de Lunessa"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 5.0
   }
 ]
