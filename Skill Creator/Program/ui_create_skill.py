@@ -23,14 +23,16 @@ from .widgets import LabeledLineEdit, LabeledTextEdit
 
 
 class CreateSkillTab(QWidget):
-    """Form allowing the user to create a new skill."""
+    """Form allowing the user to create or edit a skill."""
 
     skill_created = Signal()
+    skill_saved = Signal()
 
     def __init__(self, store: DataStore, parent: QWidget | None = None) -> None:
         super().__init__(parent)
         self.store = store
         self._display_to_emojis: dict[str, str] = {}
+        self._editing_index: int | None = None
 
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(16, 16, 16, 16)
@@ -39,6 +41,10 @@ class CreateSkillTab(QWidget):
         title = QLabel("Créer une Compétence")
         title.setStyleSheet("font-size: 20px; font-weight: bold;")
         main_layout.addWidget(title)
+
+        self._mode_label = QLabel("Mode : Création")
+        self._mode_label.setStyleSheet("color: #666; font-style: italic;")
+        main_layout.addWidget(self._mode_label)
 
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
@@ -183,6 +189,8 @@ class CreateSkillTab(QWidget):
         return pairs
 
     def _clear(self) -> None:
+        self._editing_index = None
+        self._mode_label.setText("Mode : Création")
         self.name.setText("")
         self.diff_radio_diff.setChecked(True)
         self.diff_value.setText("")
@@ -239,10 +247,89 @@ class CreateSkillTab(QWidget):
             hided=self.hidden_checkbox.isChecked(),
         )
 
-        try:
-            self.store.add_skill(skill)
-            QMessageBox.information(self, "OK", f"Compétence '{name}' ajoutée.")
+        try
+            if self._editing_index is None:
+                self.store.add_skill(skill)
+                QMessageBox.information(self, "OK", f"Compétence '{name}' ajoutée.")
+                self.skill_created.emit()
+            else:
+                self.store.update_skill(self._editing_index, skill)
+                QMessageBox.information(
+                    self, "Mis à jour", f"Compétence '{name}' mise à jour."
+                )
+            self.skill_saved.emit()
             self._clear()
-            self.skill_created.emit()
         except Exception as exc:
             QMessageBox.critical(self, "Erreur", str(exc))
+
+    # ------------------------------------------------------------------
+    def load_skill_for_edit(self, skill: Skill, index: int) -> None:
+        """Populate the form to edit an existing skill."""
+
+        self._editing_index = index
+        self._mode_label.setText(f"Mode : Modification ({skill.name})")
+
+        # refresh to ensure combo boxes contain the latest families
+        self.refresh_families()
+
+        # Families are displayed as "emoji — name". Find the matching entry.
+        display_value = None
+        for display, emojis in self._display_to_emojis.items():
+            if emojis == skill.family:
+                display_value = display
+                break
+
+        if display_value is not None:
+            idx = self.family_combo.findText(display_value)
+            if idx >= 0:
+                self.family_combo.setCurrentIndex(idx)
+        elif self.family_combo.count() > 0:
+            self.family_combo.setCurrentIndex(0)
+
+        self.name.setText(skill.name)
+
+        level_text = getattr(skill, "level", "Niv1") or "Niv1"
+        for btn in self.level_group.buttons():
+            if btn.text().lower() == level_text.lower():
+                btn.setChecked(True)
+                break
+
+        diff_text = getattr(skill, "difficulty", "").strip()
+        label, value = self._parse_difficulty(diff_text)
+        if label == "Facilité":
+            self.diff_radio_fac.setChecked(True)
+        elif label == "Passif":
+            self.diff_radio_passif.setChecked(True)
+        else:
+            self.diff_radio_diff.setChecked(True)
+        self.diff_value.setText(value)
+
+        self.cost.setText(skill.cost)
+        self.target.setText(skill.target)
+        self.range_.setText(skill.range_)
+        self.duration.setText(skill.duration)
+        self.damage.setText(skill.damage)
+
+        self.effects.setPlainText("\n".join(skill.effects))
+        self.conditions.setPlainText("\n".join(skill.conditions))
+        self.limits.setPlainText("\n".join(skill.limits))
+
+        self.hidden_checkbox.setChecked(skill.hided)
+
+    def _parse_difficulty(self, raw: str) -> tuple[str, str]:
+        if not raw:
+            return "Difficulté", ""
+        cleaned = raw.strip()
+        if ":" in cleaned:
+            prefix, value = cleaned.split(":", 1)
+            return self._normalize_difficulty_label(prefix), value.strip()
+        return self._normalize_difficulty_label(cleaned), ""
+
+    @staticmethod
+    def _normalize_difficulty_label(label: str) -> str:
+        normalized = label.strip().lower()
+        if normalized.startswith("fac"):
+            return "Facilité"
+        if normalized.startswith("pass"):
+            return "Passif"
+        return "Difficulté"
