@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Calculateur de Cristallomancie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="Cristallomancie/cristal.css" />
+</head>
+<body>
+<div class="wrap">
+  <h1>⚗️ Calculateur de Cristallomancie</h1>
+  <div class="panel">
+    <div class="grid">
+      <div class="col-6">
+        <h2>Paramètres</h2>
+        <div class="row">
+          <label for="rank">Rang de pierre</label>
+          <select id="rank">
+            <option value="ECLAT">Éclat</option>
+            <option value="PIERRE">Pierre</option>
+            <option value="COEUR">Cœur</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="refine">Affinage</label>
+          <select id="refine">
+            <option value="BRUTE">Brute</option>
+            <option value="EPUREE">Épurée</option>
+            <option value="SUBLIMEE">Sublimée</option>
+          </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Qualités</h2>
+        <div class="help">
+          Le rang donne un <b>palier de base</b> (Éclat 0, Pierre 1, Cœur 2).<br>
+          Les points d’affinage montent au-dessus du palier de base.<br>
+          Coût par montée : <code>+1, +2, +3, +5, +8</code>.
+        </div>
+
+        <div id="qualities"></div>
+
+        <div class="row">
+          <span class="kpi"><span class="k">Points dépensés</span><br><span id="spent" class="v">0</span></span>
+          <span class="kpi"><span class="k">Points restants</span><br><span id="remain" class="v">0</span></span>
+          <button id="btn-reset" class="secondary">Réinitialiser</button>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <h2>Résultats</h2>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="k">Difficulté Rang</div>
+            <div id="kpi-rank" class="v">10</div>
+          </div>
+          <div class="kpi">
+            <div class="k">Difficulté Affinage</div>
+            <div id="kpi-refine" class="v">10</div>
+          </div>
+          <div class="kpi">
+            <div class="k">Diff. Qualités</div>
+            <div id="kpi-qdif" class="v">0</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row" style="justify-content:space-between; align-items:flex-end;">
+          <div>
+            <div class="muted">Difficulté totale</div>
+            <div id="total" class="result">20</div>
+          </div>
+          <div>
+            <div class="muted">Fragilité estimée</div>
+            <!-- même style que difficulté -->
+            <div id="fragility" class="result">Faible (5)</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Résumé</h2>
+        <div id="summary" class="help">—</div>
+
+        <div class="divider"></div>
+        <div class="row">
+          <button id="btn-export">Exporter</button>
+          <span class="help">Format : <code>Rang Affinage (Pu Po Du Co St) : Utilisation</code></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Core -->
+  <script type="module" src="Cristallomancie/cristal.js"></script>
+  
+</body>
+</html>

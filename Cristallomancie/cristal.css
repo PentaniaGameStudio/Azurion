@@ -1,0 +1,199 @@
+/* /// <summary>
+   CSS Cristallomancie harmonisé avec glyph.css (palette & styles)
+   - Variables identiques (bg, panel, text, muted, accent, border, chip…)
+   - Fond en dégradé, panels/badges façon "chip", KPI dashed, boutons accent gradient
+   - Conserve la grille et les classes existantes
+   </summary> */
+
+:root {
+  --bg: #0f1221;
+  --panel: #161a2f;
+  --muted: #8d95c9;
+  --text: #e7eaff;
+  --accent: #27E0F5;
+  --good: #2ecc71;
+  --warn: #f1c40f;
+  --bad: #e74c3c;
+  --chip: #1f2444;
+  --chipOn: #24305c;
+  --border: #2a315c;
+  --disabled: #5a639a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  color: var(--text);
+  /* Fond comme glyph.css */
+  background: linear-gradient(180deg, #0b0e1a, #0f1221 30%, #0b0e1a);
+}
+
+.wrap { max-width: 1024px; margin: 24px auto; padding: 0 16px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  /* Légère ombre comme les cards glyph */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+h1 { font-size: 1.6rem; margin: 0 0 12px; }
+h2 { font-size: 1.1rem; margin: 12px 0 8px; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+.row { display:flex; gap:10px; align-items:center; margin: 8px 0; flex-wrap:wrap; }
+label { font-size: .95rem; color: var(--muted); min-width: 140px; }
+
+/* Inputs & selects proches de glyph.css */
+select,
+input[type="text"],
+textarea {
+  width: 100%;
+  background: #0e1123;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+/* /// <summary>Slider avec barre remplie (cross-browser)</summary> */
+input[type="range"]{
+  -webkit-appearance:none; appearance:none;
+  width:100%;
+  height:8px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  /* WebKit: on peint la barre de fond + la partie remplie via une 1re image */
+  background:
+    linear-gradient(var(--accent), var(--accent)) 0/var(--fill, 0%) 100% no-repeat,
+    var(--chipOn);
+  outline:none;
+}
+
+/* Piste transparente pour laisser voir le background ci-dessus (WebKit) */
+input[type="range"]::-webkit-slider-runnable-track{
+  height:8px; background:transparent;
+  border-radius:999px;
+}
+/* Thumb (WebKit) */
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none;
+  width:18px; height:18px; border-radius:50%;
+  background: var(--accent);
+  border:2px solid #2d3b86;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+  margin-top:-6px; /* centre le thumb sur une piste de 8px */
+}
+
+/* Firefox: on utilise track+progress dédiés */
+input[type="range"]::-moz-range-track{
+  height:8px; background:var(--chipOn); border-radius:999px; border:1px solid var(--border);
+}
+input[type="range"]::-moz-range-progress{
+  height:8px; background:var(--accent); border-radius:999px;
+}
+input[type="range"]::-moz-range-thumb{
+  width:18px; height:18px; border-radius:50%;
+  background: var(--accent);
+  border:2px solid #2d3b86;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+
+/* Focus */
+input[type="range"]:focus{ outline:2px solid #3a4b8f; outline-offset:4px; }
+
+
+.quality {
+  display:grid;
+  grid-template-columns: 140px 1fr auto;
+  gap:10px; align-items:center; margin:10px 0;
+}
+.qname { color: var(--text); }
+.qhint { color: var(--muted); font-size:.85rem; }
+
+/* Badges/pills façon chips glyph */
+.pill {
+  display: inline-flex;
+  gap: 8px; align-items: center;
+  padding: 6px 10px;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: #c9d2ff;
+}
+.badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 10px; border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: #c9d2ff;
+  font-size:.95rem;
+}
+
+.muted { color: var(--muted); }
+
+/* KPI style glyph (dashed & fond sombre) */
+.kpis { display:flex; gap:10px; flex-wrap:wrap; }
+.kpi {
+  display:flex; gap:8px; align-items:center;
+  background: #111534;
+  border: 1px dashed var(--border);
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.kpi .k { font-size:.8rem; color: var(--muted); }
+.kpi .v { font-size:1.1rem; font-weight:700; }
+
+.result { font-size: 2.2rem; font-weight: 800; }
+
+.divider { height:1px; background: var(--border); margin:12px 0; }
+
+/* Boutons : accent gradient + variantes */
+button {
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .03s ease-in-out;
+}
+button:hover { border-color: var(--accent); }
+button:active { transform: translateY(1px); }
+
+button:not(.secondary) {
+  background: linear-gradient(180deg, #2a3a7f, #263171);
+  border-color: #2d3b86;
+}
+button.secondary {
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* États */
+.disabled { opacity:.5; pointer-events:none; }
+.help { font-size:.85rem; color: var(--muted); }
+
+/* Focus visible (accessibilité) */
+select:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid #3a4b8f;
+  outline-offset: 2px;
+}
+
+/* Bump visuel quand le rang change, teinté accent glyph */
+@keyframes bump {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(124,155,255,0); }
+  30% { transform: scale(1.015); box-shadow: 0 0 12px rgba(124,155,255,.35); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(124,155,255,0); }
+}
+.bump { animation: bump .6s ease; }
