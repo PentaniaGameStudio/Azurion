@@ -1,54 +1,79 @@
 # -*- coding: utf-8 -*-
-"""
-///summary
-Formulaire: Créer Famille (sans description, conserve les émojis après enregistrement).
-"""
-import tkinter as tk
-from tkinter import ttk, messagebox
+"""Family creation tab implemented with Qt widgets."""
+from __future__ import annotations
+
+from PySide6.QtCore import Signal
+from PySide6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QLabel,
+    QPushButton,
+    QHBoxLayout,
+    QMessageBox,
+)
+
 from .datastore import DataStore
 from .models import Family
-from .widgets import LabeledEntry
+from .widgets import LabeledLineEdit
 
-PAD = 8
 
-class CreateFamilyFrame(ttk.Frame):
-    def __init__(self, master, store: DataStore):
-        super().__init__(master, padding=PAD)
+class CreateFamilyTab(QWidget):
+    """Form that lets the user create a new family."""
+
+    family_created = Signal()
+
+    def __init__(self, store: DataStore, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
         self.store = store
 
-        ttk.Label(self, text="Créer une Famille", font=("Segoe UI", 14, "bold")).pack(anchor="w", pady=(0, PAD))
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(16, 16, 16, 16)
+        layout.setSpacing(12)
 
-        self.emojis = LabeledEntry(self, "Emojis (clé) — ex: 🌊🔊", width=30)
-        self.name = LabeledEntry(self, "Nom de la famille", width=40)
+        title = QLabel("Créer une Famille")
+        title.setObjectName("titleLabel")
+        title.setStyleSheet("font-size: 20px; font-weight: bold;")
+        layout.addWidget(title)
 
-        self.emojis.pack(fill="x", pady=(0, PAD))
-        self.name.pack(fill="x", pady=(0, PAD))
+        self.emojis = LabeledLineEdit("Emojis (clé) — ex: 🌊🔊", width=30)
+        self.name = LabeledLineEdit("Nom de la famille", width=40)
 
-        btns = ttk.Frame(self)
-        btns.pack(pady=(PAD, 0))
-        ttk.Button(btns, text="Enregistrer", command=self._save).grid(row=0, column=0, padx=PAD)
-        ttk.Button(btns, text="Annuler", command=self._clear_all).grid(row=0, column=1, padx=PAD)
+        layout.addWidget(self.emojis)
+        layout.addWidget(self.name)
 
-    # ///summary: Vide le nom uniquement (garde les émojis).
+        buttons = QHBoxLayout()
+        save_btn = QPushButton("Enregistrer")
+        save_btn.clicked.connect(self._save)
+        buttons.addWidget(save_btn)
+
+        cancel_btn = QPushButton("Annuler")
+        cancel_btn.clicked.connect(self._clear_all)
+        buttons.addWidget(cancel_btn)
+
+        buttons.addStretch(1)
+        layout.addLayout(buttons)
+
+    def set_store(self, store: DataStore) -> None:
+        self.store = store
+
     def _clear_keep_emojis(self) -> None:
-        self.name.var.set("")
+        self.name.setText("")
 
-    # ///summary: Vide tous les champs.
     def _clear_all(self) -> None:
-        self.emojis.var.set("")
-        self.name.var.set("")
+        self.emojis.setText("")
+        self.name.setText("")
 
     def _save(self) -> None:
-        emojis = self.emojis.var.get().strip()
-        name = self.name.var.get().strip()
+        emojis = self.emojis.text().strip()
+        name = self.name.text().strip()
 
         if not emojis:
-            messagebox.showwarning("Champ requis", "Les emojis (clé) sont obligatoires.")
+            QMessageBox.warning(self, "Champ requis", "Les emojis (clé) sont obligatoires.")
             return
         try:
-            # description non utilisée -> vide
             self.store.add_family(Family(emojis=emojis, name=name, description=""))
-            messagebox.showinfo("OK", f"Famille '{emojis}' ajoutée.")
+            QMessageBox.information(self, "OK", f"Famille '{emojis}' ajoutée.")
             self._clear_keep_emojis()
-        except Exception as e:
-            messagebox.showerror("Erreur", str(e))
+            self.family_created.emit()
+        except Exception as exc:
+            QMessageBox.critical(self, "Erreur", str(exc))
