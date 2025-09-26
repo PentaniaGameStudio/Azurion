@@ -1,0 +1,113 @@
+[
+  {
+    "emoji": "🧪",
+    "name": "Potion de Soin (Simple)",
+    "desc": "Apaise les douleurs et soigne légérement.",
+    "ingredients": [
+      [
+        "Eau pure",
+        "Venin dilué",
+        "Herbe de Lunessa"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧫",
+    "name": "Onguent Purifiant",
+    "desc": "Soin très légérement & soigne l'altération \"Saignement\"",
+    "ingredients": [
+      [
+        "Miel",
+        "Charbon Végétal",
+        "Champignon mousseux"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧪",
+    "name": "Potion d’Énergie Vive",
+    "desc": "Supprime la fatigue mentale et restaure la concentration.",
+    "ingredients": [
+      [
+        "Eau pure",
+        "Herbe de Sanford",
+        "Fleur de Solméa"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧪",
+    "name": "Potion de Réflexes",
+    "desc": "Réflexes rapides, vigilance accrue.",
+    "ingredients": [
+      [
+        "Argile claire",
+        "Écorce tendre",
+        "Champignon de Nartha"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧪",
+    "name": "Élixir de Vigueur",
+    "desc": "Réchauffe le corps et apporte un regain brutal d’énergie.",
+    "ingredients": [
+      [
+        "Eau pure",
+        "Venin dilué",
+        "Baie rougeâtre",
+        "Fleur de Solméa"
+      ]
+    ],
+    "books": [
+      "Manuel d'Alchimie Débutant"
+    ],
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧼",
+    "name": "Baume du Sanglier",
+    "desc": "Renforce les muscles et augmente la résistance physique pendant quelques temps.",
+    "ingredients": [
+      [
+        "Graisse de Sanglier",
+        "Griffe d’Ours brun"
+      ]
+    ],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ],
+    "bonus": 10.0
+  },
+  {
+    "emoji": "🧪",
+    "name": "Poudre de Basilic",
+    "desc": "Provoque une rigidité musculaire légère chez ceux qui l’inhalent.",
+    "ingredients": [
+      [
+        "Venin de Basilic",
+        "Sel commun"
+      ]
+    ],
+    "books": [
+      "Bestiaire Alchimique de Terragard"
+    ],
+    "bonus": 10.0
+  }
+]
