@@ -1,41 +1,71 @@
 # -*- coding: utf-8 -*-
-"""
-///summary
-Vue texte des familles : groupées par 1er emoji, indentation = nb d’emojis - 1,
-1 famille par ligne, ligne vide entre groupes.
-"""
-import tkinter as tk
-from tkinter import ttk
-from typing import List, Dict
+"""Families view tab for the Qt interface."""
+from __future__ import annotations
+
+from typing import Dict, List
+
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QLabel,
+    QTextEdit,
+    QPushButton,
+    QHBoxLayout,
+)
+
 from .datastore import DataStore
 
 PAD = 8
-VS16 = "\ufe0f"  # variation selector-16, présent dans beaucoup d’émojis (⚔️, ⚒️, etc.)
+VS16 = "\ufe0f"
 
-class ViewFamiliesFrame(ttk.Frame):
-    def __init__(self, master, store: DataStore):
-        super().__init__(master, padding=PAD)
+
+class ViewFamiliesTab(QWidget):
+    """Display families grouped by their root emoji."""
+
+    def __init__(self, store: DataStore, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
         self.store = store
 
-        ttk.Label(self, text="Familles", font=("Segoe UI", 14, "bold")).pack(anchor="w", pady=(0, PAD))
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(16, 16, 16, 16)
+        layout.setSpacing(12)
 
-        # Zone texte read-only
-        self.text = tk.Text(self, height=18, wrap="word")
-        self.text.configure(state="disabled")
-        self.text.pack(fill="both", expand=True)
+        title = QLabel("Familles")
+        title.setStyleSheet("font-size: 20px; font-weight: bold;")
+        layout.addWidget(title)
 
-        # Barre d’actions (Actualiser + Copier)
-        actions = ttk.Frame(self)
-        actions.pack(fill="x", pady=(PAD, 0))
-        ttk.Button(actions, text="Actualiser", command=self.refresh).pack(side="left")
-        ttk.Button(actions, text="Copier", command=self.copy_to_clipboard).pack(side="left", padx=(PAD, 0))
+        self.text = QTextEdit()
+        self.text.setReadOnly(True)
+        layout.addWidget(self.text, 1)
+
+        actions = QHBoxLayout()
+        refresh_btn = QPushButton("Actualiser")
+        refresh_btn.clicked.connect(self.refresh)
+        actions.addWidget(refresh_btn)
+
+        copy_btn = QPushButton("Copier")
+        copy_btn.clicked.connect(self.copy_to_clipboard)
+        actions.addWidget(copy_btn)
+        actions.addStretch(1)
+        layout.addLayout(actions)
 
         self.refresh()
 
-    # --- Helpers unicode / emojis -------------------------------------------
+    def set_store(self, store: DataStore) -> None:
+        self.store = store
+        self.refresh()
 
+    def refresh(self) -> None:
+        lines = self._build_grouped_lines()
+        self.text.setPlainText("\n".join(lines))
+
+    def copy_to_clipboard(self) -> None:
+        clipboard = QGuiApplication.clipboard()
+        clipboard.setText(self.text.toPlainText())
+
+    # --- Helpers for grouping --------------------------------------------
     def _first_grapheme(self, s: str) -> str:
-        """Retourne le 1er emoji (grapheme approx.) = 1er codepoint + VS16 éventuel."""
         if not s:
             return ""
         if len(s) >= 2 and s[1] == VS16:
@@ -43,23 +73,9 @@ class ViewFamiliesFrame(ttk.Frame):
         return s[0]
 
     def _emoji_count_simple(self, s: str) -> int:
-        """
-        Compte grossièrement les emojis comme 'nb de codepoints != VS16'.
-        Suffisant pour des emojis simples (⚔️, ⚒️, ✨, 🐉, etc.).
-        """
         return sum(1 for ch in s if ch != VS16)
 
-    # --- Construction des lignes --------------------------------------------
-
     def _build_grouped_lines(self) -> List[str]:
-        """
-        Construit les lignes formatées :
-        - Groupées par 1er emoji (root)
-        - Indentation = nb_emojis(s) - 1 (tabulation par niveau)
-        - Ligne vide entre groupes, pas entre items du même groupe
-        - Format d’une ligne : "<emojis> : <nom>" (si nom vide => juste <emojis>)
-        """
-        # Regrouper par racine (1er emoji)
         groups: Dict[str, List[tuple]] = {}
         for fam in self.store.families:
             root = self._first_grapheme(fam.emojis)
@@ -70,28 +86,13 @@ class ViewFamiliesFrame(ttk.Frame):
         if not groups:
             return ["(aucune famille)"]
 
-        # Ordonner les groupes par racine (clé) et trier les items du groupe :
-        #   1) indent asc (la base d’abord), 2) label alpha pour stabilité
         ordered_roots = sorted(groups.keys())
         lines: List[str] = []
         for gi, root in enumerate(ordered_roots):
             items = groups[root]
-            items.sort(key=lambda t: (t[0], t[2]))
+            items.sort(key=lambda item: (item[0], item[2]))
             for indent, _emojis, label in items:
                 lines.append("\t" * indent + label)
             if gi < len(ordered_roots) - 1:
-                lines.append("")  # ligne vide entre groupes
+                lines.append("")
         return lines
-
-    # --- Actions UI ----------------------------------------------------------
-
-    def refresh(self):
-        lines = self._build_grouped_lines()
-        self.text.configure(state="normal")
-        self.text.delete("1.0", "end")
-        self.text.insert("1.0", "\n".join(lines))
-        self.text.configure(state="disabled")
-
-    def copy_to_clipboard(self):
-        self.clipboard_clear()
-        self.clipboard_append(self.text.get("1.0", "end").rstrip("\n"))

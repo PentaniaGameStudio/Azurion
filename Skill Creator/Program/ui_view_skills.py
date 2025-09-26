@@ -1,203 +1,199 @@
 # -*- coding: utf-8 -*-
-"""
-///summary
-Vue liste + détail des compétences (Liste & Item)
-- Colonnes: Famille | Nom | Niv
-- Tri: Famille, puis Niv (Niv1<Niv2<Niv3), puis Nom (alphabétique)
-"""
-import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
+"""View tab listing skills and displaying their details."""
+from __future__ import annotations
+
+import json
 from typing import Optional
+
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+    QHBoxLayout,
+    QLabel,
+    QLineEdit,
+    QPushButton,
+    QTreeWidget,
+    QTreeWidgetItem,
+    QSplitter,
+    QTextEdit,
+    QMessageBox,
+    QFileDialog,
+)
+
 from .datastore import DataStore
 from .models import Skill
 
-PAD = 8
 
-class ViewSkillsFrame(ttk.Frame):
+class ViewSkillsTab(QWidget):
+    """List of skills with a detail pane."""
+
     COLUMNS = ("family", "name", "level")
 
-    def __init__(self, master, store: DataStore):
-        super().__init__(master, padding=PAD)
+    def __init__(self, store: DataStore, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
         self.store = store
 
-        top = ttk.Frame(self)
-        top.pack(fill="x", pady=(0, PAD))
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(16, 16, 16, 16)
+        layout.setSpacing(12)
 
-        ttk.Label(top, text="Rechercher:").pack(side="left")
-        self.search_var = tk.StringVar()
-        self.search_entry = ttk.Entry(top, textvariable=self.search_var, width=32)
-        self.search_entry.pack(side="left", padx=(PAD // 2, PAD))
-        self.search_entry.bind("<Return>", lambda e: self.refresh())
+        header = QLabel("Afficher les Compétences")
+        header.setStyleSheet("font-size: 20px; font-weight: bold;")
+        layout.addWidget(header)
 
-        ttk.Button(top, text="Actualiser", command=self.refresh).pack(side="left", padx=(0, PAD))
+        top_row = QHBoxLayout()
+        top_row.addWidget(QLabel("Rechercher:"))
+        self.search_entry = QLineEdit()
+        self.search_entry.setPlaceholderText("Nom, famille, coût, effet…")
+        self.search_entry.returnPressed.connect(self.refresh)
+        top_row.addWidget(self.search_entry, 1)
+        refresh_btn = QPushButton("Actualiser")
+        refresh_btn.clicked.connect(self.refresh)
+        top_row.addWidget(refresh_btn)
+        layout.addLayout(top_row)
 
-        # Main split: list (left) + item (right)
-        main = ttk.Panedwindow(self, orient=tk.HORIZONTAL)
-        main.pack(fill="both", expand=True)
+        splitter = QSplitter(Qt.Horizontal)
+        layout.addWidget(splitter, 1)
 
-        # Left list
-        left = ttk.Frame(main)
-        self.tree = ttk.Treeview(left, columns=self.COLUMNS, show="headings", selectmode="browse")
+        left_widget = QWidget()
+        left_layout = QVBoxLayout(left_widget)
+        left_layout.setContentsMargins(0, 0, 0, 0)
+        left_layout.setSpacing(6)
 
-        headers = ["Famille", "Nom", "Niv"]
-        for col, text in zip(self.COLUMNS, headers):
-            self.tree.heading(col, text=text)
+        self.tree = QTreeWidget()
+        self.tree.setColumnCount(3)
+        self.tree.setHeaderLabels(["Famille", "Nom", "Niv"])
+        self.tree.setAlternatingRowColors(True)
+        self.tree.setSelectionMode(QTreeWidget.SingleSelection)
+        self.tree.itemSelectionChanged.connect(self._on_select)
+        self.tree.setRootIsDecorated(False)
+        left_layout.addWidget(self.tree, 1)
 
-        # tailles / alignements
-        self.tree.column("family", width=120, anchor="center")
-        self.tree.column("name", width=220, anchor="w")
-        self.tree.column("level", width=70, anchor="center")
+        splitter.addWidget(left_widget)
 
-        vsb = ttk.Scrollbar(left, orient="vertical", command=self.tree.yview)
-        self.tree.configure(yscrollcommand=vsb.set)
+        right_widget = QWidget()
+        right_layout = QVBoxLayout(right_widget)
+        right_layout.setContentsMargins(0, 0, 0, 0)
+        right_layout.setSpacing(8)
 
-        self.tree.pack(side="left", fill="both", expand=True)
-        vsb.pack(side="left", fill="y")
-        left.pack(fill="both", expand=True)
+        self.detail_title = QLabel("Aucune compétence sélectionnée")
+        self.detail_title.setStyleSheet("font-size: 16px; font-weight: bold;")
+        right_layout.addWidget(self.detail_title)
 
-        self.tree.bind("<<TreeviewSelect>>", self._on_select)
+        self.detail_text = QTextEdit()
+        self.detail_text.setReadOnly(True)
+        right_layout.addWidget(self.detail_text, 1)
 
-        # Right detail ("Item")
-        right = ttk.Frame(main, padding=PAD)
-        self.detail_title = ttk.Label(right, text="Aucune compétence sélectionnée", font=("Segoe UI", 12, "bold"))
-        self.detail_title.pack(anchor="w", pady=(0, PAD))
+        btn_row = QHBoxLayout()
+        delete_btn = QPushButton("Supprimer")
+        delete_btn.clicked.connect(self._delete_selected)
+        btn_row.addWidget(delete_btn)
 
-        self.detail_text = tk.Text(right, height=18, wrap="word")
-        self.detail_text.configure(state="disabled")
-        self.detail_text.pack(fill="both", expand=True)
+        export_btn = QPushButton("Exporter la sélection (JSON)")
+        export_btn.clicked.connect(self._export_selected)
+        btn_row.addWidget(export_btn)
+        btn_row.addStretch(1)
+        right_layout.addLayout(btn_row)
 
-        # Buttons under detail
-        btns = ttk.Frame(right)
-        btns.pack(fill="x", pady=(PAD, 0))
-        ttk.Button(btns, text="Supprimer", command=self._delete_selected).pack(side="left")
-        ttk.Button(btns, text="Exporter la sélection (JSON)", command=self._export_selected).pack(side="left", padx=(PAD, 0))
-
-        main.add(left, weight=3)
-        main.add(right, weight=2)
+        splitter.addWidget(right_widget)
+        splitter.setStretchFactor(0, 3)
+        splitter.setStretchFactor(1, 2)
 
         self.refresh()
 
+    def set_store(self, store: DataStore) -> None:
+        self.store = store
+        self.refresh()
+
     def refresh(self) -> None:
-        """Re-populate the tree trié par Famille → Niv → Nom, filtré par recherche."""
-        query = self.search_var.get().strip().lower()
+        query = self.search_entry.text().strip().lower()
 
-        # Clear
-        for iid in self.tree.get_children():
-            self.tree.delete(iid)
+        self.tree.clear()
 
-        # mapping d'ordre pour le niveau
         lvl_order_map = {"niv1": 1, "niv2": 2, "niv3": 3}
-
         rows = []
-        for idx, s in enumerate(self.store.skills):
-            family = s.family
-            name = s.name
-            level = getattr(s, "level", "") or ""
+        for idx, skill in enumerate(self.store.skills):
+            family = skill.family
+            name = skill.name
+            level = getattr(skill, "level", "") or ""
             order_level = lvl_order_map.get(level.lower(), 999)
-
-            # Texte de recherche (on garde large)
             searchable_parts = [
-                family, name, level,
-                getattr(s, "cost", "") or "",
-                getattr(s, "difficulty", "") or "",
-                getattr(s, "target", "") or "",
-                getattr(s, "range_", "") or "",
-                getattr(s, "duration", "") or "",
-                getattr(s, "damage", "") or "",
-                " ".join(getattr(s, "effects", []) or []),
-                " ".join(getattr(s, "conditions", []) or []),
-                " ".join(getattr(s, "limits", []) or []),
+                family,
+                name,
+                level,
+                getattr(skill, "cost", "") or "",
+                getattr(skill, "difficulty", "") or "",
+                getattr(skill, "target", "") or "",
+                getattr(skill, "range_", "") or "",
+                getattr(skill, "duration", "") or "",
+                getattr(skill, "damage", "") or "",
+                " ".join(getattr(skill, "effects", []) or []),
+                " ".join(getattr(skill, "conditions", []) or []),
+                " ".join(getattr(skill, "limits", []) or []),
             ]
             searchable = " ".join(searchable_parts).lower()
             if query and query not in searchable:
                 continue
-
             rows.append(((family, order_level, name.lower()), idx, (family, name, level)))
 
-        # Tri demandé: Famille → Niv → Nom
-        rows.sort(key=lambda t: t[0])
+        rows.sort(key=lambda item: item[0])
 
-        # Insert rows
         for _key, idx, values in rows:
-            self.tree.insert("", "end", iid=str(idx), values=values)
+            item = QTreeWidgetItem(list(values))
+            item.setData(0, Qt.UserRole, idx)
+            self.tree.addTopLevelItem(item)
 
-        # Reset detail
-        self._set_detail(None)
+        self.detail_title.setText("Aucune compétence sélectionnée")
+        self.detail_text.setPlainText("Sélectionnez une compétence dans la liste pour voir ses détails.")
 
-    def _on_select(self, _evt=None) -> None:
-        sel = self.tree.selection()
-        if not sel:
+    def _on_select(self) -> None:
+        items = self.tree.selectedItems()
+        if not items:
             self._set_detail(None)
             return
-        idx = int(sel[0])
-        skill = self.store.skills[idx]
-        self._set_detail(skill)
+        idx = items[0].data(0, Qt.UserRole)
+        if idx is None:
+            self._set_detail(None)
+            return
+        self._set_detail(self.store.skills[int(idx)])
 
     def _set_detail(self, skill: Optional[Skill]) -> None:
-        # ///summary
-        # Affiche:
-        #  Famille Nom (Niv)
-        #    Coût : ...
-        #    <Difficulté/Facilité> (affiche la chaîne telle quelle)
-        #    Cible : ...
-        #    Portée : ...
-        #    Durée : ...
-        #    Dégâts : ...
-        #    Effet : x        (si 1)
-        #    Effets :         (si >1)
-        #      x
-        #      y
-        #    Condition : x    (si 1)
-        #    Conditions :     (si >1)
-        #      x
-        #      y
-        #    Limite : x       (si 1)
-        #    Limites :        (si >1)
-        #      x
-        #      y
-        self.detail_text.configure(state="normal")
-        self.detail_text.delete("1.0", "end")
-
         if skill is None:
-            self.detail_title.configure(text="Aucune compétence sélectionnée")
-            self.detail_text.insert("1.0", "Sélectionnez une compétence dans la liste pour voir ses détails.")
-            self.detail_text.configure(state="disabled")
+            self.detail_title.setText("Aucune compétence sélectionnée")
+            self.detail_text.setPlainText("Sélectionnez une compétence dans la liste pour voir ses détails.")
             return
 
-        # Titre (on garde le label au-dessus, et on remet l'entête dans le texte)
-        self.detail_title.configure(text=f"{skill.family}  {skill.name}")
+        self.detail_title.setText(f"{skill.family}  {skill.name}")
 
-        # Récupération/normalisation
         family = getattr(skill, "family", "") or ""
         name = getattr(skill, "name", "") or ""
         level = getattr(skill, "level", "") or ""
         cost = getattr(skill, "cost", "") or ""
         diff = getattr(skill, "difficulty", "") or ""
+        if diff.strip() == "Difficulté : 0":
+            diff = ""
         target = getattr(skill, "target", "") or ""
         range_ = getattr(skill, "range_", "") or ""
         duration = getattr(skill, "duration", "") or ""
         damage = getattr(skill, "damage", "") or ""
 
-        def _norm_list(lst):
-            return [x.strip() for x in (lst or []) if isinstance(x, str) and x.strip()]
+        def _norm_list(values):
+            return [x.strip() for x in (values or []) if isinstance(x, str) and x.strip()]
 
         effects = _norm_list(getattr(skill, "effects", []))
         conditions = _norm_list(getattr(skill, "conditions", []))
         limits = _norm_list(getattr(skill, "limits", []))
 
-        lines = []
-
-        # En-tête: Famille Nom (Niv)
+        lines: list[str] = []
         header = f"{family} {name}"
         if level:
             header += f" ({level})"
         lines.append(header)
 
-        # Champs simples (afficher seulement si non vide)
         if cost:
             lines.append(f"\tCoût : {cost}")
         if diff:
-            # Le champ contient déjà "Difficulté : ..." ou "Facilité : ..."
             lines.append(f"\t{diff}")
         if target:
             lines.append(f"\tCible : {target}")
@@ -208,48 +204,49 @@ class ViewSkillsFrame(ttk.Frame):
         if damage:
             lines.append(f"\tDégâts : {damage}")
 
-        # Effets
         if len(effects) == 1:
             lines.append(f"\tEffet : {effects[0]}")
         elif len(effects) > 1:
             lines.append("\tEffets :")
-            for e in effects:
-                lines.append(f"\t\t{e}")
+            for eff in effects:
+                lines.append(f"\t\t{eff}")
 
-        # Conditions
         if len(conditions) == 1:
             lines.append(f"\tCondition : {conditions[0]}")
         elif len(conditions) > 1:
             lines.append("\tConditions :")
-            for c in conditions:
-                lines.append(f"\t\t{c}")
+            for cond in conditions:
+                lines.append(f"\t\t{cond}")
 
-        # Limites
         if len(limits) == 1:
             lines.append(f"\tLimite : {limits[0]}")
         elif len(limits) > 1:
             lines.append("\tLimites :")
-            for l in limits:
-                lines.append(f"\t\t{l}")
+            for lim in limits:
+                lines.append(f"\t\t{lim}")
 
-        # Rendu
-        self.detail_text.insert("1.0", "\n".join(lines))
-        self.detail_text.configure(state="disabled")
-
+        self.detail_text.setPlainText("\n".join(lines))
 
     def _selected_index(self) -> Optional[int]:
-        sel = self.tree.selection()
-        if not sel:
+        items = self.tree.selectedItems()
+        if not items:
             return None
-        return int(sel[0])
+        idx = items[0].data(0, Qt.UserRole)
+        return int(idx) if idx is not None else None
 
     def _delete_selected(self) -> None:
         idx = self._selected_index()
         if idx is None:
-            messagebox.showinfo("Info", "Aucune compétence sélectionnée.")
+            QMessageBox.information(self, "Info", "Aucune compétence sélectionnée.")
             return
         skill = self.store.skills[idx]
-        if not messagebox.askyesno("Confirmation", f"Supprimer '{skill.name}' ?"):
+        if QMessageBox.question(
+            self,
+            "Confirmation",
+            f"Supprimer '{skill.name}' ?",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No,
+        ) != QMessageBox.Yes:
             return
         del self.store.skills[idx]
         self.store.save()
@@ -258,22 +255,20 @@ class ViewSkillsFrame(ttk.Frame):
     def _export_selected(self) -> None:
         idx = self._selected_index()
         if idx is None:
-            messagebox.showinfo("Info", "Aucune compétence sélectionnée.")
+            QMessageBox.information(self, "Info", "Aucune compétence sélectionnée.")
             return
-        s = self.store.skills[idx]
-        payload = s.__dict__
-        path = filedialog.asksaveasfilename(
-            title="Exporter la compétence en JSON",
-            defaultextension=".json",
-            filetypes=[("JSON files", "*.json")],
-            initialfile=f"{s.name.replace(' ', '_')}.json",
+        skill = self.store.skills[idx]
+        path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Exporter la compétence en JSON",
+            f"{skill.name.replace(' ', '_')}.json",
+            "JSON files (*.json)",
         )
         if not path:
             return
         try:
-            import json
-            with open(path, "w", encoding="utf-8") as f:
-                json.dump(payload, f, ensure_ascii=False, indent=2)
-            messagebox.showinfo("Exporté", f"Compétence exportée vers:\n{path}")
-        except Exception as e:
-            messagebox.showerror("Erreur", f"Export impossible:\n{e}")
+            with open(path, "w", encoding="utf-8") as fh:
+                json.dump(skill.__dict__, fh, ensure_ascii=False, indent=2)
+            QMessageBox.information(self, "Exporté", f"Compétence exportée vers:\n{path}")
+        except Exception as exc:
+            QMessageBox.critical(self, "Erreur", f"Export impossible:\n{exc}")
