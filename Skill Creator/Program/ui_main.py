@@ -78,6 +78,7 @@ class MainWindow(QMainWindow):
         self.tab_create_skill.skill_saved.connect(self._on_skill_saved)
         self.tab_view_skills.skill_edit_requested.connect(self._open_skill_for_edit)
 
+
         self._tabs.currentChanged.connect(self._maybe_refresh)
 
         corner = QWidget(self)
@@ -111,7 +112,6 @@ class MainWindow(QMainWindow):
     # ----- UI helpers -----------------------------------------------------
     def _build_menu(self) -> None:
         menubar = self.menuBar()
-
         file_menu = menubar.addMenu("Fichier")
         file_menu.addAction(self._create_action("Ouvrir un JSON…", self._load_other_file))
         file_menu.addAction(self._create_action("Exporter JSON sous…", self._export_as))
@@ -281,6 +281,7 @@ class _ConfigDialog(QDialog):
         self.cmb_color.currentTextChanged.connect(
             lambda color: parent._preview_theme(is_dark=self.chk_dark.isChecked(), color=color)
         )
+
 
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self.accept)

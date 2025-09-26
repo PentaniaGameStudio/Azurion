@@ -247,7 +247,7 @@ class CreateSkillTab(QWidget):
             hided=self.hidden_checkbox.isChecked(),
         )
 
-        try:
+        try
             if self._editing_index is None:
                 self.store.add_skill(skill)
                 QMessageBox.information(self, "OK", f"Compétence '{name}' ajoutée.")

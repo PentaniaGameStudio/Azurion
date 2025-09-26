@@ -102,7 +102,6 @@ class ViewSkillsTab(QWidget):
         splitter.addWidget(right_widget)
         splitter.setStretchFactor(0, 3)
         splitter.setStretchFactor(1, 2)
-
         self.refresh()
 
     def set_store(self, store: DataStore) -> None:
@@ -275,7 +274,7 @@ class ViewSkillsTab(QWidget):
             QMessageBox.information(self, "Exporté", f"Compétence exportée vers:\n{path}")
         except Exception as exc:
             QMessageBox.critical(self, "Erreur", f"Export impossible:\n{exc}")
-
+            
     def _on_item_double_clicked(self, item: QTreeWidgetItem, _column: int) -> None:
         idx = item.data(0, Qt.UserRole)
         if idx is None:
@@ -285,3 +284,4 @@ class ViewSkillsTab(QWidget):
         except (TypeError, ValueError):
             return
         self.skill_edit_requested.emit(index)
+
