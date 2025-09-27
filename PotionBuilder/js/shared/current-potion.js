@@ -102,6 +102,21 @@ async function render() {
     btn.type = "button";
     btn.className = "statBtn catBtn";
     btn.textContent = `${t.icon} ${t.label} : ${t.value}`;
+
+    if (t.label === "Difficulté"){
+      btn.title = "Cliquer pour copier la difficulté inversée";
+      btn.addEventListener("click", async () => {
+        const diff = Number(result?.totalDifficulty ?? 0);
+        const inverted = diff * -1;
+        try {
+          if (!navigator?.clipboard?.writeText) throw new Error("clipboard API non disponible");
+          await navigator.clipboard.writeText(String(inverted));
+        } catch (error) {
+          console.error("[current-potion] clipboard error:", error);
+        }
+      });
+    }
+
     elTotals.append(btn);
   }
 
