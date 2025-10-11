@@ -91,7 +91,8 @@
     ],
     "books": [
       "Herbier de Tothymia",
-      "Manuel d'Alchimie Débutant"
+      "Manuel d'Alchimie Débutant",
+      "Savoir Elfique"
     ]
   },
   {
@@ -106,7 +107,8 @@
     "books": [
       "Herbier de Tothymia",
       "Manuel d'Alchimie Débutant",
-      "Racines et Écorces de Silvanea"
+      "Racines et Écorces de Silvanea",
+      "Savoir Elfique"
     ]
   },
   {
@@ -177,7 +179,8 @@
     ],
     "books": [
       "Herbier de Tothymia",
-      "Manuel d'Alchimie Débutant"
+      "Manuel d'Alchimie Débutant",
+      "Savoir Elfique"
     ]
   },
   {
@@ -290,7 +293,8 @@
       "Silvanea"
     ],
     "books": [
-      "Herbier de Tothymia"
+      "Herbier de Tothymia",
+      "Savoir Elfique"
     ]
   },
   {
@@ -314,7 +318,8 @@
       "Silvanea"
     ],
     "books": [
-      "Herbier de Tothymia"
+      "Herbier de Tothymia",
+      "Savoir Elfique"
     ]
   },
   {
@@ -327,7 +332,8 @@
       "Orcanfeld"
     ],
     "books": [
-      "Herbier de Tothymia"
+      "Herbier de Tothymia",
+      "Savoir Elfique"
     ]
   },
   {
@@ -459,6 +465,479 @@
     "origins": [],
     "books": [
       "Pierres et Métaux des Montagnes de Terragard"
+    ]
+  },
+  {
+    "name": "Écorce d’Ysilis",
+    "cat": "Catalyseur",
+    "difficulty": 35,
+    "shortEffect": "Amplificateur",
+    "effect": "Multiplie les effets curatifs et protecteur, mais rend la potion sensible à la lumière.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Poudre de Lune-Eveil",
+    "cat": "Catalyseur",
+    "difficulty": 30,
+    "shortEffect": "Résonance lunaire",
+    "effect": "Selon la phases des lunes actuelles, amplifie fortement les effets bonifiques de la potion.\n(Nouvelle Lune(s) + 0%; Pleine Lune(s) + 100%)",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Feuille de Lune-Eveil",
+    "cat": "Catalyseur",
+    "difficulty": 30,
+    "shortEffect": "Résonance Lunaire",
+    "effect": "Selon la phases des lunes actuelles, amplifie fortement les effets bonifiques de la potion.\n(Nouvelle Lune(s) + 100%; Pleine Lune(s) + 0%)",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Graine d’Orpheline",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Purificatrice",
+    "effect": "Permet à la concoction d'éliminer les impuretés et autres produits toxique.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Sève argentée",
+    "cat": "Catalyseur",
+    "difficulty": 60,
+    "shortEffect": "Amplification Magique",
+    "effect": "Augmente puissament les effets lié à la magie.\nPeut servir de conducteur magique",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Pétale de Mystrée",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Adoucissement",
+    "effect": "Atténue les effets négatifs d'une potion sans en altérer la puissance.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Nectar de Briselune",
+    "cat": "Catalyseur",
+    "difficulty": 50,
+    "shortEffect": "Stabilisateur Astral",
+    "effect": "Harmonise les effets liés au songes et illusions.\nPeut servir de base a des antidotes de potions mentales.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Pollen de Virelys",
+    "cat": "Catalyseur",
+    "difficulty": 15,
+    "shortEffect": "Effervescance",
+    "effect": "Rend la potion plus légère et rapide à agir, mais moins durable dans le temps.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Résine de Céléria",
+    "cat": "Catalyseur",
+    "difficulty": 40,
+    "shortEffect": "Amplificateur végétal",
+    "effect": "Renforce les propriétés des réactifs végétaux. Extrêmement instable avec des éléments de feu.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Glande de Nymphylis",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Luminscence Vive",
+    "effect": "Fait briller la concotion.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Cendre de Brumefleur",
+    "cat": "Catalyseur",
+    "difficulty": 30,
+    "shortEffect": "Dissipation",
+    "effect": "Peut servir de base à une potion dissipatrice.\n(Annule les effets selon le réactif utilisé)",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Feuille-Miroir",
+    "cat": "Catalyseur",
+    "difficulty": 80,
+    "shortEffect": "Réflexion Magique",
+    "effect": "Inverse les effets d'une concoction.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Larme de Sylphide",
+    "cat": "Catalyseur",
+    "difficulty": 40,
+    "shortEffect": "Sommeil",
+    "effect": "Amplifie ou donne des effets relatif au sommeil et aux songes (rêves / cauchemard).",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Spores d'Aeloria",
+    "cat": "Catalyseur",
+    "difficulty": 20,
+    "shortEffect": "Effervescence",
+    "effect": "Rend la potion plus légère et rapide à agir, mais moins durable dans le temps.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Goutte de Rosée Céleste",
+    "cat": "Catalyseur",
+    "difficulty": -30,
+    "shortEffect": "Synchronisation",
+    "effect": "Accorde les ingrédients d'une potion entre eux, augmente la chance de réussite.",
+    "origins": [
+      "Silvanea",
+      "Forêt Céleste"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Eau Céleste",
+    "cat": "Liant",
+    "difficulty": -30,
+    "shortEffect": "Purification Lunaire",
+    "effect": "Stabilise la potion, réduisant la difficulté de préparation.\nRéduction supplémentaire de 20 si pleine lune.",
+    "origins": [
+      "Silvanea",
+      "Forêt Céleste"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Miel Féerique",
+    "cat": "Liant",
+    "difficulty": -25,
+    "shortEffect": "Liant Doux",
+    "effect": "Équilibre les arômes et adoucit les potions.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Huile d’Écorce",
+    "cat": "Liant",
+    "difficulty": -20,
+    "shortEffect": "Huileux",
+    "effect": "Sert de base grasse pour les onguents ou huiles essentielles.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Larme de Virelys",
+    "cat": "Liant",
+    "difficulty": -25,
+    "shortEffect": "Fixateur aromatique",
+    "effect": "Lie parfaitement les odeurs, permettant la création d'encens ou de parfums.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Pâte d'Orpheline",
+    "cat": "Liant",
+    "difficulty": -20,
+    "shortEffect": "Stabilisateur Purifiant",
+    "effect": "Stabilise la potion, tout en améliorant les effets purificateurs de la concoction.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Sève d'Yggdrasil",
+    "cat": "Liant",
+    "difficulty": -100,
+    "shortEffect": "Essence Vitale Pure",
+    "effect": "Liant suprême, elle reforce toute concoction végétale et en purifie tout effets négatifs.\nNe supporte pas la corruption magique.",
+    "origins": [
+      "Arbre Monde"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Racine d'Yggdrasil",
+    "cat": "Catalyseur",
+    "difficulty": 60,
+    "shortEffect": "Guérison",
+    "effect": "Amplie tout les effets lié à la guerison.\nNe supporte pas la corruption magique.",
+    "origins": [
+      "Arbre Monde"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Feuille d’Yggdrasil",
+    "cat": "Réactif",
+    "difficulty": 100,
+    "shortEffect": "Guérison Absolue",
+    "effect": "Rend vie et énergie à tout organisme.",
+    "origins": [
+      "Arbre Monde"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Sève Céleste",
+    "cat": "Liant",
+    "difficulty": -50,
+    "shortEffect": "Stabilisateur",
+    "effect": "Stabilise la potion, réduisant la difficulté de préparation.",
+    "origins": [
+      "Silvanea",
+      "Forêt Céleste"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Herbe de Mornelis",
+    "cat": "Réactif",
+    "difficulty": 20,
+    "shortEffect": "Réveil",
+    "effect": "Stimule la conscience, ainsi que la connexion magique.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Herbier de Tothymia",
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Fleur de Séralune",
+    "cat": "Réactif",
+    "difficulty": 30,
+    "shortEffect": "Charme",
+    "effect": "Crée un effet d'attraction ou de fascination.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Pousse d’Auravine",
+    "cat": "Réactif",
+    "difficulty": 40,
+    "shortEffect": "Temporalité",
+    "effect": "Fait circuler les effets d’une potion dans tout le corps de manière progressive.",
+    "origins": [
+      "Silvanea",
+      "Forêt Céleste"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Feuille de Noctheris",
+    "cat": "Réactif",
+    "difficulty": 20,
+    "shortEffect": "Invisibilité Partielle",
+    "effect": "Permet d'avoir un effet de dissimulation.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Baie de Verrelune",
+    "cat": "Réactif",
+    "difficulty": 40,
+    "shortEffect": "Restauration Magique",
+    "effect": "Restaure beaucoup l'énergie magique et mentale.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Fleur de Lys d’Or",
+    "cat": "Réactif",
+    "difficulty": 50,
+    "shortEffect": "Purification",
+    "effect": "Dissipe totalement les effets négatifs ou toxiques.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Champignon de Spiralis",
+    "cat": "Réactif",
+    "difficulty": 30,
+    "shortEffect": "Croissance",
+    "effect": "Augmente la fertilité de l'organisme receveur.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Résine d’Embrasyl",
+    "cat": "Catalyseur",
+    "difficulty": 30,
+    "shortEffect": "Inflammabilité",
+    "effect": "Produit une flamme persistante lorsque qu'inflammée.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Perle de Fulgur",
+    "cat": "Réactif",
+    "difficulty": 45,
+    "shortEffect": "Charge électrique",
+    "effect": "Rends une concoction électrique.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Gomme de Méduva",
+    "cat": "Réactif",
+    "difficulty": 30,
+    "shortEffect": "Gluant / Venimeux",
+    "effect": "Sécrétion gluante qui rends le concoction venimeuse.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Nacre d’Illutia",
+    "cat": "Réactif",
+    "difficulty": 30,
+    "shortEffect": "Illusion",
+    "effect": "Donne des effets hallucinogènes aux concoctions.",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
+    ]
+  },
+  {
+    "name": "Cendre de Vorath",
+    "cat": "Réactif",
+    "difficulty": 50,
+    "shortEffect": "Corrosif",
+    "effect": "Rends une concoction corrosive. (Très puissante, même sur du métal)",
+    "origins": [
+      "Silvanea"
+    ],
+    "books": [
+      "Savoir Elfique"
     ]
   }
 ]
