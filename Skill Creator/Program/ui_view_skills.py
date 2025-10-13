@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import Optional
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
@@ -29,6 +29,8 @@ class ViewSkillsTab(QWidget):
     """List of skills with a detail pane."""
 
     COLUMNS = ("family", "name", "level")
+
+    skill_edit_requested = Signal(int)
 
     def __init__(self, store: DataStore, parent: QWidget | None = None) -> None:
         super().__init__(parent)
@@ -68,6 +70,7 @@ class ViewSkillsTab(QWidget):
         self.tree.setSelectionMode(QTreeWidget.SingleSelection)
         self.tree.itemSelectionChanged.connect(self._on_select)
         self.tree.setRootIsDecorated(False)
+        self.tree.itemDoubleClicked.connect(self._on_item_double_clicked)
         left_layout.addWidget(self.tree, 1)
 
         splitter.addWidget(left_widget)
@@ -99,7 +102,6 @@ class ViewSkillsTab(QWidget):
         splitter.addWidget(right_widget)
         splitter.setStretchFactor(0, 3)
         splitter.setStretchFactor(1, 2)
-
         self.refresh()
 
     def set_store(self, store: DataStore) -> None:
@@ -272,3 +274,14 @@ class ViewSkillsTab(QWidget):
             QMessageBox.information(self, "Exporté", f"Compétence exportée vers:\n{path}")
         except Exception as exc:
             QMessageBox.critical(self, "Erreur", f"Export impossible:\n{exc}")
+            
+    def _on_item_double_clicked(self, item: QTreeWidgetItem, _column: int) -> None:
+        idx = item.data(0, Qt.UserRole)
+        if idx is None:
+            return
+        try:
+            index = int(idx)
+        except (TypeError, ValueError):
+            return
+        self.skill_edit_requested.emit(index)
+

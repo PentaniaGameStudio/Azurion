@@ -54,9 +54,20 @@ class DataStore:
         self.skills = converted
 
     def save(self) -> None:
+        families_payload = [Family(**f.__dict__).__dict__ for f in self.families]
+        families_payload.sort(key=lambda fam: fam.get("emojis", "").lower())
+
+        skills_payload = [Skill(**s.__dict__).__dict__ for s in self.skills]
+        skills_payload.sort(
+            key=lambda skill: (
+                skill.get("family", "").lower(),
+                skill.get("name", "").lower(),
+            )
+        )
+
         payload = {
-            "families": [Family(**f.__dict__).__dict__ for f in self.families],
-            "skills": [Skill(**s.__dict__).__dict__ for s in self.skills],
+            "families": families_payload,
+            "skills": skills_payload,
         }
         self._write(payload)
 
@@ -69,6 +80,12 @@ class DataStore:
 
     def add_skill(self, skill: Skill) -> None:
         self.skills.append(skill)
+        self.save()
+
+    def update_skill(self, index: int, skill: Skill) -> None:
+        if index < 0 or index >= len(self.skills):
+            raise IndexError("Index de compétence invalide")
+        self.skills[index] = skill
         self.save()
 
     def get_family_emojis(self):

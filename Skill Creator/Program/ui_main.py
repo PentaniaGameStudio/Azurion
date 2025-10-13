@@ -75,7 +75,9 @@ class MainWindow(QMainWindow):
         self._tabs.addTab(self.tab_view_families, "Afficher Familles")
 
         self.tab_create_family.family_created.connect(self._on_family_created)
-        self.tab_create_skill.skill_created.connect(self._on_skill_created)
+        self.tab_create_skill.skill_saved.connect(self._on_skill_saved)
+        self.tab_view_skills.skill_edit_requested.connect(self._open_skill_for_edit)
+
 
         self._tabs.currentChanged.connect(self._maybe_refresh)
 
@@ -110,7 +112,6 @@ class MainWindow(QMainWindow):
     # ----- UI helpers -----------------------------------------------------
     def _build_menu(self) -> None:
         menubar = self.menuBar()
-
         file_menu = menubar.addMenu("Fichier")
         file_menu.addAction(self._create_action("Ouvrir un JSON…", self._load_other_file))
         file_menu.addAction(self._create_action("Exporter JSON sous…", self._export_as))
@@ -181,8 +182,15 @@ class MainWindow(QMainWindow):
         self.tab_create_skill.refresh_families()
         self.tab_view_families.refresh()
 
-    def _on_skill_created(self) -> None:
+    def _on_skill_saved(self) -> None:
         self.tab_view_skills.refresh()
+
+    def _open_skill_for_edit(self, index: int) -> None:
+        if index < 0 or index >= len(self.store.skills):
+            return
+        skill = self.store.skills[index]
+        self.tab_create_skill.load_skill_for_edit(skill, index)
+        self._tabs.setCurrentWidget(self.tab_create_skill)
 
     def _set_store(self, store: DataStore) -> None:
         self.store = store
@@ -273,6 +281,7 @@ class _ConfigDialog(QDialog):
         self.cmb_color.currentTextChanged.connect(
             lambda color: parent._preview_theme(is_dark=self.chk_dark.isChecked(), color=color)
         )
+
 
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self.accept)
